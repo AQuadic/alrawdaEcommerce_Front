@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./../dist/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+    <!-- Start Navbar -->
+        <div id="navbar"></div>
+    <!-- End Navbar -->
+
+    <hr>
+
+    <!-- Start Location -->
+        <div class="w-full h-[72px] bg-[#F2F4F5] mt-[13px]">
+            <div class="flex items-center gap-2 md:ml-[300px] ml-10 pt-[26px]">
+                <img src="../assets/images/House.svg" alt="Home Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Home</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">User Account</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#2DA5F3] text-sm font-medium">Sign In</p>
+            </div>
+        </div>
+    <!-- End Location -->
+
+    <!-- Start Form -->
+        <div class="w-full max-w-md bg-white rounded-lg p-8 mt-24 mb-24 mx-auto" style="box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.12);">
+            <!-- Tab Navigation -->
+            <div class="flex border-b mb-4">
+                <button id="signInTab" class="w-1/2 text-center py-2 border-[#FA8232] border-b-2 text-[#191C1F] font-semibold text-[20px]" onclick="showSignIn()">Sign In</button>
+                <button id="signUpTab" class="w-1/2 text-center py-2 text-[#77878F] font-semibold text-[20px]" onclick="showSignUp()">Sign Up</button>
+            </div>
+        
+            <!-- Sign In Form -->
+                <div id="signInForm" class="h-[350px]">
+                    <form action="#" class="space-y-4">
+                    <div>
+                        <label class="block text-[#191C1F] text-sm font-normal mb-2">Email Address</label>
+                        <input type="email" placeholder="" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232]">
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <label class="block text-[#191C1F] text-sm font-normal mb-2">Password</label>
+                            <a href="#" class="text-sm text-[#2DA5F3] mb-2 font-medium">Forget Password?</a>
+                        </div>
+                        <div class="relative">
+                        <input type="password" placeholder="" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232]">
+                        <span class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer">
+                            <img src="../assets/images/Eye.svg" alt="Eye Icon">
+                        </span>
+                        </div>
+                    </div>
+                    <button class="w-full bg-[#FA8232] flex items-center justify-center gap-2 text-white py-2 rounded-md h-[48px] font-bold text-sm">
+                        SIGN IN
+                        <img src="../assets/images/ArrowRight.svg" alt="">
+                    </button>
+                    </form>
+                    <div class="text-center mt-4">
+                    <p class="text-sm text-gray-500">or</p>
+                    <button class="w-full py-2 mt-2 bg-white border border-gray-300 rounded-md flex  items-center gap-20">
+                        <img src="../assets/images/Google.webp" alt="Google logo" class="w-[20px] h-[20px] ml-5">
+                        Login with Google
+                    </button>
+                    </div>
+                </div>
+        
+            <!-- Sign Up Form -->
+                <div id="signUpForm" class="hidden">
+                    <form action="#" class="space-y-4">
+                    <div>
+                        <label class="blockblock text-[#191C1F] text-sm font-normal mb-2">Name</label>
+                        <input type="text" placeholder="" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232]">
+                    </div>
+                    <div>
+                        <label class="blockblock text-[#191C1F] text-sm font-normal mb-2">Email Address</label>
+                        <input type="email" placeholder="" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232]">
+                    </div>
+                    <div>
+                        <label class="blockblock text-[#191C1F] text-sm font-normal mb-2">Password</label>
+                        <div class="relative">
+                        <input type="password" placeholder="8+ characters" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232]">
+                        <span class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer">
+                            <img src="../assets/images/Eye.svg" alt="Eye Icon">
+                        </span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="blockblock text-[#191C1F] text-sm font-normal mb-2">Confirm Password</label>
+                        <div class="relative">
+                        <input type="password" placeholder="" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232]">
+                        <span class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer">
+                            <img src="../assets/images/Eye.svg" alt="Eye Icon">
+                        </span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-1">
+                        <input type="checkbox" id="terms" class="mr-2 w-[20px] h-[20px]">
+                        <label for="terms" class="text-sm text-[#475156] font-medium">Are you agree to Clicon <a href="#" class="text-[#2DA5F3] hover:underline">Terms of Condition</a> and <a href="#" class="text-[#2DA5F3] hover:underline">Privacy Policy</a>?</label>
+                    </div>
+                    <button class="w-full bg-[#FA8232] text-white py-2 rounded-md hover:bg-orange-600">SIGN UP</button>
+                    </form>
+                    <div class="text-center mt-4">
+                    <p class="text-sm text-gray-500">or</p>
+                    <button class="w-full py-2 mt-2 bg-white border border-gray-300 rounded-md flex  items-center gap-20">
+                        <img src="../assets/images/Google.webp" alt="Google logo" class="w-[20px] h-[20px] ml-5">
+                        Sign up with Google
+                    </button>
+                    <button class="w-full py-2 mt-2 bg-white border border-gray-300 rounded-md flex  items-center gap-20">
+                        <img src="../assets/images/Apple.svg" alt="Apple logo" class="w-[20px] h-[20px] ml-5">
+                        Sign up with Apple
+                    </button>
+                    </div>
+                </div>
+        </div>
+    <!-- Start Form -->
+
+    <!-- Start Footer -->
+        <div id="footer"></div>
+    <!-- End Footer -->
+
+    <script>
+        function showSignIn() {
+            document.getElementById('signInForm').classList.remove('hidden');
+            document.getElementById('signUpForm').classList.add('hidden');
+            document.getElementById('signInTab').classList.add('border-[#FA8232]', 'border-b-2');
+            document.getElementById('signUpTab').classList.remove('border-[#FA8232]', 'border-b-2');
+        }
+    
+        function showSignUp() {
+            document.getElementById('signUpForm').classList.remove('hidden');
+            document.getElementById('signInForm').classList.add('hidden');
+            document.getElementById('signUpTab').classList.add('border-[#FA8232]', 'border-b-2');
+            document.getElementById('signInTab').classList.remove('border-[#FA8232]', 'border-b-2');
+        }
+    </script>
+</body>
+
+
+</html>
