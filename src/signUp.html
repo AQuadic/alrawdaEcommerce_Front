@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Sign Up</title>
     <link href="./../dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="./../dist/all.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -27,7 +27,7 @@
                 <img src="../assets/images/arrow.svg" alt="Arrow Icon">
                 <p class="text-[#5F6C72] font-normal text-sm">User Account</p>
                 <img src="../assets/images/arrow.svg" alt="Arrow Icon">
-                <p class="text-[#2DA5F3] text-sm font-medium">Sign In</p>
+                <p class="text-[#2DA5F3] text-sm font-medium">Sign Up</p>
             </div>
         </div>
     <!-- End Location -->
@@ -36,8 +36,8 @@
         <div class="w-full max-w-md bg-white rounded-lg p-8 mt-24 mb-24 mx-auto" style="box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.12);">
             <!-- Tab Navigation -->
             <div class="flex border-b mb-4">
-                <button id="signInTab" class="w-1/2 text-center py-2 border-[#FA8232] border-b-2 text-[#191C1F] font-semibold text-[20px]" onclick="showSignIn()">Sign In</button>
-                <button id="signUpTab" class="w-1/2 text-center py-2 text-[#77878F] font-semibold text-[20px]" onclick="showSignUp()">Sign Up</button>
+                <button id="signInTab" class="w-1/2 text-center py-2 text-[#191C1F] font-semibold text-[20px]" onclick="showSignIn()">Sign In</button>
+                <button id="signUpTab" class="w-1/2 text-center py-2 border-[#FA8232] border-b-2 text-[#77878F] font-semibold text-[20px]" onclick="showSignUp()">Sign Up</button>
             </div>
         
             <!-- Sign In Form -->
@@ -77,15 +77,15 @@
                 <div id="signUpForm" class="hidden">
                     <form action="#" class="space-y-4">
                     <div>
-                        <label class="blockblock text-[#191C1F] text-sm font-normal">Name</label>
+                        <label class="blockblock text-[#191C1F] text-sm font-normal mb-2">Name</label>
                         <input type="text" placeholder="" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232] mt-2">
                     </div>
                     <div>
-                        <label class="blockblock text-[#191C1F] text-sm font-normal">Email Address</label>
+                        <label class="blockblock text-[#191C1F] text-sm font-normal mb-2">Email Address</label>
                         <input type="email" placeholder="" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232] mt-2">
                     </div>
                     <div>
-                        <label class="blockblock text-[#191C1F] text-sm font-normal">Password</label>
+                        <label class="blockblock text-[#191C1F] text-sm font-normal mb-2">Password</label>
                         <div class="relative">
                         <input type="password" placeholder="8+ characters" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232] mt-2">
                         <span class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer">
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     <div>
-                        <label class="blockblock text-[#191C1F] text-sm font-normal">Confirm Password</label>
+                        <label class="blockblock text-[#191C1F] text-sm font-normal mb-2">Confirm Password</label>
                         <div class="relative">
                         <input type="password" placeholder="" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232] mt-2">
                         <span class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer">
@@ -129,19 +129,26 @@
 
     <script>
         function showSignIn() {
-            document.getElementById('signInForm').classList.remove('hidden');
-            document.getElementById('signUpForm').classList.add('hidden');
-            document.getElementById('signInTab').classList.add('border-[#FA8232]', 'border-b-2');
-            document.getElementById('signUpTab').classList.remove('border-[#FA8232]', 'border-b-2');
+            document.getElementById("signInForm").classList.remove("hidden");
+            document.getElementById("signUpForm").classList.add("hidden");
+            document.getElementById("signInTab").classList.add("border-b-2", "border-[#FA8232]");
+            document.getElementById("signUpTab").classList.remove("border-b-2", "border-[#FA8232]");
+            document.getElementById("signInTab").classList.remove("text-[#77878F]");
+            document.getElementById("signUpTab").classList.add("text-[#77878F]");
         }
     
         function showSignUp() {
-            document.getElementById('signUpForm').classList.remove('hidden');
-            document.getElementById('signInForm').classList.add('hidden');
-            document.getElementById('signUpTab').classList.add('border-[#FA8232]', 'border-b-2');
-            document.getElementById('signInTab').classList.remove('border-[#FA8232]', 'border-b-2');
+            document.getElementById("signInForm").classList.add("hidden");
+            document.getElementById("signUpForm").classList.remove("hidden");
+            document.getElementById("signUpTab").classList.add("border-b-2", "border-[#FA8232]");
+            document.getElementById("signInTab").classList.remove("border-b-2", "border-[#FA8232]");
+            document.getElementById("signUpTab").classList.remove("text-[#77878F]");
+            document.getElementById("signInTab").classList.add("text-[#77878F]");
         }
+    
+        window.onload = showSignUp;
     </script>
+    
 </body>
 
 
