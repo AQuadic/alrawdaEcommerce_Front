@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="./../dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="./../dist/all.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- offer-->
+
+  <div class="py-3  relative bg-[#191c1e] flex flex-col sm:flex-row justify-between items-center">
+    <!--  Black Friday -->
+    <div class="flex items-center gap-2.5  sm:ml-[100px] lg:ml-[200px] ">
+      <!-- Banner div  -->
+      <div class="px-2.5 py-1.5 bg-[#f3de6d] -rotate-3">
+        <span class="text-[#191c1e] text-base sm:text-xl font-semibold font-['Public Sans']">Black</span>
+      </div>
+      <!-- Main heading -->
+      <h1 class="text-white text-lg sm:text-2xl font-semibold font-['Public Sans']">Friday</h1>
+    </div>
+
+    <!--   Discount  -->
+    <div class="flex items-center gap-2 my-4 sm:my-0">
+      <span class="text-white text-xs sm:text-sm font-medium font-['Public Sans'] ">Up to</span>
+      <strong class="text-[#eac70b] text-2xl sm:text-[40px] font-semibold font-['Public Sans']  ">59%</strong>
+      <span class="text-white text-sm sm:text-xl font-semibold font-['Public Sans'] ">OFF</span>
+    </div>
+
+    <!-- shop now -->
+    <button class="flex items-center  sm:mr-[100px] lg:mr-[200px]">
+      <div class="h-11 px-3 bg-[#eac70b] rounded-sm justify-center items-center gap-2 inline-flex">
+        <div class="text-[#191c1e] text-sm sm:text-base font-bold font-['Public Sans'] uppercase  tracking-tight">Shop
+          now</div>
+        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+      </div>
+    </button>
+
+    <!-- Exit Button -->
+    <button class="p-2 right-4 sm:right-6 absolute bg-[#303639] rounded-sm flex items-center">
+      <i class="fa-solid fa-x text-white text-xs"></i>
+    </button>
+  </div>
+
+  <!--  navbar-->
+    <nav>
+    <!-- contact bar-->
+    <div class="  lg:px-[150px] w-full py-2 bg-[#f8f8f8] justify-between items-center gap-2 flex flex-col lg:flex-row">
+      <ul class=" hidden sm:flex text-center min-[360px]:gap-3  ">
+        <li class="self-stretch text-[#666666] text-[13px]  ">تواصل معنا </li>
+        <li class="m-1.5 w-0 h-[10px]  border  border-[#d6d6d6]"></li>
+        <li class="self-stretch text-[#666666] text-[13px] ">سياسة الإستبدال أو
+          الاسترجاع</li>
+        <li class="m-1.5 w-0  h-[10px]  border  border-[#d6d6d6]"></li>
+        <li class="self-stretch text-[#666666] text-[13px] ">المفضلة</li>
+        <li class="m-1.5 w-0 ma h-[10px]  border  border-[#d6d6d6]"></li>
+        <li class="text-[#666666] text-[13px] flex ">العربية - جم <img class="w-5 mx-1 h-5"
+            src="../assets/images/icon.svg" alt=""></li>
+  
+      </ul>
+  
+      <ul class="flex gap-2 pt-[3px] pb-0.5">
+        <li class=" text-[#666666] text-[13px] ">Support@salla.sa <i
+            class="pl-2 fa-regular text-[#62D0B6]  fa-envelope"></i> </li>
+        <li class="m-1.5 shrink-0  mx-0 h-[10px]  border  border-[#d6d6d6]"></li>
+        <li class="text-[#666666] text-[13px] ">+966556754472 <i
+            class=" pr-2 fa-solid fa-phone-volume text-[#62D0B6] transform -scale-x-100"></i>
+        </li>
+      </ul>
+    </div>
+    <!--  search-->
+  
+    <div class="h-auto p-0 m:px-4 md:px-10 lg:px-[150px] py-8 w-full flex flex-col md:flex-row justify-center items-center gap-6">
+      <!-- Cart -->
+      <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+        <div class="flex justify-start items-center gap-2">
+          <div class="flex-col justify-start items-end">
+            <h2 class="text-center text-[#a4a4a4] text-sm font-normal font-['DIN Next LT Arabic']">سلة المشتريات</h2>
+            <div class="justify-end items-start gap-1 inline-flex">
+              <span class="text-[#333333] text-base font-normal font-['DIN Next LT Arabic'] leading-[25px]">1,200</span>
+            </div>
+          </div>
+  
+          <div class="p-2 bg-[#f8f8f8] relative rounded-full flex justify-center items-center gap-2.5">
+            <div class="w-6 h-6 flex justify-center items-center">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div
+              class="absolute top-0 left-6 w-[18px] h-[18px] p-2.5 bg-[#f55157] rounded-full border border-white flex justify-center items-center">
+              <span class="w-1.5 h-[18px] text-white text-[10px] font-normal font-['DIN Next LT Arabic']">2</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Wishlist -->
+        <div class="p-2 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+          <i class="fa-regular fa-heart"></i>
+        </div>
+  
+        <!-- User -->
+        <div class="flex justify-between items-center w-full">
+          <!-- Welcome Text -->
+          <div class="flex-col justify-start items-start">
+            <h2 class="text-center text-[#a4a4a4] text-sm font-normal font-['DIN Next LT Arabic']">مرحبا بك</h2>
+            <div class="flex items-center gap-1">
+              <div class="w-3.5 h-5 text-[#333333] text-sm ">
+                <i class="fa-solid fa-angle-up text-xs font-light transform scale-95"></i>
+              </div>
+              <a href="/login"
+                class="text-[#333333] text-base font-normal font-['DIN Next LT Arabic'] leading-[25px]">تسجيل دخول</a>
+            </div>
+          </div>
+  
+          <!-- User Icon -->
+          <div class="p-2 bg-[#f8f8f8] rounded-full flex justify-center items-center ml-2">
+            <div class="w-6 h-6 flex justify-center items-center">
+              <i class="fa-regular fa-user"></i>
+            </div>
+          </div>
+        </div>
+  
+  
+      </div>
+  
+      <!-- Search Input -->
+      <div class="flex-grow flex-col justify-end items-center gap-2">
+        <div
+          class="self-stretch px-4 pt-3.5 pb-[15px] bg-white rounded border border-[#eeeeee] focus-within:border-[#a4a4a4] flex justify-end items-center gap-1">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="ابحث عما تريد"
+            class="grow shrink basis-0 text-right focus:outline-none text-[13px] font-normal font-['DIN Next LT Arabic']" />
+        </div>
+      </div>
+  
+      <!-- Logo -->
+      <img class="w-[166px] h-[50px] md:w-[200px] md:h-[60px]"
+        src="./../assets/images/Alrawda-logo-Arabic-400-x-120-px 1.svg" alt="Logo" />
+    </div>
+  
+    <!--  blue-bar -->
+  
+    <!-- <div class="px-[150px] w-full bg-[#017cc5] flex justify-center items-center">
+    <ul class="flex flex-row p-1 justify-between w-full">
+        <li class="flex justify-end items-center ">
+          <div class="w-3.5 h-5 text-[#333333] text-sm ">
+            <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+          </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                aria-label="التوريدات والجملة">التوريدات والجملة
+              </span>
+        </li>
+  
+        <li class="flex justify-end items-center ">
+          <div class="w-3.5 h-5 text-[#333333] text-sm ">
+            <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+          </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                aria-label="التوريدات والجملة">كل المنتجات
+              </span>
+        </li>
+        
+             <li class="flex justify-end items-center ">
+          <div class="w-3.5 h-5 text-[#333333] text-sm ">
+            <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+          </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                aria-label="التوريدات والجملة">مواد لاسفه
+              </span>
+        </li>
+        
+        <li class="flex justify-end items-center ">
+          <div class="w-3.5 h-5 text-[#333333] text-sm ">
+            <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+          </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                aria-label="التوريدات والجملة">التوريدات والجملة
+              </span>
+        </li>
+        
+        <li class="flex justify-end items-center ">
+          <div class="w-3.5 h-5 text-[#333333] text-sm ">
+            <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+          </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                aria-label="التوريدات والجملة">التوريدات والجملة
+              </span>
+        </li>
+        
+        <li class="flex justify-end items-center ">
+          <div class="w-3.5 h-5 text-[#333333] text-sm ">
+            <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+          </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                aria-label="التوريدات والجملة">التوريدات والجملة
+              </span>
+        </li>
+        
+        <li class="flex justify-end items-center ">
+          <div class="w-3.5 h-5 text-[#333333] text-sm ">
+            <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+          </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                aria-label="التوريدات والجملة">التوريدات والجملة
+              </span>
+        </li>
+        
+        <li class="flex justify-end items-center ">
+          <div class="w-3.5 h-5 text-[#333333] text-sm ">
+            <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+          </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                aria-label="التوريدات والجملة">معطر
+              </span>
+        </li>
+        
+        <li class="flex justify-end items-center ">
+          <div class="w-3.5 h-5 text-[#333333] text-sm ">
+            <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+          </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                aria-label="التوريدات والجملة">مواد لاسقه
+              </span>
+        </li>
+        
+        <li class="flex justify-end items-center ">
+          <div class="w-3.5 h-5 text-[#333333] text-sm ">
+            <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+          </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                aria-label="التوريدات والجملة"> كل المنتجات
+              </span>
+        </li>
+        
+    </ul>
+  </div> -->
+  
+  
+    </nav>
+
+  <!--  header-->
+
+  <div class="flex flex-col xl:flex-row px-4 lg:px-[100px] xl:px-[200px] p-6 gap-4">
+    <div class="flex-1 bg-[#f2f3f4] rounded-md">
+      <div class="flex flex-col md:flex-row px-4 md:px-10 py-8">
+        <!-- Xbox console div  -->
+        <div class="my-auto flex-1 ">
+          <div class="flex items-center">
+            <div class="w-6 h-[0px] border-2 border-[#2ca4f3]"></div>
+            <h4 class="text-[#2484c2] text-sm font-semibold font-['Public Sans']">THE BEST PLACE TO PLAY</h4>
+          </div>
+          <h2 class="text-[#191c1e] text-3xl md:text-5xl font-semibold font-['Public Sans'] leading-[56px] my-1">Xbox
+            Consoles</h2>
+          <p class="text-[#475156] text-base md:text-lg font-normal font-['Public Sans'] leading-normal my-4">Save up to
+            50% on select Xbox games. Get 3 months of PC Game Pass for $2 USD.</p>
+          <button class="flex items-center">
+            <div class="h-11 px-3 bg-[#f98131] rounded-sm justify-center items-center gap-2 inline-flex">
+              <div class="text-white text-base font-['Public Sans'] uppercase tracking-tight">Shop now</div>
+              <i class="fa text-white fa-arrow-right" aria-hidden="true"></i>
+            </div>
+          </button>
+        </div>
+        <div class="flex justify-center">
+          <div class=" relative  w-fit">
+            <div
+              class="p-12 absolute right-5 bg-[#2ca4f3] rounded-full border-4 border-white flex-col justify-center items-center">
+              <span class="text-white font-medium text-2xl absolute top-8 left-5">$299</span>
+            </div>
+            <img src="./../assets/images/Image.svg" class="mt-4" alt="">
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="flex-none w-full xl:w-4/12 flex xl:flex-col flex-col md:flex-row  gap-2">
+      <!-- 2nd div -->
+      <div class="bg-[#191c1e]   basis-1/2 p-2 flex overflow-hidden relative  rounded-md">
+        <div class="my-auto w-1/2 p-3">
+          <div class="flex items-center">
+            <span class="w-40 text-[#eac70b]">Summer Sales</span>
+          </div>
+          <h2 class="text-white text-2xl mb-2">New Google Pixel 6 Pro</h2>
+          <button class="flex items-center">
+            <div class="h-11 px-3 bg-[#f98131] rounded-sm justify-center items-center gap-2 inline-flex">
+              <div class="text-white text-base font-['Public Sans'] uppercase tracking-tight">Shop now</div>
+              <i class="fa text-white fa-arrow-right" aria-hidden="true"></i>
+            </div>
+          </button>
+        </div>
+        <div class=" basis-1/2 relative ">
+        </div>
+
+        <div class="absolute top-8  -right-36 xl:w-fit w- ">
+          <div class="relativ ">
+            <img src="./../assets/images/Image.svg" class=" w-4/5 " alt="">
+            <div
+              class="px-4 py-2  bg-[#efd33d] rounded-sm justify-start items-start inline-flex absolute  top-0 left-[29%]  ">
+              <span class="text-[#141414] text-base font-semibold">29% OFF</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 3rd div -->
+      <div class=" bg-[#f2f3f4]  basis-1/2   p-2 flex flex-col sm:flex-row  relative overflow-hidden rounded-md">
+        <img src="./../assets/images/Image.svg" class="w-full md:w-6/12 mt-4 md:mt-0" alt="">
+        <div class="my-auto p-3">
+          <h2 class="text-2xl">New Google Pixel 6 Pro</h2>
+          <div class="text-[#2ca4f3] my-2 text-lg font-semibold">$299 USD</div>
+          <button class="flex items-center">
+            <div class="h-11 px-3 bg-[#f98131] rounded-sm justify-center items-center gap-2 inline-flex">
+              <div class="text-white text-base uppercase tracking-tight">Shop now</div>
+              <i class="fa text-white fa-arrow-right" aria-hidden="true"></i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  featurs-->
+
+  <div class=" lg:px-[100px] xl:px-[200px] p-3 ">
+    <div class="border p-4 rounded-md border-[#e4e7e9] items-center justify-center flex flex-row flex-wrap ">
+
+      <div class="flex justify-center items-center w-full lg:w-fit   min-[420px]:flex-row flex-col ">
+        <div class="  p-4 bg-white justify-center grow  items-center gap-4 inline-flex">
+          <img src="./../assets/images/Package.svg" alt="">
+          <div class="flex-col justify-start items-start gap-1 inline-flex">
+            <div class=" text-[#191c1e] ">Support 24/7</div>
+            <div class=" text-[#5f6c72] ">Live contact/message</div>
+          </div>
+
+        </div>
+        <div class=" m-4 w-0 min-[420px]:block hidden  ma h-14 border border-[#d6d6d6]"></div>
+
+        <div class=" grow  p-4 bg-white justify-center items-center gap-4 inline-flex">
+          <img src="./../assets/images/Trophy.svg" alt="">
+          <div class="flex-col justify-start items-start gap-1 inline-flex">
+            <div class=" text-[#191c1e] ">Support 24/7</div>
+            <div class=" text-[#5f6c72] ">Live contact/message</div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class=" m-4 w-0 hidden 2xl:block  ma h-14 border border-[#d6d6d6]"></div>
+
+      <div class="flex justify-center items-center w-full lg:w-fit  min-[420px]:flex-row flex-col ">
+        <div class=" p-4 grow bg-white justify-center items-center gap-4 inline-flex">
+          <img src="./../assets/images/CreditCard.svg" alt="">
+          <div class="flex-col justify-start items-start gap-1 inline-flex">
+            <div class=" text-[#191c1e] ">Support 24/7</div>
+            <div class=" text-[#5f6c72] ">Live contact/message</div>
+          </div>
+
+        </div>
+        <div class=" min-[420px]:block hidden m-4 w-0 ma h-14 border border-[#d6d6d6]"></div>
+
+        <div class=" grow p-4 bg-white justify-center items-center gap-4 inline-flex">
+          <img src="./../assets/images/Headphones.svg" alt="">
+          <div class="flex-col justify-start items-start gap-1 inline-flex">
+            <div class=" text-[#191c1e] ">Support 24/7</div>
+            <div class=" text-[#5f6c72] ">Live contact/message</div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <!--  shop with category -->
+  <h1 class="text-center    text-[#191c1e] text-[32px] py-6 ">Shop with
+    Categorys </h1>
+  <!--  coluser-->
+
+
+  <!--slider-->>
+<!--  
+  <div class="lg:px-[100px] xl:px-[200px]  ">
+
+    <div class=" relative">
+      <div class=" left-0 top-0  flex justify-start items-start gap-4">
+        <div class="px-3 py-6 bg-white rounded border border-[#e4e7e9] flex-1  justify-center items-center gap-4">
+          <img class="pb-3" src="https://via.placeholder.com/148x148" />
+          <div class="text-center text-[#191c1e] ">Computer & Laptop</div>
+        </div>
+        <div class="px-3 py-6 bg-white rounded border border-[#e4e7e9] flex-1  justify-center items-center gap-4">
+          <img class="pb-3" src="https://via.placeholder.com/148x148" />
+          <div class="text-center text-[#191c1e] ">SmartPhone</div>
+        </div>
+        <div class="px-3 py-6 bg-white rounded border border-[#e4e7e9] flex-1  justify-center items-center gap-4">
+          <img class="pb-3" src="https://via.placeholder.com/148x148" />
+          <div class="text-center text-[#191c1e] ">Headphones</div>
+        </div>
+        <div class="px-3 py-6 bg-white rounded border border-[#e4e7e9] flex-1  justify-center items-center gap-4">
+          <img class="pb-3" src="https://via.placeholder.com/148x148" />
+          <div class="text-center text-[#191c1e] ">Accessories</div>
+        </div>
+        <div class="px-3 py-6 bg-white rounded border border-[#e4e7e9] flex-1  justify-center items-center gap-4">
+          <img class="pb-3" src="https://via.placeholder.com/148x148" />
+          <div class="text-center text-[#191c1e] ">Camera & Photo</div>
+        </div>
+        <div class="px-3 py-6 bg-white rounded border border-[#e4e7e9] flex-1  justify-center items-center gap-4">
+          <img class="pb-3" src="https://via.placeholder.com/148x148" />
+          <div class="text-center text-[#191c1e] ">Perfumes</div>
+        </div>
+      </div>
+
+      <div class="p-3 bg-[#f98131] -left-6 top-[92px] absolute  rounded-full flex justify-center items-center">
+        <i class="fa text-white fa-arrow-left" aria-hidden="true"></i>
+      </div>
+      <div class="p-3 bg-[#f98131] -right-6 top-[92px] absolute  rounded-full flex justify-center items-center">
+        <i class="fa text-white fa-arrow-right" aria-hidden="true"></i>
+      </div>
+    </div>
+
+  </div> -->
+
+
+  <!--  best Deals products-->
+
+  <div class="lg:px-[100px] xl:px-[200px]   p-6">
+    <div class="flex flex-col md:flex-row justify-between items-center p-4">
+      <div class="flex justify-start items-center gap-6 mb-4 flex-wrap md:mb-0">
+        <h2 class="text-[#191c1e] text-2xl font-semibold font-['Public Sans'] leading-loose">Best Deals</h2>
+    
+        <div class="flex justify-start items-center gap-3">
+          <span class="text-black text-sm font-normal font-['Public Sans'] leading-tight">Deals ends in</span>
+    
+          <span class="px-3 py-1.5 bg-[#f3de6d] rounded-sm text-[#191c1e] text-base font-normal font-['Public Sans'] leading-normal flex items-center gap-1">
+            <span>16d</span>
+            <span>:</span>
+            <span>12h</span>
+            <span>:</span>
+            <span>11m</span>
+            <span>:</span>
+            <span>9s</span>
+          </span>
+        </div>
+      </div>
+    
+      <div class="py-1.5 bg-white flex items-center gap-2">
+        <a href="/all-products" class="text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">Browse All Products</a>
+        <div class="w-5 h-5 relative">
+          <!-- Optional icon for the button -->
+        </div>
+      </div>
+    </div>
+    
+    
+    
+
+      <div class="mt-6 flex   h-full flex-col  xl:h-fit lg:flex-row">
+        <!-- flex 1 -->
+        <div class=" flex w-full lg:w-3/12   flex-col justify-center items-center border  border-[#e4e7e9]">
+          <div class="max-w-full mt-3 h-auto">
+            <img src="./../assets/images/photos/first.svg" class=" m-auto h-auto ">
+
+          </div>
+          <div class="flex flex-col items-start px-6">
+            <div class="flex justify-start items-center w-full">
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star-half-alt text-yellow-500"></i>
+              <span class="text-[#76868e]"> (52,677)</span>
+            </div>
+            <span class="text-[#191c1e]">Xbox Series S - 512GB SSD Console with Wireless Controller - EU Version...</span>
+            <div class="flex my-1">
+              <div class="text-[#adb7bc] text-base font-normal line-through leading-normal">$865.99</div>
+              <div class="text-[#2ca4f3] text-lg font-semibold px-2">$442.12</div>
+            </div>
+            <p class="text-[#5f6c72]">Games built using the Xbox Series X|S development kit showcase unparalleled load
+              times, visuals.</p>
+          </div>
+          <div class="flex gap-2 py-5 ">
+            <button class="flex-none px-3 py-2 bg-[#ffe7d6] rounded-sm justify-start items-start">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <button class="flex items-center grow">
+              <div class="h-11 px-3 bg-[#f98131] text-white rounded-sm justify-center items-center gap-2 inline-flex">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h4>Shop now</h4>
+              </div>
+            </button>
+            <button class="flex-none px-3 py-2 bg-[#ffe7d6] rounded-sm justify-start items-start">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+        </div>
+        <!-- flex2 -->
+
+        <div class="flex w-full flex-row lg:w-9/12  flex-wrap md:flex-nowrap  ">
+          <div class="flex flex-col w-full justify-center items-center sm:flex-row">
+            <div class="flex flex-col  h-full">
+              <!-- elem1 -->
+              <div class=" h-1/2 border p-2 border-[#e4e7e9] flex flex-col px-4 pb-2  ">
+                <img src="./../assets/images/Image.svg" class="w-5/6 m-auto " alt="  ">
+                <div class="flex justify-start items-center w-full">
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                  <span class="text-[#76868e] text-sm"> (52,677)</span>
+                </div>
+                
+                <div class="  ">
+                  <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس FLYKILLER </h5>
+                  <span class=" text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">$2,300</span>
+                </div>
+        
+              </div>
+              <div class=" h-1/2 border p-2.5 border-[#e4e7e9] flex flex-col px-4 pb-2  ">
+                <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="  ">
+                <div class="flex justify-start items-center w-full">
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                  <span class="text-[#76868e] text-sm"> (52,677)</span>
+                </div>
+                
+                <div class="  ">
+                  <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس FLYKILLER </h5>
+                  <span class=" text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">$2,300</span>
+                </div>
+        
+              </div>
+        
+        
+        
+            </div>
+            <div class="flex flex-col  h-full">
+              <!-- elem1 -->
+              <div class=" h-1/2 border p-2 border-[#e4e7e9] flex flex-col px-4 pb-2  ">
+                <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="  ">
+                <div class="flex justify-start items-center w-full">
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                  <span class="text-[#76868e] text-sm"> (52,677)</span>
+                </div>
+                
+                <div class="  ">
+                  <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس FLYKILLER </h5>
+                  <span class=" text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">$2,300</span>
+                </div>
+        
+              </div>
+              <div class=" h-1/2 border p-2.5 border-[#e4e7e9] flex flex-col px-4 pb-2  ">
+                <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="  ">
+                <div class="flex justify-start items-center w-full">
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                  <span class="text-[#76868e] text-sm"> (52,677)</span>
+                </div>
+                
+                <div class="  ">
+                  <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس FLYKILLER </h5>
+                  <span class=" text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">$2,300</span>
+                </div>
+        
+              </div>
+        
+        
+        
+            </div>
+
+          </div>
+          <div class="flex flex-col w-full justify-center items-center sm:flex-row">
+            <div class="flex flex-col  h-full">
+              <!-- elem1 -->
+              <div class=" h-1/2 border p-2 border-[#e4e7e9] flex flex-col px-4 pb-2  ">
+                <img src="./../assets/images/Image.svg" class="w-5/6 m-auto " alt="  ">
+                <div class="flex justify-start items-center w-full">
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                  <span class="text-[#76868e] text-sm"> (52,677)</span>
+                </div>
+                
+                <div class="  ">
+                  <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس FLYKILLER </h5>
+                  <span class=" text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">$2,300</span>
+                </div>
+        
+              </div>
+              <div class=" h-1/2 border p-2.5 border-[#e4e7e9] flex flex-col px-4 pb-2  ">
+                <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="  ">
+                <div class="flex justify-start items-center w-full">
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                  <span class="text-[#76868e] text-sm"> (52,677)</span>
+                </div>
+                
+                <div class="  ">
+                  <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس FLYKILLER </h5>
+                  <span class=" text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">$2,300</span>
+                </div>
+        
+              </div>
+        
+        
+        
+            </div>
+            <div class="flex flex-col  h-full">
+              <!-- elem1 -->
+              <div class=" h-1/2 border p-2 border-[#e4e7e9] flex flex-col px-4 pb-2  ">
+                <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="  ">
+                <div class="flex justify-start items-center w-full">
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                  <span class="text-[#76868e] text-sm"> (52,677)</span>
+                </div>
+                
+                <div class="  ">
+                  <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس FLYKILLER </h5>
+                  <span class=" text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">$2,300</span>
+                </div>
+        
+              </div>
+              <div class=" h-1/2 border p-2.5 border-[#e4e7e9] flex flex-col px-4 pb-2  ">
+                <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="  ">
+                <div class="flex justify-start items-center w-full">
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star text-yellow-500 text-sm"></i>
+                  <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                  <span class="text-[#76868e] text-sm"> (52,677)</span>
+                </div>
+                
+                <div class="  ">
+                  <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس FLYKILLER </h5>
+                  <span class=" text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">$2,300</span>
+                </div>
+        
+              </div>
+        
+        
+        
+            </div>
+
+          </div>
+
+
+      
+        </div>
+      </div>
+  </div >
+
+    <!--  Featurs products-->
+
+  <div class="lg:px-[100px] xl:px-[200px]   p-6">
+
+
+      <div class="mt-6 flex gap-5  h-full flex-col  xl:h-fit lg:flex-row">
+        <!-- flex 1 -->
+        <div class=" flex w-full lg:w-3/12  flex-col justify-center items-center border  bg-[#f3de6d]">
+          <div class=" my-4 text-center">
+            <h6 class=" text-center text-[#be4646] ">COMPUTER & ACCESSORIES</h6>
+            <span class=" text-center text-[#191c1e] text-[25px] font-semibold ">32% Discount </span>
+            <p class=" text-center text-[#475156] text-base ">For all ellectronics products</p>
+          </div>
+          <div class="flex items-center mb-3 ">
+            <div class="text-[#191c1e] text-[13px]">Offers ends in:</div>
+            <span class="px-3 py-1.5 text-[13px] bg-white rounded-sm ml-2 text-[#191c1e]">
+              ENDS OF CHRISTMAS
+            </span>
+          </div>
+
+          <button class="flex items-center  mb-0">
+            <div class="h-11 px-3 bg-[#f98131] rounded-sm justify-center items-center gap-2 inline-flex">
+              <div class="text-white text-base font-['Public Sans'] uppercase tracking-tight">Shop now</div>
+              <i class="fa text-white fa-arrow-right" aria-hidden="true"></i>
+            </div>
+          </button>
+          <div class="">
+            <img src="./../assets/images/photos/hulk.svg" class="m-auto w-5/6 ">
+
+          </div>
+
+
+        </div>
+        <!-- flex2 -->
+
+        <div class="lg:w-9/12 flex flex-col ">
+          <nav class="flex flex-col md:flex-row grow justify-between items-center p-4">
+            <h3 class="text-[#191c1e] text-2xl mb-4 md:mb-0">Featured Products</h3>
+          
+            <ul class="flex flex-col md:flex-row items-center gap-3">
+              <li class="relative font-semibold after:content-[''] after:block after:w-full after:h-[2.5px] after:bg-[#f98131] after:absolute after:-bottom-1 after:left-0 after:transition-all after:duration-300 after:ease-in-out active">
+                <div class="bg-white justify-start items-start gap-2.5 inline-flex"> 
+                  <span class="to-black text-sm">All Products</span>
+                </div>
+              </li>
+          
+              <li>
+                <div class="bg-white justify-start items-start gap-2.5 inline-flex"> 
+                  <span class="text-[#5f6c72] text-sm">Smart Phone</span>
+                </div>
+              </li>
+              <li>
+                <div class="bg-white justify-start items-start gap-2.5 inline-flex"> 
+                  <span class="text-[#5f6c72] text-sm">Laptop</span>
+                </div>
+              </li>
+              <li>
+                <div class="bg-white justify-start items-start gap-2.5 inline-flex"> 
+                  <span class="text-[#5f6c72] text-sm">Headphone</span>
+                </div>
+              </li>
+              <li>
+                <div class="bg-white justify-start items-start gap-2.5 inline-flex"> 
+                  <span class="text-[#5f6c72] text-sm">TV</span>
+                </div>
+              </li>
+              <li>
+                <div class="bg-white justify-start items-start gap-2.5 inline-flex"> 
+                  <a href="/all-products" class="text-[#f98131] text-sm font-semibold leading-tight">Browse All Products</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          
+          <div class="flex w-full flex-row   flex-wrap md:flex-nowrap  ">
+            <div class="flex flex-col w-full justify-center items-center sm:flex-row">
+              <div class="flex flex-col  h-full">
+                <!-- elem1 -->
+                <div class=" h-1/2 border p-2 border-[#e4e7e9] flex flex-col px-4 pb-2  ">
+                  <img src="./../assets/images/Image.svg" class="w-5/6 m-auto " alt="  ">
+                  <div class="flex justify-start items-center w-full">
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                    <span class="text-[#76868e] text-sm"> (52,677)</span>
+                  </div>
+                  
+                  <div class="  ">
+                    <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس FLYKILLER </h5>
+                    <span class=" text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">$2,300</span>
+                  </div>
+          
+                </div>
+                <div class=" h-1/2 border p-2.5 border-[#e4e7e9] flex flex-col px-4 pb-2  ">
+                  <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="  ">
+                  <div class="flex justify-start items-center w-full">
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                    <span class="text-[#76868e] text-sm"> (52,677)</span>
+                  </div>
+                  
+                  <div class="  ">
+                    <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس FLYKILLER </h5>
+                    <span class=" text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">$2,300</span>
+                  </div>
+          
+                </div>
+          
+          
+          
+              </div>
+              <div class="flex flex-col  h-full">
+                <!-- elem1 -->
+                <div class=" h-1/2 border p-2 border-[#e4e7e9] flex flex-col px-4 pb-2  ">
+                  <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="  ">
+                  <div class="flex justify-start items-center w-full">
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                    <span class="text-[#76868e] text-sm"> (52,677)</span>
+                  </div>
+                  
+                  <div class="  ">
+                    <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس FLYKILLER </h5>
+                    <span class=" text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">$2,300</span>
+                  </div>
+          
+                </div>
+                <div class=" h-1/2 border p-2.5 border-[#e4e7e9] flex flex-col px-4 pb-2  ">
+                  <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="  ">
+                  <div class="flex justify-start items-center w-full">
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                    <span class="text-[#76868e] text-sm"> (52,677)</span>
+                  </div>
+                  
+                  <div class="  ">
+                    <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس FLYKILLER </h5>
+                    <span class=" text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">$2,300</span>
+                  </div>
+          
+                </div>
+          
+          
+          
+              </div>
+  
+            </div>
+            <div class="flex flex-col w-full justify-center items-center sm:flex-row">
+              <div class="flex flex-col  h-full">
+                <!-- elem1 -->
+                <div class=" h-1/2 border p-2 border-[#e4e7e9] flex flex-col px-4 pb-2  ">
+                  <img src="./../assets/images/Image.svg" class="w-5/6 m-auto " alt="  ">
+                  <div class="flex justify-start items-center w-full">
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                    <span class="text-[#76868e] text-sm"> (52,677)</span>
+                  </div>
+                  
+                  <div class="  ">
+                    <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس FLYKILLER </h5>
+                    <span class=" text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">$2,300</span>
+                  </div>
+          
+                </div>
+                <div class=" h-1/2 border p-2.5 border-[#e4e7e9] flex flex-col px-4 pb-2  ">
+                  <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="  ">
+                  <div class="flex justify-start items-center w-full">
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                    <span class="text-[#76868e] text-sm"> (52,677)</span>
+                  </div>
+                  
+                  <div class="  ">
+                    <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس FLYKILLER </h5>
+                    <span class=" text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">$2,300</span>
+                  </div>
+          
+                </div>
+          
+          
+          
+              </div>
+              <div class="flex flex-col  h-full">
+                <!-- elem1 -->
+                <div class=" h-1/2 border p-2 border-[#e4e7e9] flex flex-col px-4 pb-2  ">
+                  <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="  ">
+                  <div class="flex justify-start items-center w-full">
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                    <span class="text-[#76868e] text-sm"> (52,677)</span>
+                  </div>
+                  
+                  <div class="  ">
+                    <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس FLYKILLER </h5>
+                    <span class=" text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">$2,300</span>
+                  </div>
+          
+                </div>
+                <div class=" h-1/2 border p-2.5 border-[#e4e7e9] flex flex-col px-4 pb-2  ">
+                  <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="  ">
+                  <div class="flex justify-start items-center w-full">
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star text-yellow-500 text-sm"></i>
+                    <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                    <span class="text-[#76868e] text-sm"> (52,677)</span>
+                  </div>
+                  
+                  <div class="  ">
+                    <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس FLYKILLER </h5>
+                    <span class=" text-[#2ca4f3] text-sm font-semibold font-['Public Sans'] leading-tight">$2,300</span>
+                  </div>
+          
+                </div>
+          
+          
+          
+              </div>
+  
+            </div>
+  
+  
+        
+          </div>
+        </div>
+
+      </div>
+  </div >
+
+
+  
+  <div class=" lg:px-[100px] xl:px-[200px]   p-6 bg-[#191c1e] flex flex-col md:flex-row justify-center items-center gap-6">
+    <div class="flex-col justify-start items-start gap-6">
+      <div class="flex justify-center items-center gap-2">
+        <img class="w-12 h-12" src="https://via.placeholder.com/48x48" alt="CLICON Logo" />
+        <h1 class="text-white text-[32px] font-bold font-['Public Sans'] leading-10">CLICON</h1>
+      </div>
+      <div class="flex-col justify-start items-start gap-3">
+        <div class="flex-col justify-start items-start gap-1">
+          <span class="text-[#76868e] text-sm font-normal font-['Public Sans'] leading-tight">Customer Supports:</span>
+          <span class="text-white text-lg font-medium font-['Public Sans'] leading-normal">(629) 555-0129</span>
+        </div>
+        <address class="text-[#adb7bc] text-base font-normal font-['Public Sans'] leading-normal">4517 Washington Ave. Manchester, Kentucky 39495</address>
+        <a href="mailto:info@kinbo.com" class="text-white text-base font-medium font-['Public Sans'] leading-normal">info@kinbo.com</a>
+      </div>
+    </div>
+  
+    <div class="flex-col justify-start items-start gap-3">
+      <h2 class="text-white text-base font-medium font-['Public Sans'] uppercase leading-normal">Top Category</h2>
+      <div class="flex-col justify-start items-start">
+        <div class="py-1.5 flex items-center gap-2">
+          <span class="text-[#929fa5] text-sm font-medium font-['Public Sans'] leading-tight">Computer & Laptop</span>
+        </div>
+        <div class="py-1.5 flex items-center gap-2">
+          <span class="text-[#929fa5] text-sm font-medium font-['Public Sans'] leading-tight">SmartPhone</span>
+        </div>
+        <div class="py-1.5 flex items-center gap-2">
+          <span class="text-[#929fa5] text-sm font-medium font-['Public Sans'] leading-tight">Headphone</span>
+        </div>
+        <div class="py-1.5 flex items-center gap-2">
+          <div class="w-6 h-[0px] border-2 border-[#eac70b]"></div>
+          <span class="text-white text-sm font-medium font-['Public Sans'] leading-tight">Accessories</span>
+        </div>
+        <div class="py-1.5 flex items-center gap-2">
+          <span class="text-[#929fa5] text-sm font-medium font-['Public Sans'] leading-tight">Camera & Photo</span>
+        </div>
+        <div class="py-1.5 flex items-center gap-2">
+          <span class="text-[#929fa5] text-sm font-medium font-['Public Sans'] leading-tight">TV & Homes</span>
+        </div>
+        <div class="py-1.5 flex items-center gap-2 bg-[#191c1e]">
+          <span class="text-[#eac70b] text-sm font-medium font-['Public Sans'] leading-tight">Browse All Products</span>
+          <div class="w-5 h-5 relative"></div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="flex-col justify-start items-start gap-3">
+      <h2 class="text-white text-base font-medium font-['Public Sans'] uppercase leading-normal">Quick links</h2>
+      <div class="flex-col justify-start items-start">
+        <div class="py-1.5 flex items-center gap-2">
+          <a href="#" class="text-[#929fa5] text-sm font-medium font-['Public Sans'] leading-tight">Shop Product</a>
+        </div>
+        <div class="py-1.5 flex items-center gap-2">
+          <a href="#" class="text-[#929fa5] text-sm font-medium font-['Public Sans'] leading-tight">Shopping Cart</a>
+        </div>
+        <div class="py-1.5 flex items-center gap-2">
+          <a href="#" class="text-[#929fa5] text-sm font-medium font-['Public Sans'] leading-tight">Wishlist</a>
+        </div>
+        <div class="py-1.5 flex items-center gap-2">
+          <a href="#" class="text-[#929fa5] text-sm font-medium font-['Public Sans'] leading-tight">Compare</a>
+        </div>
+        <div class="py-1.5 flex items-center gap-2">
+          <a href="#" class="text-[#929fa5] text-sm font-medium font-['Public Sans'] leading-tight">Track Order</a>
+        </div>
+        <div class="py-1.5 flex items-center gap-2">
+          <a href="#" class="text-[#929fa5] text-sm font-medium font-['Public Sans'] leading-tight">Customer Help</a>
+        </div>
+        <div class="py-1.5 flex items-center gap-2">
+          <a href="#" class="text-[#929fa5] text-sm font-medium font-['Public Sans'] leading-tight">About Us</a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="flex-col justify-start items-start gap-4">
+      <h2 class="text-white text-base font-medium font-['Public Sans'] uppercase leading-normal">Popular Tags</h2>
+      <div class="flex-col justify-start items-start gap-2">
+        <div class="flex justify-start items-start gap-2">
+          <span class="px-3 py-1.5 rounded-sm border border-[#303639] flex justify-center items-center gap-2.5">
+            <span class="text-white text-sm font-medium font-['Public Sans'] leading-tight">Game</span>
+          </span>
+          <span class="px-3 py-1.5 rounded-sm border border-[#303639] flex justify-center items-center gap-2.5">
+            <span class="text-white text-sm font-medium font-['Public Sans'] leading-tight">iPhone</span>
+          </span>
+          <span class="px-3 py-1.5 rounded-sm border border-[#303639] flex justify-center items-center gap-2.5">
+            <span class="text-white text-sm font-medium font-['Public Sans'] leading-tight">TV</span>
+          </span>
+          <span class="px-3 py-1.5 rounded-sm border border-[#303639] flex justify-center items-center gap-2.5">
+            <span class="text-white text-sm font-medium font-['Public Sans'] leading-tight">Asus Laptops</span>
+          </span>
+        </div>
+        <div class="flex justify-start items-start gap-2">
+          <span class="px-3 py-1.5 rounded-sm border border-[#303639] flex justify-center items-center gap-2.5">
+            <span class="text-white text-sm font-medium font-['Public Sans'] leading-tight">Macbook</span>
+          </span>
+          <span class="px-3 py-1.5 rounded-sm border border-[#303639] flex justify-center items-center gap-2.5">
+            <span class="text-white text-sm font-medium font-['Public Sans'] leading-tight">SSD</span>
+          </span>
+          <span class="px-3 py-1.5 bg-[#303639] rounded-sm border border-white flex justify-center items-center gap-2.5">
+            <span class="text-white text-sm font-medium font-['Public Sans'] leading-tight">Graphics Card</span>
+          </span>
+        </div>
+        <div class="flex justify-start items-start gap-2">
+          <span class="px-3 py-1.5 rounded-sm border border-[#303639] flex justify-center items-center gap-2.5">
+            <span class="text-white text-sm font-medium font-['Public Sans'] leading-tight">Power Bank</span>
+          </span>
+          <span class="px-3 py-1.5 rounded-sm border border-[#303639] flex justify-center items-center gap-2.5">
+            <span class="text-white text-sm font-medium font-['Public Sans'] leading-tight">Smart TV</span>
+          </span>
+          <span class="px-3 py-1.5 rounded-sm border border-[#303639] flex justify-center items-center gap-2.5">
+            <span class="text-white text-sm font-medium font-['Public Sans'] leading-tight">Speaker</span>
+          </span>
+        </div>
+        <div class="flex justify-start items-start gap-2">
+          <span class="px-3 py-1.5 rounded-sm border border-[#303639] flex justify-center items-center gap-2.5">
+            <span class="text-white text-sm font-medium font-['Public Sans'] leading-tight">Tablet</span>
+          </span>
+          <span class="px-3 py-1.5 rounded-sm border border-[#303639] flex justify-center items-center gap-2.5">
+            <span class="text-white text-sm font-medium font-['Public Sans'] leading-tight">Smart Watch</span>
+          </span>
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+
+
+  
+
+</body>
+
+</html>
