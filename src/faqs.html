@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <link href="./../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./../dist/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/script.js"></script>
+    <style>
+        .accordion-button.active {
+            background-color: #FA8232;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Start Navbar -->
+        <div id="navbar"></div>
+    <!-- End Navbar -->
+    <hr>
+
+    <!-- Start Location -->
+        <div class="w-full h-[72px] bg-[#F2F4F5] mt-[13px]">
+            <div class="flex items-center gap-2 ltr:md:ml-[300px] rtl:md:mr-[300px] ltr:ml-10 rtl:mr-10 pt-[26px]">
+                <img src="../assets/images/House.svg" alt="Home Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Home</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Pages</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#2DA5F3] text-sm font-medium">FAQs</p>
+            </div>
+        </div>
+    <!-- End Location -->
+
+
+    <!-- Start Content -->
+        <div class="container flex lg:flex-row flex-col justify-around mx-auto mt-[72px]">
+            <div class="p-5 md:p-0">
+                <h1 class="text-[#191C1F] text-[32px] font-semibold mb-[40px]">Frequently Asked Questions </h1>
+                <div id="accordion-collapse relative">
+                    <!-- Accordion 1 -->
+                    <h2 id="accordion-collapse-heading-1" class="mb-5">
+                        <button type="button" class="accordion-button flex items-center justify-between md:w-[760px] w-full p-5 md:font-bold font-normal md:text-[18px] text-xl text-[#191C1F] border border-[#E4E7E9] rounded-[4px] mb-0 gap-3" data-target="#accordion-collapse-body-1" aria-expanded="false">
+                            <span id="trueLeader">Suspendisse ultrices pharetra libero sed interdum.</span>
+                            <img src="../assets/images/Plus.svg" alt="Plus Icon">
+                        </button>
+                    </h2>
+                    <div id="accordion-collapse-body-1" class="accordion-content items-center justify-between md:w-[760px] w-full p-5 bg-white shadow-lg hidden mb-6 mt-[-22px] text-[#475156] font-normal text-sm">
+                        <p class="mb-[16px]">Nulla malesuada iaculis nisi, vitae sagittis lacus laoreet in. Morbi aliquet pulvinar orci non vulputate. Donec aliquet ullamcorper gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed molestie accumsan dui, non iaculis magna mattis id. Ut consectetur massa at viverra euismod. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent eget sem purus.</p>
+                        <ul class="list-disc ml-5">
+                            <li class="mb-2">Vivamus sed est non arcu porta aliquet et vitae nulla.</li>
+                            <li class="mb-2">Integer et lacus vitae justo fermentum rutrum. In nec ultrices massa.</li>
+                            <li class="mb-2">Proin blandit nunc risus, at semper turpis sagittis nec.</li>
+                            <li>Quisque ut dolor erat.</li>
+                        </ul>
+                    </div>
+                    <!-- Accordion 2 -->
+                    <h2 id="accordion-collapse-heading-2" class="mb-5">
+                        <button type="button" class="accordion-button flex items-center justify-between md:w-[760px] w-full p-5 md:font-bold font-normal md:text-[18px] text-xl text-[#191C1F] border border-[#E4E7E9] rounded-[4px] mb-0 gap-3" data-target="#accordion-collapse-body-2" aria-expanded="false">
+                            <span id="trueLeader">Fusce molestie condimentum facilisis.</span>
+                            <img src="../assets/images/Plus.svg" alt="Plus Icon">
+                        </button>
+                    </h2>
+                    <div id="accordion-collapse-body-2" class="accordion-content items-center justify-between md:w-[760px] w-full p-5 bg-white shadow-lg hidden mb-6 mt-[-22px] text-[#475156] font-normal text-sm">
+                        <p class="mb-[16px]">Nulla malesuada iaculis nisi, vitae sagittis lacus laoreet in. Morbi aliquet pulvinar orci non vulputate. Donec aliquet ullamcorper gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed molestie accumsan dui, non iaculis magna mattis id. Ut consectetur massa at viverra euismod. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent eget sem purus.</p>
+                        <ul class="list-disc ml-5">
+                            <li class="mb-2">Vivamus sed est non arcu porta aliquet et vitae nulla.</li>
+                            <li class="mb-2">Integer et lacus vitae justo fermentum rutrum. In nec ultrices massa.</li>
+                            <li class="mb-2">Proin blandit nunc risus, at semper turpis sagittis nec.</li>
+                            <li>Quisque ut dolor erat.</li>
+                        </ul>
+                    </div>
+                    <!-- Accordion 3 -->
+                    <h2 id="accordion-collapse-heading-3" class="mb-5">
+                        <button type="button" class="accordion-button flex items-center justify-between md:w-[760px] w-full p-5 md:font-bold font-normal md:text-[18px] text-xl text-[#191C1F] border border-[#E4E7E9] rounded-[4px] mb-0 gap-3" data-target="#accordion-collapse-body-3" aria-expanded="false">
+                            <span id="trueLeader">Quisque quis nunc quis urna tempor lobortis vel non orci. </span>
+                            <img src="../assets/images/Plus.svg" alt="Plus Icon">
+                        </button>
+                    </h2>
+                    <div id="accordion-collapse-body-3" class="accordion-content items-center justify-between md:w-[760px] w-full p-5 bg-white shadow-lg hidden mb-6 mt-[-22px] text-[#475156] font-normal text-sm">
+                        <p class="mb-[16px]">Nulla malesuada iaculis nisi, vitae sagittis lacus laoreet in. Morbi aliquet pulvinar orci non vulputate. Donec aliquet ullamcorper gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed molestie accumsan dui, non iaculis magna mattis id. Ut consectetur massa at viverra euismod. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent eget sem purus.</p>
+                        <ul class="list-disc ml-5">
+                            <li class="mb-2">Vivamus sed est non arcu porta aliquet et vitae nulla.</li>
+                            <li class="mb-2">Integer et lacus vitae justo fermentum rutrum. In nec ultrices massa.</li>
+                            <li class="mb-2">Proin blandit nunc risus, at semper turpis sagittis nec.</li>
+                            <li>Quisque ut dolor erat.</li>
+                        </ul>
+                    </div>
+                    <!-- Accordion 4 -->
+                    <h2 id="accordion-collapse-heading-4" class="mb-5">
+                        <button type="button" class="accordion-button flex items-center justify-between md:w-[760px] w-full p-5 md:font-bold font-normal md:text-[18px] text-xl text-[#191C1F] border border-[#E4E7E9] rounded-[4px] mb-0 gap-3" data-target="#accordion-collapse-body-4" aria-expanded="false">
+                            <span id="trueLeader">Donec rutrum ultrices ante nec malesuada. In accumsan eget nisi a rhoncus. </span>
+                            <img src="../assets/images/Plus.svg" alt="Plus Icon">
+                        </button>
+                    </h2>
+                    <div id="accordion-collapse-body-4" class="accordion-content items-center justify-between md:w-[760px] w-full p-5 bg-white shadow-lg hidden mb-6 mt-[-22px] text-[#475156] font-normal text-sm">
+                        <p class="mb-[16px]">Nulla malesuada iaculis nisi, vitae sagittis lacus laoreet in. Morbi aliquet pulvinar orci non vulputate. Donec aliquet ullamcorper gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed molestie accumsan dui, non iaculis magna mattis id. Ut consectetur massa at viverra euismod. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent eget sem purus.</p>
+                        <ul class="list-disc ml-5">
+                            <li class="mb-2">Vivamus sed est non arcu porta aliquet et vitae nulla.</li>
+                            <li class="mb-2">Integer et lacus vitae justo fermentum rutrum. In nec ultrices massa.</li>
+                            <li class="mb-2">Proin blandit nunc risus, at semper turpis sagittis nec.</li>
+                            <li>Quisque ut dolor erat.</li>
+                        </ul>
+                    </div>
+                    <!-- Accordion 5 -->
+                    <h2 id="accordion-collapse-heading-5" class="mb-5">
+                        <button type="button" class="accordion-button flex items-center justify-between md:w-[760px] w-full p-5 md:font-bold font-normal md:text-[18px] text-xl text-[#191C1F] border border-[#E4E7E9] rounded-[4px] mb-0 gap-3" data-target="#accordion-collapse-body-5" aria-expanded="false">
+                            <span id="trueLeader">Donec rutrum ultrices ante nec malesuada. In accumsan eget nisi a rhoncus. </span>
+                            <img src="../assets/images/Plus.svg" alt="Plus Icon">
+                        </button>
+                    </h2>
+                    <div id="accordion-collapse-body-5" class="accordion-content items-center justify-between md:w-[760px] w-full p-5 bg-white shadow-lg hidden mb-6 mt-[-22px] text-[#475156] font-normal text-sm">
+                        <p class="mb-[16px]">Nulla malesuada iaculis nisi, vitae sagittis lacus laoreet in. Morbi aliquet pulvinar orci non vulputate. Donec aliquet ullamcorper gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed molestie accumsan dui, non iaculis magna mattis id. Ut consectetur massa at viverra euismod. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent eget sem purus.</p>
+                        <ul class="list-disc ml-5">
+                            <li class="mb-2">Vivamus sed est non arcu porta aliquet et vitae nulla.</li>
+                            <li class="mb-2">Integer et lacus vitae justo fermentum rutrum. In nec ultrices massa.</li>
+                            <li class="mb-2">Proin blandit nunc risus, at semper turpis sagittis nec.</li>
+                            <li>Quisque ut dolor erat.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="w-[424px] h-[456px] bg-[#FBF4CE] p-[32px] mx-auto mb-5 md:mb-0">
+                <h1 class="text-[#191C1F] text-lg font-medium mb-3">Don’t find your answer, Ask for support.</h1>
+                <p class="text-[#475156] font-normal text-sm">Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed molestie accumsan dui, non iaculis primis in faucibu raesent eget sem purus.</p>
+                <input type="email" placeholder="Email Address" class="w-full px-3 py-2 h-[44px] border border-[#F7E99E] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232] mt-4">
+                <input type="text" placeholder="Subject" class="w-full px-3 py-2 h-[44px] border border-[#F7E99E] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232] mt-3">
+                <textarea name="text" placeholder="Message (Optional)" class="w-full px-3 py-2 h-[88px] border border-[#F7E99E] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232] mt-3"></textarea>
+                <button class="w-[191px] bg-[#FA8232] flex items-center justify-center gap-2 text-white py-2 rounded-[2px] h-[48px] font-bold text-sm mt-4">
+                    Send message
+                    <img src="../assets/images/ArrowRight.svg" alt="">
+                </button>
+            </div>
+        </div>
+    <!-- Start Content -->
+
+    <!-- Start Footer -->
+        <div id="footer"></div>
+    <!-- End Footer -->
+
+        <!-- Script For Accordion -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = document.querySelector(button.getAttribute('data-target'));
+                const isOpen = content.classList.contains('hidden');
+                const icon = button.querySelector('img');
+                document.querySelectorAll('.accordion-content').forEach(item => {
+                    if (item !== content) {
+                        item.classList.add('hidden');
+                        const associatedButton = document.querySelector(`button[data-target="#${item.id}"]`);
+                        if (associatedButton) {
+                            associatedButton.classList.remove('active');
+                            const associatedIcon = associatedButton.querySelector('img');
+                            associatedIcon.src = "../assets/images/Plus.svg";
+                        }
+                    }
+                });
+                content.classList.toggle('hidden', !isOpen);
+                button.classList.toggle('active', isOpen);
+                button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                icon.src = isOpen ? "../assets/images/Minus.svg" : "../assets/images/Plus.svg";
+
+            });
+    });
+});
+        </script> 
+</body>
+</html>
