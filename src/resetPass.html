@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link href="./../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./../dist/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+    <!-- Start Navbar -->
+        <div id="navbar"></div>
+    <!-- End Navbar -->
+    <hr>
+
+    <!-- Start Form -->
+        <div class="w-full max-w-[424px] bg-white rounded-lg p-8 mt-24 mb-24 mx-auto" style="box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.12);">   
+            <div id="signInForm" class="h-[350px]">
+                <form action="#" class="space-y-4">
+                <div class="flex flex-col items-center justify-center">
+                    <h1 class="text-[#191C1F] font-semibold text-[20px]">Reset Password</h1>
+                    <p class="text-[#5F6C72] text-sm font-normal text-center mt-3">Duis sagittis molestie tellus, at eleifend sapien pellque quis. Fusce lorem nunc, fringilla sit amet nunc.</p>
+                </div>
+                <div>
+                    <label class="blockblock text-[#191C1F] text-sm font-normal mb-2">Password</label>
+                    <div class="relative mt-2">
+                    <input type="password" placeholder="8+ characters" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232]">
+                    <span class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer">
+                        <img src="../assets/images/Eye.svg" alt="Eye Icon">
+                    </span>
+                    </div>
+                </div>
+                <div>
+                    <label class="blockblock text-[#191C1F] text-sm font-normal mb-2">Confirm Password</label>
+                    <div class="relative mt-2">
+                    <input type="password" placeholder="" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232]">
+                    <span class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer">
+                        <img src="../assets/images/Eye.svg" alt="Eye Icon">
+                    </span>
+                    </div>
+                </div>
+                <div>
+                </div>
+                <button class="w-full bg-[#FA8232] flex items-center justify-center gap-2 text-white py-2 rounded-md h-[48px] font-bold text-sm">
+                    Reset Password
+                    <img src="../assets/images/ArrowRight.svg" alt="">
+                </button>
+                </form>
+            </div>
+        </div>
+    <!-- Start Form -->
+
+    <!-- Start Footer -->
+        <div id="footer"></div>
+    <!-- End Footer -->
+
+</html>
