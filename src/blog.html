@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alrawda">
+    <title>Blog</title>
+    <link href="./../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./../dist/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+    <!-- Start Navbar -->
+        <div id="navbar"></div>
+    <!-- End Navbar -->
+    <hr>
+
+    <!-- Start Location -->
+        <div class="w-full h-[72px] bg-[#F2F4F5] mt-[13px]">
+            <div class="flex items-center gap-2 ltr:md:ml-[300px] rtl:md:mr-[300px] ltr:ml-10 rtl:mr-10 pt-[26px]">
+                <img src="../assets/images/House.svg" alt="Home Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Home</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Pages</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#2DA5F3] text-sm font-medium">Blog</p>
+            </div>
+        </div>
+    <!-- End Location -->
+
+    <!-- Start Search -->
+        <div class="container flex md:flex-row flex-col md:gap-48 gap-5 p-5 sm:p-0 mx-auto mt-[72px]">
+                <form>   
+                    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 end-5 flex items-center ps-3">
+                            <img src="../assets/images/searchIcon.svg" alt="Search Icon">
+                        </div>
+                        <input type="search" id="default-search" class="block md:w-[424px] w-full py-4 text-sm text-gray-900 border border-[#E4E7E9] rounded-[2px] focus:outline-none focus:ring-0" placeholder="Search" required />
+                    </div>
+                </form>
+                <div class="flex items-center gap-4">
+                    <p class="text-[#191C1F] text-sm font-normal">Sort by:</p>
+                    <select name="select" id="select" class="w-[180px] h-[44px] border-[#E4E7E9] text-[#475156] rounded-[2px] focus:outline-none focus:ring-0 p-2">
+                        <option value="1">Most Popular</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+        </div>
+    <!-- Start Search -->
+
+    <!-- Start Blog -->
+        <div class="container mx-auto mt-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Card 1 -->
+                    <div class=" bg-[#FFFFFF] border border-[#E4E7E9] w-[424px] h-[572px] p-8 rounded-[4px]" style="box-shadow: 0px 8px 24px 0px #0000000A;">
+                        <img src="../assets/images/blog.webp" alt="blog" class="w-[360px] h-[248px]">
+                        <div class="flex items-center gap-2 mt-6">
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/UserCircle.svg" alt="User Circle">
+                                <li class="text-[#475156]">Cameron</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/CalendarBlank.svg" alt="Calendar Blank">
+                                <li class="text-[#475156]">1 Feb, 2020</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/ChatCircleDots.svg" alt="ChatCircleDots">
+                                <li class="text-[#475156]">738</li>
+                            </ul>
+                        </div>
+                        <h1 class="text-[#191C1F] text-lg font-medium mt-2">Curabitur pulvinar aliquam lectus, non blandit erat mattis vitae.</h1>
+                        <p class="text-[#77878F] text-lg mt-3">Mauris scelerisque odio id rutrum volutpat. Pellentesque urna odio, vulputate at tortor vitae, hendrerit blandit lorem.</p>
+                        <a href="#" class="flex items-center justify-center gap-2 rounded-[2px] bg-white border border-[#FA8232] w-[168px] h-[48px] text-[#FA8232] mt-6">
+                            <p class="font-bold">Read More</p>
+                            <img src="../assets/images/oArrowRight.svg" alt="Arrow Right" class="transform rtl:scale-x-[-1] ltr:scale-x-100">
+                        </a>
+                    </div>
+                <!-- Card 2 -->
+                    <div class=" bg-[#FFFFFF] border border-[#E4E7E9] w-[424px] h-[572px] p-8 rounded-[4px]" style="box-shadow: 0px 8px 24px 0px #0000000A;">
+                        <img src="../assets/images/blog.webp" alt="blog" class="w-[360px] h-[248px]">
+                        <div class="flex items-center gap-2 mt-6">
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/UserCircle.svg" alt="User Circle">
+                                <li class="text-[#475156]">Cameron</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/CalendarBlank.svg" alt="Calendar Blank">
+                                <li class="text-[#475156]">1 Feb, 2020</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/ChatCircleDots.svg" alt="ChatCircleDots">
+                                <li class="text-[#475156]">738</li>
+                            </ul>
+                        </div>
+                        <h1 class="text-[#191C1F] text-lg font-medium mt-2">Curabitur pulvinar aliquam lectus, non blandit erat mattis vitae.</h1>
+                        <p class="text-[#77878F] text-lg mt-3">Mauris scelerisque odio id rutrum volutpat. Pellentesque urna odio, vulputate at tortor vitae, hendrerit blandit lorem.</p>
+                        <a href="#" class="flex items-center justify-center gap-2 rounded-[2px] bg-white border border-[#FA8232] w-[168px] h-[48px] text-[#FA8232] mt-6">
+                            <p class="font-bold">Read More</p>
+                            <img src="../assets/images/oArrowRight.svg" alt="Arrow Right" class="transform rtl:scale-x-[-1] ltr:scale-x-100">
+                        </a>
+                    </div>
+                <!-- Card 3 -->
+                    <div class=" bg-[#FFFFFF] border border-[#E4E7E9] w-[424px] h-[572px] p-8 rounded-[4px]" style="box-shadow: 0px 8px 24px 0px #0000000A;">
+                        <img src="../assets/images/blog.webp" alt="blog" class="w-[360px] h-[248px]">
+                        <div class="flex items-center gap-2 mt-6">
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/UserCircle.svg" alt="User Circle">
+                                <li class="text-[#475156]">Cameron</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/CalendarBlank.svg" alt="Calendar Blank">
+                                <li class="text-[#475156]">1 Feb, 2020</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/ChatCircleDots.svg" alt="ChatCircleDots">
+                                <li class="text-[#475156]">738</li>
+                            </ul>
+                        </div>
+                        <h1 class="text-[#191C1F] text-lg font-medium mt-2">Curabitur pulvinar aliquam lectus, non blandit erat mattis vitae.</h1>
+                        <p class="text-[#77878F] text-lg mt-3">Mauris scelerisque odio id rutrum volutpat. Pellentesque urna odio, vulputate at tortor vitae, hendrerit blandit lorem.</p>
+                        <a href="#" class="flex items-center justify-center gap-2 rounded-[2px] bg-white border border-[#FA8232] w-[168px] h-[48px] text-[#FA8232] mt-6">
+                            <p class="font-bold">Read More</p>
+                            <img src="../assets/images/oArrowRight.svg" alt="Arrow Right" class="transform rtl:scale-x-[-1] ltr:scale-x-100">
+                        </a>
+                    </div>
+                <!-- Card 4 -->
+                    <div class=" bg-[#FFFFFF] border border-[#E4E7E9] w-[424px] h-[572px] p-8 rounded-[4px]" style="box-shadow: 0px 8px 24px 0px #0000000A;">
+                        <img src="../assets/images/blog.webp" alt="blog" class="w-[360px] h-[248px]">
+                        <div class="flex items-center gap-2 mt-6">
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/UserCircle.svg" alt="User Circle">
+                                <li class="text-[#475156]">Cameron</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/CalendarBlank.svg" alt="Calendar Blank">
+                                <li class="text-[#475156]">1 Feb, 2020</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/ChatCircleDots.svg" alt="ChatCircleDots">
+                                <li class="text-[#475156]">738</li>
+                            </ul>
+                        </div>
+                        <h1 class="text-[#191C1F] text-lg font-medium mt-2">Curabitur pulvinar aliquam lectus, non blandit erat mattis vitae.</h1>
+                        <p class="text-[#77878F] text-lg mt-3">Mauris scelerisque odio id rutrum volutpat. Pellentesque urna odio, vulputate at tortor vitae, hendrerit blandit lorem.</p>
+                        <a href="#" class="flex items-center justify-center gap-2 rounded-[2px] bg-white border border-[#FA8232] w-[168px] h-[48px] text-[#FA8232] mt-6">
+                            <p class="font-bold">Read More</p>
+                            <img src="../assets/images/oArrowRight.svg" alt="Arrow Right" class="transform rtl:scale-x-[-1] ltr:scale-x-100">
+                        </a>
+                    </div>
+                <!-- Card 5 -->
+                    <div class=" bg-[#FFFFFF] border border-[#E4E7E9] w-[424px] h-[572px] p-8 rounded-[4px]" style="box-shadow: 0px 8px 24px 0px #0000000A;">
+                        <img src="../assets/images/blog.webp" alt="blog" class="w-[360px] h-[248px]">
+                        <div class="flex items-center gap-2 mt-6">
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/UserCircle.svg" alt="User Circle">
+                                <li class="text-[#475156]">Cameron</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/CalendarBlank.svg" alt="Calendar Blank">
+                                <li class="text-[#475156]">1 Feb, 2020</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/ChatCircleDots.svg" alt="ChatCircleDots">
+                                <li class="text-[#475156]">738</li>
+                            </ul>
+                        </div>
+                        <h1 class="text-[#191C1F] text-lg font-medium mt-2">Curabitur pulvinar aliquam lectus, non blandit erat mattis vitae.</h1>
+                        <p class="text-[#77878F] text-lg mt-3">Mauris scelerisque odio id rutrum volutpat. Pellentesque urna odio, vulputate at tortor vitae, hendrerit blandit lorem.</p>
+                        <a href="#" class="flex items-center justify-center gap-2 rounded-[2px] bg-white border border-[#FA8232] w-[168px] h-[48px] text-[#FA8232] mt-6">
+                            <p class="font-bold">Read More</p>
+                            <img src="../assets/images/oArrowRight.svg" alt="Arrow Right" class="transform rtl:scale-x-[-1] ltr:scale-x-100">
+                        </a>
+                    </div>
+                <!-- Card 6 -->
+                    <div class=" bg-[#FFFFFF] border border-[#E4E7E9] w-[424px] h-[572px] p-8 rounded-[4px]" style="box-shadow: 0px 8px 24px 0px #0000000A;">
+                        <img src="../assets/images/blog.webp" alt="blog" class="w-[360px] h-[248px]">
+                        <div class="flex items-center gap-2 mt-6">
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/UserCircle.svg" alt="User Circle">
+                                <li class="text-[#475156]">Cameron</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/CalendarBlank.svg" alt="Calendar Blank">
+                                <li class="text-[#475156]">1 Feb, 2020</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/ChatCircleDots.svg" alt="ChatCircleDots">
+                                <li class="text-[#475156]">738</li>
+                            </ul>
+                        </div>
+                        <h1 class="text-[#191C1F] text-lg font-medium mt-2">Curabitur pulvinar aliquam lectus, non blandit erat mattis vitae.</h1>
+                        <p class="text-[#77878F] text-lg mt-3">Mauris scelerisque odio id rutrum volutpat. Pellentesque urna odio, vulputate at tortor vitae, hendrerit blandit lorem.</p>
+                        <a href="#" class="flex items-center justify-center gap-2 rounded-[2px] bg-white border border-[#FA8232] w-[168px] h-[48px] text-[#FA8232] mt-6">
+                            <p class="font-bold">Read More</p>
+                            <img src="../assets/images/oArrowRight.svg" alt="Arrow Right" class="transform rtl:scale-x-[-1] ltr:scale-x-100">
+                        </a>
+                    </div>
+                <!-- Card 7 -->
+                    <div class=" bg-[#FFFFFF] border border-[#E4E7E9] w-[424px] h-[572px] p-8 rounded-[4px]" style="box-shadow: 0px 8px 24px 0px #0000000A;">
+                        <img src="../assets/images/blog.webp" alt="blog" class="w-[360px] h-[248px]">
+                        <div class="flex items-center gap-2 mt-6">
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/UserCircle.svg" alt="User Circle">
+                                <li class="text-[#475156]">Cameron</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/CalendarBlank.svg" alt="Calendar Blank">
+                                <li class="text-[#475156]">1 Feb, 2020</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/ChatCircleDots.svg" alt="ChatCircleDots">
+                                <li class="text-[#475156]">738</li>
+                            </ul>
+                        </div>
+                        <h1 class="text-[#191C1F] text-lg font-medium mt-2">Curabitur pulvinar aliquam lectus, non blandit erat mattis vitae.</h1>
+                        <p class="text-[#77878F] text-lg mt-3">Mauris scelerisque odio id rutrum volutpat. Pellentesque urna odio, vulputate at tortor vitae, hendrerit blandit lorem.</p>
+                        <a href="#" class="flex items-center justify-center gap-2 rounded-[2px] bg-white border border-[#FA8232] w-[168px] h-[48px] text-[#FA8232] mt-6">
+                            <p class="font-bold">Read More</p>
+                            <img src="../assets/images/oArrowRight.svg" alt="Arrow Right" class="transform rtl:scale-x-[-1] ltr:scale-x-100">
+                        </a>
+                    </div>
+                <!-- Card 8 -->
+                    <div class=" bg-[#FFFFFF] border border-[#E4E7E9] w-[424px] h-[572px] p-8 rounded-[4px]" style="box-shadow: 0px 8px 24px 0px #0000000A;">
+                        <img src="../assets/images/blog.webp" alt="blog" class="w-[360px] h-[248px]">
+                        <div class="flex items-center gap-2 mt-6">
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/UserCircle.svg" alt="User Circle">
+                                <li class="text-[#475156]">Cameron</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/CalendarBlank.svg" alt="Calendar Blank">
+                                <li class="text-[#475156]">1 Feb, 2020</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/ChatCircleDots.svg" alt="ChatCircleDots">
+                                <li class="text-[#475156]">738</li>
+                            </ul>
+                        </div>
+                        <h1 class="text-[#191C1F] text-lg font-medium mt-2">Curabitur pulvinar aliquam lectus, non blandit erat mattis vitae.</h1>
+                        <p class="text-[#77878F] text-lg mt-3">Mauris scelerisque odio id rutrum volutpat. Pellentesque urna odio, vulputate at tortor vitae, hendrerit blandit lorem.</p>
+                        <a href="#" class="flex items-center justify-center gap-2 rounded-[2px] bg-white border border-[#FA8232] w-[168px] h-[48px] text-[#FA8232] mt-6">
+                            <p class="font-bold">Read More</p>
+                            <img src="../assets/images/oArrowRight.svg" alt="Arrow Right" class="transform rtl:scale-x-[-1] ltr:scale-x-100">
+                        </a>
+                    </div>
+                <!-- Card 9 -->
+                <div class=" bg-[#FFFFFF] border border-[#E4E7E9] w-[424px] h-[572px] p-8 rounded-[4px]" style="box-shadow: 0px 8px 24px 0px #0000000A;">
+                    <img src="../assets/images/blog.webp" alt="blog" class="w-[360px] h-[248px]">
+                    <div class="flex items-center gap-2 mt-6">
+                        <ul class="flex items-center gap-[2px]">
+                            <img src="../assets/images/UserCircle.svg" alt="User Circle">
+                            <li class="text-[#475156]">Cameron</li>
+                        </ul>
+                        <ul class="flex items-center gap-[2px]">
+                            <img src="../assets/images/CalendarBlank.svg" alt="Calendar Blank">
+                            <li class="text-[#475156]">1 Feb, 2020</li>
+                        </ul>
+                        <ul class="flex items-center gap-[2px]">
+                            <img src="../assets/images/ChatCircleDots.svg" alt="ChatCircleDots">
+                            <li class="text-[#475156]">738</li>
+                        </ul>
+                    </div>
+                    <h1 class="text-[#191C1F] text-lg font-medium mt-2">Curabitur pulvinar aliquam lectus, non blandit erat mattis vitae.</h1>
+                    <p class="text-[#77878F] text-lg mt-3">Mauris scelerisque odio id rutrum volutpat. Pellentesque urna odio, vulputate at tortor vitae, hendrerit blandit lorem.</p>
+                    <a href="#" class="flex items-center justify-center gap-2 rounded-[2px] bg-white border border-[#FA8232] w-[168px] h-[48px] text-[#FA8232] mt-6">
+                        <p class="font-bold">Read More</p>
+                        <img src="../assets/images/oArrowRight.svg" alt="Arrow Right" class="transform rtl:scale-x-[-1] ltr:scale-x-100">
+                    </a>
+                </div>
+                <!-- Card 10 -->
+                    <div class=" bg-[#FFFFFF] border border-[#E4E7E9] w-[424px] h-[572px] p-8 rounded-[4px]" style="box-shadow: 0px 8px 24px 0px #0000000A;">
+                        <img src="../assets/images/blog.webp" alt="blog" class="w-[360px] h-[248px]">
+                        <div class="flex items-center gap-2 mt-6">
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/UserCircle.svg" alt="User Circle">
+                                <li class="text-[#475156]">Cameron</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/CalendarBlank.svg" alt="Calendar Blank">
+                                <li class="text-[#475156]">1 Feb, 2020</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/ChatCircleDots.svg" alt="ChatCircleDots">
+                                <li class="text-[#475156]">738</li>
+                            </ul>
+                        </div>
+                        <h1 class="text-[#191C1F] text-lg font-medium mt-2">Curabitur pulvinar aliquam lectus, non blandit erat mattis vitae.</h1>
+                        <p class="text-[#77878F] text-lg mt-3">Mauris scelerisque odio id rutrum volutpat. Pellentesque urna odio, vulputate at tortor vitae, hendrerit blandit lorem.</p>
+                        <a href="#" class="flex items-center justify-center gap-2 rounded-[2px] bg-white border border-[#FA8232] w-[168px] h-[48px] text-[#FA8232] mt-6">
+                            <p class="font-bold">Read More</p>
+                            <img src="../assets/images/oArrowRight.svg" alt="Arrow Right" class="transform rtl:scale-x-[-1] ltr:scale-x-100">
+                        </a>
+                    </div>
+                <!-- Card 11 -->
+                    <div class=" bg-[#FFFFFF] border border-[#E4E7E9] w-[424px] h-[572px] p-8 rounded-[4px]" style="box-shadow: 0px 8px 24px 0px #0000000A;">
+                        <img src="../assets/images/blog.webp" alt="blog" class="w-[360px] h-[248px]">
+                        <div class="flex items-center gap-2 mt-6">
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/UserCircle.svg" alt="User Circle">
+                                <li class="text-[#475156]">Cameron</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/CalendarBlank.svg" alt="Calendar Blank">
+                                <li class="text-[#475156]">1 Feb, 2020</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/ChatCircleDots.svg" alt="ChatCircleDots">
+                                <li class="text-[#475156]">738</li>
+                            </ul>
+                        </div>
+                        <h1 class="text-[#191C1F] text-lg font-medium mt-2">Curabitur pulvinar aliquam lectus, non blandit erat mattis vitae.</h1>
+                        <p class="text-[#77878F] text-lg mt-3">Mauris scelerisque odio id rutrum volutpat. Pellentesque urna odio, vulputate at tortor vitae, hendrerit blandit lorem.</p>
+                        <a href="#" class="flex items-center justify-center gap-2 rounded-[2px] bg-white border border-[#FA8232] w-[168px] h-[48px] text-[#FA8232] mt-6">
+                            <p class="font-bold">Read More</p>
+                            <img src="../assets/images/oArrowRight.svg" alt="Arrow Right" class="transform rtl:scale-x-[-1] ltr:scale-x-100">
+                        </a>
+                    </div>
+                <!-- Card 12 -->
+                    <div class=" bg-[#FFFFFF] border border-[#E4E7E9] w-[424px] h-[572px] p-8 rounded-[4px]" style="box-shadow: 0px 8px 24px 0px #0000000A;">
+                        <img src="../assets/images/blog.webp" alt="blog" class="w-[360px] h-[248px]">
+                        <div class="flex items-center gap-2 mt-6">
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/UserCircle.svg" alt="User Circle">
+                                <li class="text-[#475156]">Cameron</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/CalendarBlank.svg" alt="Calendar Blank">
+                                <li class="text-[#475156]">1 Feb, 2020</li>
+                            </ul>
+                            <ul class="flex items-center gap-[2px]">
+                                <img src="../assets/images/ChatCircleDots.svg" alt="ChatCircleDots">
+                                <li class="text-[#475156]">738</li>
+                            </ul>
+                        </div>
+                        <h1 class="text-[#191C1F] text-lg font-medium mt-2">Curabitur pulvinar aliquam lectus, non blandit erat mattis vitae.</h1>
+                        <p class="text-[#77878F] text-lg mt-3">Mauris scelerisque odio id rutrum volutpat. Pellentesque urna odio, vulputate at tortor vitae, hendrerit blandit lorem.</p>
+                        <a href="#" class="flex items-center justify-center gap-2 rounded-[2px] bg-white border border-[#FA8232] w-[168px] h-[48px] text-[#FA8232] mt-6">
+                            <p class="font-bold">Read More</p>
+                            <img src="../assets/images/oArrowRight.svg" alt="Arrow Right" class="transform rtl:scale-x-[-1] ltr:scale-x-100">
+                        </a>
+                    </div>
+            </div>
+            <div class="flex items-center justify-center space-x-2 mt-[40px] mb-[72px]">
+                <button class="flex justify-center items-center rtl:m-2 w-10 h-10 border-2 border-[#FA8232] text-[#FA8232] rounded-full">
+                    <img src="../assets/images/oArrowLeft.svg" alt="Left Arrow" class="transform rtl:scale-x-[-1] ltr:scale-x-100">
+                </button>
+
+                <button class="flex justify-center items-center w-10 h-10 bg-[#FA8232] text-white rounded-full">01</button>
+                <button class="flex justify-center items-center w-10 h-10 border-2 border-gray-300 text-gray-500 rounded-full hover:bg-[#FA8232] hover:text-white">02</button>
+                <button class="flex justify-center items-center w-10 h-10 border-2 border-gray-300 text-gray-500 rounded-full hover:bg-[#FA8232] hover:text-white">03</button>
+                <button class="flex justify-center items-center w-10 h-10 border-2 border-gray-300 text-gray-500 rounded-full hover:bg-[#FA8232] hover:text-white">04</button>
+                <button class="flex justify-center items-center w-10 h-10 border-2 border-gray-300 text-gray-500 rounded-full hover:bg-[#FA8232] hover:text-white">05</button>
+                <button class="flex justify-center items-center w-10 h-10 border-2 border-gray-300 text-gray-500 rounded-full hover:bg-[#FA8232] hover:text-white">06</button>
+        
+                <button class="flex justify-center items-center w-10 h-10 border-2 border-[#FA8232] text-[#FA8232] rounded-full">
+                    <img src="../assets/images/oArrowRight.svg" alt="Right Arrow" class="transform rtl:scale-x-[-1] ltr:scale-x-100">
+                </button>
+            </div>
+        </div>
+    <!-- End Blog -->
+
+    <!-- Start Footer -->
+        <div id="footer"></div>
+    <!-- End Footer -->
+</body>
+</html>
