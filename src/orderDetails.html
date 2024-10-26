@@ -91,10 +91,38 @@
                             <h2 class="text-[#191C1F] flex items-center gap-2 font-medium text-sm uppercase">
                                 <img src="../assets/images/ArrowLeftB.svg" alt="Arrow">
                                 Order Details</h2>
-                            <a href="#" class="flex items-center gap-2 text-[#FA8232] text-sm font-semibold">
-                                Leave a Rating
-                                <img src="../assets/images/OPlus.svg" alt="Plus">
-                            </a>
+                                <a href="#" id="ratingTrigger" class="flex items-center gap-2 text-[#FA8232] text-sm font-semibold">
+                                    Leave a Rating
+                                    <img src="../assets/images/OPlus.svg" alt="Plus">
+                                </a>
+
+                                <div id="ratingModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 hidden">
+                                    <div class="bg-white rounded-lg p-6 w-96 relative w-[472px] h-[420px]">
+                                        <i id="closeModal" class="fa-solid fa-x cursor-pointer absolute top-4 right-4 text-gray-500 text-xl"></i>
+                                        <h2 class="font-medium text-[#191C1F] mb-2 uppercase">Billing address</h2>
+                                        <hr>
+                                
+                                        <p class="mt-2 text-sm font-normal text-[#191C1F]">Rating</p>
+                                        <div class="mt-2">
+                                            <select class="w-full h-10 bg-white border border-gray-300 text-sm rounded px-2 py-1">
+                                                <option class="text-[#475156]" selected>&#11088;&#11088;&#11088;&#11088;&#11088; 5 Star Rating</option>
+                                                <option class="text-[#475156]">&#11088;&#11088;&#11088;&#11088;&#9734; 4 Star Rating</option>
+                                                <option class="text-[#475156]">&#11088;&#11088;&#11088;&#9734;&#9734; 3 Star Rating</option>
+                                                <option class="text-[#475156]">&#11088;&#11088;&#9734;&#9734;&#9734; 2 Star Rating</option>
+                                                <option class="text-[#475156]">&#11088;&#9734;&#9734;&#9734;&#9734; 1 Star Rating</option>
+                                            </select>
+                                            
+                                        </div>
+                                
+                                        <p class="mt-4 text-sm font-normal text-[#191C1F]">Feedback</p>
+                                        <textarea placeholder="Write down your feedback about our product & services" class="w-full h-[152px] mt-2 p-3 border border-gray-300 rounded text-sm text-gray-500"></textarea>
+                                
+                                        <div class="mt-4">
+                                            <button class="w-[205px] h-[56px] px-4 py-2 bg-[#FA8232] text-white font-medium rounded">Publish Review</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                         </div>
                         <div class="w-[936px] h-[104px] bg-[#FDFAE7] border border-[#F7E99E] m-6">
                             <div class="pl-6 py-6 flex items-center justify-between">
@@ -208,6 +236,65 @@
                                 </li>
                             </ul>
                         </div>
+                        <hr>
+                        
+                        <div>
+                            <h1 class="pt-6 pl-[32px] text-[#191C1F] font-medium text-lg">Product <span class="text-[#5F6C72]"> (02) </span></h1>
+                            <div class="overflow-x-auto pt-[20px]">
+                                <table class="w-full table-auto">
+                                <thead>
+                                    <tr class="bg-gray-200">
+                                    <th class="text-left p-3 text-[#475156] text-sm font-medium">PRODUCTS</th>
+                                    <th class="text-left p-3 text-[#475156] text-sm font-medium">PRICE</th>
+                                    <th class="text-left p-3 text-[#475156] text-sm font-medium">QUANTITY</th>
+                                    <th class="text-left p-3 text-[#475156] text-sm font-medium">SUB-TOTAL</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                    <td class="p-3 flex gap-2">
+                                        <img src="../assets/images/mobileImage.webp" alt="Mobile">
+                                        <div>
+                                        <span class="text-[#2DA5F3] font-semibold">SMARTPHONE</span><br>
+                                        <p class="text-[#191C1F] w-[306px]">Google Pixel 6 Pro - 5G Android Phone - Unlocked Smartphone with Advanced Pixel C...</p>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 text-[#475156]">$899</td>
+                                    <td class="p-3 text-[#475156]">x1</td>
+                                    <td class="p-3 text-[#191C1F] font-medium">$899</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                    <td class="p-3 flex gap-2">
+                                        <img src="../assets/images/mobileImage2.webp" alt="Mobile">
+                                        <div>
+                                            <span class="text-[#2DA5F3] font-semibold">ACCESSORIES</span><br>
+                                            <p class="text-[#191C1F] w-[306px]">Tech21 Evo Clear for Google Pixel 6 Pro - Crystal Clear Phone Case with 12ft Multi-Dr...</p>    
+                                        </div>
+                                    </td>
+                                    <td class="p-3 text-[#475156]">$39</td>
+                                    <td class="p-3 text-[#475156]">x1</td>
+                                    <td class="p-3 text-[#191C1F] font-medium">$39</td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                            </div>
+                        
+                            <div class="flex gap-8 mt-8 mb-[32px]">
+                            <!-- Shipping Address -->
+                            <div class="ml-12">
+                                <h2 class="font-medium text-[#191C1F] mb-6 text-lg">Shipping Address</h2>
+                                <p class="text-[#191C1F] text-base font-medium">Kevin Gilbert</p>
+                                <p class="w-[280px] text-[#5F6C72] mb-3">East Tejturi Bazar, Word No. 04, Road No. 13/x, House no. 1320/C, Flat No. 5D, Dhaka - 1200, Bangladesh</p>
+                                <p class="text-[#191C1F] mb-3">Phone Number: <span class="text-[#5F6C72]">+1-202-555-0118</span></p>
+                                <p class="text-[#191C1F]">Email: <span class="text-[#5F6C72]"> kevin.gilbert@gmail.com</span></p>
+                            </div>
+                        
+                            <div >
+                                <h2 class="font-medium text-[#191C1F] mb-6">Order Notes</h2>
+                                <p class="text-[#5F6C72] w-[280px]"> Donec ac vehicula turpis. Aenean sagittis est eu arcu ornare, eget venenatis purus lobortis. Aliquam erat volutpat. Aliquam magna odio. </p>
+                            </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -218,5 +305,27 @@
     <!-- Start Footer -->
         <div id="footer"></div>
     <!-- End Footer --> 
+
+    <script>
+        const ratingTrigger = document.getElementById('ratingTrigger');
+        const ratingModal = document.getElementById('ratingModal');
+        const closeModal = document.getElementById('closeModal');
+
+        ratingTrigger.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            ratingModal.classList.remove('hidden');
+        });
+
+        closeModal.addEventListener('click', () => {
+            ratingModal.classList.add('hidden'); 
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === ratingModal) {
+                ratingModal.classList.add('hidden');
+            }
+        });
+
+    </script>
 </body>
 </html>

@@ -36,12 +36,12 @@
                 <span class="bg-[#EFD33D] uppercase p-3 rounded-[2px] font-semibold">Help Center</span>
             <h1 class="text-3xl font-semibold mt-5">How we can help you!</h1>
             <div class="relative">
-                <input type="text" placeholder="Enter your question or keyword" class="md:w-[536px] w-full h-[72px] mt-6 px-14 py-2 border border-[#E4E7E9] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232]">
+                <input type="text" placeholder="Enter your question" class="md:w-[536px] w-full h-[72px] mt-6 px-14 py-2 border border-[#E4E7E9] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232]">
                 <div class="absolute inset-y-16 ltr:left-4 rtl:right-4 flex items-center">
                     <img src="../assets/images/MagnifyingGlass.svg" alt="Search">
                 </div>
-                <div class="absolute inset-y-[60px] md:ltr:left-[420px] ltr:left-[260px] rtl:right-[420px] flex items-center">
-                    <a href="#" class="text-white bg-[#FA8232] uppercase w-[108px] h-[48px] flex items-center justify-center rounded-[2px]">Search</a>
+                <div class="absolute inset-y-[60px] md:ltr:left-[420px] ltr:left-[240px] md:rtl:right-[420px] rtl:right-[240px] flex items-center">
+                    <a href="#" class="text-white bg-[#FA8232] uppercase md:w-[108px] w-[80px] h-[48px] flex items-center justify-center rounded-[2px]">Search</a>
                 </div>
                 </div>
             </div>
@@ -54,46 +54,39 @@
         <section class="container mx-auto my-[72px] md:p-0 p-5">
             <h1 class="text-[#191C1F] md:text-[32px] text-lg font-semibold flex justify-center">What can we assist you with today?</h1>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-[40px] px-5 md:px-0">
-                <!-- Team Member 1 -->
-                <div class="border border-[#FA8232] rounded-[3px] flex items-center p-6 gap-4 cursor-pointer">
+                <div class="border border-[#FA8232] rounded-[3px] flex items-center p-6 gap-4 cursor-pointer item" data-item="track">
                     <img src="../assets/images/Truck.svg" alt="Truck">
                     <p class="text-[#191C1F] text-base font-medium">Track Order</p>
                 </div>
         
-                <!-- Team Member 2 -->
-                <div class="border border-[#FFE7D6] rounded-[3px] flex items-center p-6 gap-4 cursor-pointer">
+                <div class="border border-[#FFE7D6] rounded-[3px] flex items-center p-6 gap-4 cursor-pointer item" data-item="reset">
                     <img src="../assets/images/LockOpen.svg" alt="Reset Password">
                     <p class="text-[#191C1F] text-base font-medium">Reset Password</p>
                 </div>
         
-                <!-- Team Member 3 -->
-                <div class="border border-[#FFE7D6] rounded-[3px] flex items-center p-6 gap-4 cursor-pointer">
+                <div class="border border-[#FFE7D6] rounded-[3px] flex items-center p-6 gap-4 cursor-pointer item" data-item="payment">
                     <img src="../assets/images/oCreditCard.svg" alt="Credit Card">
                     <p class="text-[#191C1F] text-base font-medium">Payment Option</p>
                 </div>
         
-                <!-- Team Member 4 -->
-                <div class="border border-[#FFE7D6] rounded-[3px] flex items-center p-6 gap-4 cursor-pointer">
+                <div class="border border-[#FFE7D6] rounded-[3px] flex items-center p-6 gap-4 cursor-pointer item" data-item="user">
                     <img src="../assets/images/User.svg" alt="User">
                     <p class="text-[#191C1F] text-base font-medium">User & Account</p>
                 </div>
         
-                <!-- Team Member 5 -->
-                <div class="border border-[#FFE7D6] rounded-[3px] flex items-center p-6 gap-4 cursor-pointer">
+                <div class="border border-[#FFE7D6] rounded-[3px] flex items-center p-6 gap-4 cursor-pointer item" data-item="wishlist">
                     <img src="../assets/images/Stack.svg" alt="Wishlist">
                     <p class="text-[#191C1F] text-base font-medium">Wishlist</p>
                 </div>
         
-                <!-- Team Member 6 -->
-                <div class="border border-[#FFE7D6] rounded-[3px] flex items-center p-6 gap-4 cursor-pointer">
+                <div class="border border-[#FFE7D6] rounded-[3px] flex items-center p-6 gap-4 cursor-pointer item" data-item="shipping">
                     <img src="../assets/images/Notepad.svg" alt="Notepad">
                     <p class="text-[#191C1F] text-base font-medium">Shipping & Billing</p>
                 </div>
         
-                <!-- Team Member 7 -->
-                <div class="border border-[#FFE7D6] rounded-[3px] flex items-center p-6 gap-4 cursor-pointer">
+                <div class="border border-[#FFE7D6] rounded-[3px] flex items-center p-6 gap-4 cursor-pointer item" data-item="cart">
                     <img src="../assets/images/oCreditCard.svg" alt="Credit Card">
-                    <p class="text-[#191C1F] text-base font-medium">Shoping Cart</p>
+                    <p class="text-[#191C1F] text-base font-medium">Shopping Cart</p>
                 </div>
             </div>
         </section>
@@ -103,7 +96,7 @@
     <!-- Popular Topics -->
         <section class="container mx-auto my-[72px]">
             <h1 class="text-[#191C1F] text-[32px] font-semibold flex justify-center">Popular Topics</h1>
-            <div class="flex md:flex-row flex-col items-center justify-center md:gap-44 mt-[40px] gap-10 px-5 md:px-0">
+            <div class="flex md:flex-row flex-col md:items-center justify-center md:gap-44 mt-[40px] gap-10 px-10 md:px-0">
                 <ul class="list-disc">
                     <li class="text-[#191C1F] text-base mb-4">How do I return my item?</li>
                     <li class="text-[#FA8232] text-base mb-4">What is Clicons Returns Policy?</li>
@@ -129,26 +122,26 @@
                 <span class="uppercase text-white bg-[#2DA5F3] w-[121px] h-[36px] rounded-[2px] flex items-center justify-center">Contact Us</span>
                 <p class="text-[#191C1F] md:text-[32px] text-lg font-semibold text-center mt-4 mb-[40px] leading-[40px]">Don’t find your answer. <br> Contact with us</p>
                 <div class="flex md:flex-row flex-col gap-10">
-                    <!-- Card1 -->
-                    <div class="md:w-[536px] h-[256px] bg-white flex gap-6">
+
+                    <div class="md:w-[536px] h-[256px] bg-white flex gap-6 mx-1 sm:mx-0">
                         <img src="../assets/images/phoneIcon.svg" class="w-24 h-24 mt-8 ltr:ml-8 rtl:mr-8" alt="Phone">
                         <div class="mt-8">
                             <h1 class="text-[#191C1F] font-semibold text-lg">Call us now</h1>
                             <p class="text-[#5F6C72] font-normal text-sm mt-2 mb-4">we are available online from 9:00 AM to 5:00 PM <br> (GMT95:45) Talk with use now</p>
-                            <span class="text-[#191C1F] text-2xl">+1-202-555-0126</span>
+                            <span class="text-[#191C1F] sm:text-2xl text-lg">+1-202-555-0126</span>
                             <a href="#" class="uppercase text-white rounded-[2px] bg-[#2DA5F3] w-[152px] h-[48px] flex items-center justify-center mt-6 gap-2">
                                 call now
                                 <img src="../assets/images/ArrowRight.svg" alt="Arrow Right">
                             </a>
                         </div>
                     </div>
-                    <!-- Card 2 -->
-                    <div class="md:w-[536px] h-[256px] bg-white flex gap-6">
+
+                    <div class="md:w-[536px] h-[256px] bg-white flex gap-6 mx-1 sm:mx-0">
                         <img src="../assets/images/megIcon.svg" class="w-24 h-24 mt-8 ltr:ml-8 rtl:mr-8" alt="Message">
                         <div class="mt-8">
                             <h1 class="text-[#191C1F] font-semibold text-lg">Chat with us</h1>
                             <p class="text-[#5F6C72] font-normal text-sm mt-2 mb-4">we are available online from 9:00 AM to 5:00 PM <br> (GMT95:45) Talk with use now</p>
-                            <span class="text-[#191C1F] text-2xl">Support@clicon.com</span>
+                            <span class="text-[#191C1F] sm:text-2xl text-lg">Support@clicon.com</span>
                             <a href="#" class="uppercase text-white rounded-[2px] bg-[#2DB224] w-[168px] h-[48px] flex items-center justify-center mt-6 gap-2">
                                 Contact Us
                                 <img src="../assets/images/ArrowRight.svg" alt="Arrow Right">
@@ -163,5 +156,21 @@
     <!-- Start Footer -->
         <div id="footer"></div>
     <!-- End Footer -->
+
+    <script>
+        const items = document.querySelectorAll('.item');
+    
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                items.forEach(i => {
+                    i.classList.remove('border-[#FA8232]');
+                    i.classList.add('border-[#FFE7D6]');
+                });
+    
+                item.classList.remove('border-[#FFE7D6]');
+                item.classList.add('border-[#FA8232]');
+            });
+        });
+    </script>
 </body>
 </html>
