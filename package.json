@@ -3,6 +3,7 @@
     "tailwindcss": "^3.4.13"
   },
   "dependencies": {
+    "alpinejs": "^3.14.3",
     "flowbite": "^2.5.2",
     "pagedone": "^1.2.2",
     "swiper": "^11.1.14"

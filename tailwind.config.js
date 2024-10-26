@@ -5,7 +5,11 @@ module.exports = {
     // Adjust this based on where your files are located
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens:{
+      
+      }
+    },
   },
   plugins: [
     require('flowbite/plugin')
