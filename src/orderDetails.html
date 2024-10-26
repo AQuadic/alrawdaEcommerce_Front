@@ -42,43 +42,43 @@
         <section class="container mx-auto flex  gap-16 mt-[40px] mb-[72px]">
                 <div class="w-[264px] h-[432px] border border-[#E4E7E9]" style="box-shadow: 0px 8px 40px 0px #00000014;">
                     <ul class="mt-4">
-                        <a href="./dashboard.html" class="flex items-center gap-3  w-[264px] h-[40px] pl-6 cursor-pointer">
+                        <a href="./dashboard.html" class="flex items-center gap-3  w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/Stackgray.svg" alt="Stack">
                             <p class="text-[#5F6C72] text-sm font-semibold">Dashboard</p>
                         </a>
-                        <a href="./orderHistory.html" class="flex items-center gap-3 w-[264px] bg-[#FA8232] h-[40px] pl-6 cursor-pointer">
+                        <a href="./orderHistory.html" class="flex items-center gap-3 w-[264px] bg-[#FA8232] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/StorefrontW.svg" alt="Storefront">
                             <p class="text-white text-sm font-normal">Order History</p>
                         </a href="./orderHistory.html">
-                        <li class="flex items-center gap-3 w-[264px] h-[40px] pl-6 cursor-pointer">
+                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/MapPinLine.svg" alt="MapPinLine">
                             <p class="text-[#5F6C72] text-sm font-normal">Track Order</p>
                         </li>
-                        <li class="flex items-center gap-3 w-[264px] h-[40px] pl-6 cursor-pointer">
+                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/ShoppingCartSimple.svg" alt="Shopping Cart">
                             <p class="text-[#5F6C72] text-sm font-normal">Shopping Cart</p>
                         </li>
-                        <li class="flex items-center gap-3 w-[264px] h-[40px] pl-6 cursor-pointer">
+                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/Heart.svg" alt="Heart">
                             <p class="text-[#5F6C72] text-sm font-normal">Wishlist</p>
                         </li>
-                        <li class="flex items-center gap-3 w-[264px] h-[40px] pl-6 cursor-pointer">
+                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/ArrowsCounterClockwise.svg" alt="Clockwise">
                             <p class="text-[#5F6C72] text-sm font-normal">Compare</p>
                         </li>
-                        <li class="flex items-center gap-3 w-[264px] h-[40px] pl-6 cursor-pointer">
+                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/NotebookGray.svg" alt="Notebook">
                             <p class="text-[#5F6C72] text-sm font-normal">Cards & Address</p>
                         </li>
-                        <li class="flex items-center gap-3 w-[264px] h-[40px] pl-6 cursor-pointer">
+                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/ClockClockwise.svg" alt="Clock">
                             <p class="text-[#5F6C72] text-sm font-normal">Browsing History</p>
                         </li>
-                        <li class="flex items-center gap-3 w-[264px] h-[40px] pl-6 cursor-pointer">
+                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/Gear.svg" alt="Gear">
                             <p class="text-[#5F6C72] text-sm font-normal">Setting</p>
                         </li>
-                        <li class="flex items-center gap-3 w-[264px] h-[40px] pl-6 cursor-pointer">
+                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/SignOut.svg" alt="Sign Out">
                             <p class="text-[#5F6C72] text-sm font-normal">Log-out</p>
                         </li>
@@ -88,20 +88,21 @@
                 <div class="w-[984px]">
                     <div class="bg-white border border-[#E4E7E9] rounded-[4px] overflow-hidden">
                         <div class="flex justify-between items-center px-6 py-4 border-b">
-                            <h2 class="text-[#191C1F] flex items-center gap-2 font-medium text-sm uppercase">
-                                <img src="../assets/images/ArrowLeftB.svg" alt="Arrow">
-                                Order Details</h2>
+                            <div class="text-[#191C1F] flex items-center gap-2 font-medium text-sm uppercase">
+                                <img src="../assets/images/ArrowLeftB.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
+                                <h1>Order Details</h1>
+                            </div>
                                 <a href="#" id="ratingTrigger" class="flex items-center gap-2 text-[#FA8232] text-sm font-semibold">
                                     Leave a Rating
                                     <img src="../assets/images/OPlus.svg" alt="Plus">
                                 </a>
 
+                                <!-- Rating Popup -->
                                 <div id="ratingModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 hidden">
                                     <div class="bg-white rounded-lg p-6 w-96 relative w-[472px] h-[420px]">
                                         <i id="closeModal" class="fa-solid fa-x cursor-pointer absolute top-4 right-4 text-gray-500 text-xl"></i>
                                         <h2 class="font-medium text-[#191C1F] mb-2 uppercase">Billing address</h2>
                                         <hr>
-                                
                                         <p class="mt-2 text-sm font-normal text-[#191C1F]">Rating</p>
                                         <div class="mt-2">
                                             <select class="w-full h-10 bg-white border border-gray-300 text-sm rounded px-2 py-1">
@@ -111,7 +112,6 @@
                                                 <option class="text-[#475156]">&#11088;&#11088;&#9734;&#9734;&#9734; 2 Star Rating</option>
                                                 <option class="text-[#475156]">&#11088;&#9734;&#9734;&#9734;&#9734; 1 Star Rating</option>
                                             </select>
-                                            
                                         </div>
                                 
                                         <p class="mt-4 text-sm font-normal text-[#191C1F]">Feedback</p>
@@ -122,15 +122,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                
                         </div>
+
                         <div class="w-[936px] h-[104px] bg-[#FDFAE7] border border-[#F7E99E] m-6">
-                            <div class="pl-6 py-6 flex items-center justify-between">
+                            <div class="ltr:pl-6 rtl:pr-6 py-6 flex items-center justify-between">
                                 <span>
                                     <p class="text-[#191C1F] font-normal text-[20px]">#96459761</p>
                                     <p class="text-[#475156] font-normal text-sm">4 Products . Order Placed in 17 Jan, 2021 at 7:32 PM</p>    
                                 </span>
-                                <p class="text-[#2DA5F3] text-[28px] font-semibold pr-6">$1199.00</p>
+                                <p class="text-[#2DA5F3] text-[28px] font-semibold ltr:pr-6 rtl:pl-6">$1199.00</p>
                             </div>
                         </div>
                         <p class="m-6 text-[#475156] ">Order expected arrival <span class="text-[#191C1F]">23 Jan, 2021</span></p>
@@ -190,44 +190,44 @@
                         <hr>
                         <!-- Order Activity -->
                         <div>
-                            <h1 class="pt-6 pl-[32px] text-[#191C1F] font-medium text-lg">Order Activity</h1>
+                            <h1 class="pt-6 ltr:pl-[32px] rtl:pr-[32px] text-[#191C1F] font-medium text-lg">Order Activity</h1>
                             <ul>
-                                <li class="flex items-center gap-2 ml-6 mt-6">
+                                <li class="flex items-center gap-2 ltr:ml-6 rtl:mr-6 mt-6">
                                     <img src="../assets/images/Icondetail.svg" alt="Icondetail">
                                     <div>
                                         <p class="text-[#191C1F]">Your order has been delivered. Thank you for shopping at Clicon!</p>
                                         <span class="text-[#77878F] mt-2">23 Jan, 2021 at 7:32 PM</span>
                                     </div>
                                 </li>
-                                <li class="flex items-center gap-2 ml-6 mt-4">
+                                <li class="flex items-center gap-2 ltr:ml-6 rtl:mr-6 mt-4">
                                     <img src="../assets/images/Icondetail1.svg" alt="Icondetail">
                                     <div>
                                         <p class="text-[#191C1F]">Your order has been delivered. Thank you for shopping at Clicon!</p>
                                         <span class="text-[#77878F] mt-2">23 Jan, 2021 at 7:32 PM</span>
                                     </div>
                                 </li>
-                                <li class="flex items-center gap-2 ml-6 mt-4">
+                                <li class="flex items-center gap-2 ltr:ml-6 rtl:mr-6 mt-4">
                                     <img src="../assets/images/Icondetail2.svg" alt="Icondetail">
                                     <div>
                                         <p class="text-[#191C1F]">Your order has been delivered. Thank you for shopping at Clicon!</p>
                                         <span class="text-[#77878F] mt-2">23 Jan, 2021 at 7:32 PM</span>
                                     </div>
                                 </li>
-                                <li class="flex items-center gap-2 ml-6 mt-4">
+                                <li class="flex items-center gap-2 ltr:ml-6 rtl:mr-6 mt-4">
                                     <img src="../assets/images/Icondetail3.svg" alt="Icondetail">
                                     <div>
                                         <p class="text-[#191C1F]">Your order has been delivered. Thank you for shopping at Clicon!</p>
                                         <span class="text-[#77878F] mt-2">23 Jan, 2021 at 7:32 PM</span>
                                     </div>
                                 </li>
-                                <li class="flex items-center gap-2 ml-6 mt-4">
+                                <li class="flex items-center gap-2 ltr:ml-6 rtl:mr-6 mt-4">
                                     <img src="../assets/images/Icondetail4.svg" alt="Icondetail">
                                     <div>
                                         <p class="text-[#191C1F]">Your order has been delivered. Thank you for shopping at Clicon!</p>
                                         <span class="text-[#77878F] mt-2">23 Jan, 2021 at 7:32 PM</span>
                                     </div>
                                 </li>
-                                <li class="flex items-center gap-2 ml-6 mt-4">
+                                <li class="flex items-center gap-2 ltr:ml-6 rtl:mr-6 mt-4">
                                     <img src="../assets/images/Icondetail5.svg" alt="Icondetail">
                                     <div>
                                         <p class="text-[#191C1F]">Your order has been delivered. Thank you for shopping at Clicon!</p>
@@ -244,10 +244,10 @@
                                 <table class="w-full table-auto">
                                 <thead>
                                     <tr class="bg-gray-200">
-                                    <th class="text-left p-3 text-[#475156] text-sm font-medium">PRODUCTS</th>
-                                    <th class="text-left p-3 text-[#475156] text-sm font-medium">PRICE</th>
-                                    <th class="text-left p-3 text-[#475156] text-sm font-medium">QUANTITY</th>
-                                    <th class="text-left p-3 text-[#475156] text-sm font-medium">SUB-TOTAL</th>
+                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium">PRODUCTS</th>
+                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium">PRICE</th>
+                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium">QUANTITY</th>
+                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium">SUB-TOTAL</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -281,7 +281,7 @@
                         
                             <div class="flex gap-8 mt-8 mb-[32px]">
                             <!-- Shipping Address -->
-                            <div class="ml-12">
+                            <div class="ltr:ml-12 rtl:mr-12">
                                 <h2 class="font-medium text-[#191C1F] mb-6 text-lg">Shipping Address</h2>
                                 <p class="text-[#191C1F] text-base font-medium">Kevin Gilbert</p>
                                 <p class="w-[280px] text-[#5F6C72] mb-3">East Tejturi Bazar, Word No. 04, Road No. 13/x, House no. 1320/C, Flat No. 5D, Dhaka - 1200, Bangladesh</p>

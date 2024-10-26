@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -29,18 +29,24 @@
                 </div>
                 <div>
                     <label class="block text-[#191C1F] text-sm font-normal mb-2">Email Address</label>
-                    <input type="email" placeholder="" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232]">
+                    <input type="email" placeholder="" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-0 focus:border-[#FA8232]">
                 </div>
                 <div>
                 </div>
                 <button class="w-full bg-[#FA8232] flex items-center justify-center gap-2 text-white py-2 rounded-md h-[48px] font-bold text-sm">
                     Send Code
-                    <img src="../assets/images/ArrowRight.svg" alt="">
+                    <img src="../assets/images/ArrowRight.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="">
                 </button>
                 </form>
                 <div class="mt-6">
-                    <p class="text-[#5F6C72] font-normal text-sm mb-2">Already have account? <a href="./login.html" class="text-[#2DA5F3]">Sign In</a></p>
-                    <p class="text-[#5F6C72] font-normal text-sm mb-4">Don’t have account? <a href="./signUp.html" class="text-[#2DA5F3]">Sign Up</a></p>
+                    <div class="flex items-baseline">
+                        <p class="text-[#5F6C72] font-normal text-sm mb-2">Already have account?</p>
+                        <a href="./login.html" class="text-[#2DA5F3]">Sign In</a>
+                    </div>
+                    <div class="flex items-baseline">
+                        <p class="text-[#5F6C72] font-normal text-sm mb-4">Don’t have account? </p>
+                        <a href="./signUp.html" class="text-[#2DA5F3]">Sign Up</a>
+                    </div>
                 </div>
                 <hr>
                 <div class="mt-4">
