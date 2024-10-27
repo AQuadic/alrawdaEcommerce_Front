@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alrawda">
+    <title>Order Details</title>
+    <link href="./../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./../dist/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/script.js"></script>
+    <style>
+        .trContent {
+            display: ruby-text;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Start Navbar -->
+        <div id="navbar"></div>
+    <!-- End Navbar -->
+    <hr>
+
+    <!-- Start Content -->
+        <section class="container mx-auto flex justify-center mt-[40px] mb-[72px]">
+                <div class="w-full">
+                    <div class="bg-white border border-[#E4E7E9] rounded-[4px] overflow-hidden">
+                        <div>
+                            <h1 class="pt-6 ltr:pl-[32px] rtl:pr-[32px] text-[#191C1F] font-medium text-lg">Wishlist</h1>
+                            <div class="overflow-x-auto pt-[20px]">
+                                <table class="w-full table-auto">
+                                <thead>
+                                    <tr class="bg-gray-200">
+                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium">PRODUCTS</th>
+                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium">PRICE</th>
+                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium">Stock Status</th>
+                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="p-3 flex gap-2">
+                                            <img src="../assets/images/wishlistimg1.webp" class="w-[72px] h-[72px] object-cover" alt="Wishlist">
+                                            <p class="w-[419px] text-[#475156]">Bose Sport Earbuds - Wireless Earphones - Bluetooth In Ear Headphones for Workouts and Running, Triple Black</p>
+                                        </td>
+                                        <td class="p-3 text-black">
+                                            <span class="text-[#929FA5]">$1299</span>
+                                            $1299
+                                        </td>
+                                        <td class="p-3 text-[#2DB224] font-semibold uppercase">IN STOCK</td>
+                                        <td class="trContent relative p-3 text-[#191C1F] font-medium  items-center">
+                                                <a href="#" class="text-white bg-[#FA8232] uppercase w-[174px] h-[48px] flex gap-2 items-center justify-center rounded-[2px]">add to card
+                                                    <img src="../assets/images/ShoppingCartwh.svg" alt="Shopping Cart">
+                                                </a>
+                                                <div>
+                                                    <img src="../assets/images/closeIcon.svg" class="absolute top-2 cursor-pointer" alt="Closw Icon">
+                                                </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 flex gap-2">
+                                            <img src="../assets/images/wishlistimg2.webp" class="w-[72px] h-[72px] object-cover" alt="Wishlist">
+                                            <p class="w-[419px] text-[#475156]">Simple Mobile 5G LTE Galexy 12 Mini 512GB Gaming Phone</p>
+                                        </td>
+                                        <td class="p-3 text-black">
+                                            $2,300.00
+                                        </td>
+                                        <td class="p-3 text-[#2DB224] font-semibold uppercase">IN STOCK</td>
+                                        <td class="trContent relative p-3 text-[#191C1F] font-medium  items-center">
+                                                <a href="#" class="text-white bg-[#FA8232] uppercase w-[174px] h-[48px] flex gap-2 items-center justify-center rounded-[2px]">add to card
+                                                    <img src="../assets/images/ShoppingCartwh.svg" alt="Shopping Cart">
+                                                </a>
+                                                <div>
+                                                    <img src="../assets/images/closeIcon.svg" class="absolute top-2 cursor-pointer" alt="Closw Icon">
+                                                </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 flex gap-2">
+                                            <img src="../assets/images/wishlistimg3.webp" class="w-[72px] h-[72px] object-cover" alt="Wishlist">
+                                            <p class="w-[419px] text-[#475156]">Portable Wshing Machine, 11lbs capacity Model 18NMFIAM</p>
+                                        </td>
+                                        <td class="p-3 text-black">
+                                            $70.00
+                                        </td>
+                                        <td class="p-3 text-[#2DB224] font-semibold uppercase">IN STOCK</td>
+                                        <td class="trContent relative p-3 text-[#191C1F] font-medium  items-center">
+                                                <a href="#" class="text-white bg-[#FA8232] uppercase w-[174px] h-[48px] flex gap-2 items-center justify-center rounded-[2px]">add to card
+                                                    <img src="../assets/images/ShoppingCartwh.svg" alt="Shopping Cart">
+                                                </a>
+                                                <div>
+                                                    <img src="../assets/images/closeIcon.svg" class="absolute top-2 cursor-pointer" alt="Closw Icon">
+                                                </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 flex gap-2">
+                                            <img src="../assets/images/wishlistimg4.webp" class="w-[72px] h-[72px] object-cover" alt="Wishlist">
+                                            <p class="w-[419px] text-[#475156]">TOZO T6 True Wireless Earbuds Bluetooth Headphones Touch Control with Wireless Charging Case IPX8 Waterproof Stereo Earphones in-Ear</p>
+                                        </td>
+                                        <td class="p-3 text-black">
+                                            $70.00
+                                        </td>
+                                        <td class="p-3 text-[#EE5858] font-semibold uppercase">OUT OF STOCK</td>
+                                        <td class="trContent relative p-3 text-[#191C1F] font-medium  items-center">
+                                                <a href="#" class="text-white bg-[#ADB7BC] uppercase w-[174px] h-[48px] flex gap-2 items-center justify-center rounded-[2px]">add to card
+                                                    <img src="../assets/images/ShoppingCartwh.svg" alt="Shopping Cart">
+                                                </a>
+                                                <div>
+                                                    <img src="../assets/images/closeIcon.svg" class="absolute top-2 cursor-pointer" alt="Closw Icon">
+                                                </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 flex gap-2">
+                                            <img src="../assets/images/wishlistimg5.webp" class="w-[72px] h-[72px] object-cover" alt="Wishlist">
+                                            <p class="w-[419px] text-[#475156]">Wyze Cam Pan v2 1080p Pan/Tilt/Zoom Wi-Fi Indoor Smart Home Camera with Color Night Vision, 2-Way Audio</p>
+                                        </td>
+                                        <td class="p-3 text-black">
+                                            $1,499.99
+                                        </td>
+                                        <td class="p-3 text-[#2DB224] font-semibold uppercase">IN STOCK</td>
+                                        <td class="trContent relative p-3 text-[#191C1F] font-medium  items-center">
+                                                <a href="#" class="text-white bg-[#FA8232] uppercase w-[174px] h-[48px] flex gap-2 items-center justify-center rounded-[2px]">add to card
+                                                    <img src="../assets/images/ShoppingCartwh.svg" alt="Shopping Cart">
+                                                </a>
+                                                <div>
+                                                    <img src="../assets/images/closeIcon.svg" class="absolute top-2 cursor-pointer" alt="Closw Icon">
+                                                </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                            </div>
+                    
+                        </div>
+                    </div>
+                </div>
+                
+        </section>
+    <!-- End Content -->
+
+    <!-- Start Footer -->
+        <div id="footer"></div>
+    <!-- End Footer --> 
+</body>
+</html>
