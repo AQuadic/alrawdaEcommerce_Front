@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alrawda">
+    <title>Dashboard Setting</title>
+    <link href="./../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./../dist/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <!-- Start Navbar -->
+        <div id="navbar"></div>
+    <!-- End Navbar -->
+    <hr>
+
+    <!-- Start Location -->
+        <section class="w-full h-[72px] bg-[#F2F4F5] mt-[13px]">
+            <div class="flex items-center gap-2 ltr:md:ml-[300px] rtl:md:mr-[300px] ltr:ml-10 rtl:mr-10 pt-[26px]">
+                <img src="../assets/images/House.svg" alt="Home Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Home</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">User Account</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Dashboard</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#2DA5F3] text-sm font-medium">Cards & Address</p>
+            </div>
+        </section>
+    <!-- End Location -->
+
+    <!-- Start Content -->
+        <section class="container mx-auto flex  gap-16 mt-[40px] mb-[72px]">
+            <div class="w-[264px] h-[432px] border border-[#E4E7E9]" style="box-shadow: 0px 8px 40px 0px #00000014;">
+                <ul class="mt-4">
+                    <a href="./dashboard.html" class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/Stackgray.svg" alt="Stack">
+                        <p class="text-[#5F6C72] text-sm font-normal">Dashboard</p>
+                    </a href="./dashboard.html">
+                    <a href="./orderHistory.html" class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/Storefront@2x.svg" alt="Storefront">
+                        <p class="text-[#5F6C72] text-sm font-normal">Order History</p>
+                    </a>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/MapPinLine.svg" alt="MapPinLine">
+                        <p class="text-[#5F6C72] text-sm font-normal">Track Order</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/ShoppingCartSimple.svg" alt="Shopping Cart">
+                        <p class="text-[#5F6C72] text-sm font-normal">Shopping Cart</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/Heart.svg" alt="Heart">
+                        <p class="text-[#5F6C72] text-sm font-normal">Wishlist</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/ArrowsCounterClockwise.svg" alt="Clockwise">
+                        <p class="text-[#5F6C72] text-sm font-normal">Compare</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/NotebookGray.svg" alt="Notebook">
+                        <p class="text-[#5F6C72] text-sm font-normal">Cards & Address</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/ClockClockwise.svg" alt="Clock">
+                        <p class="text-[#5F6C72] text-sm font-normal">Browsing History</p>
+                    </li>
+                    <li class="flex items-center gap-3 bg-[#FA8232] w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/whiteGear.svg" alt="Gear">
+                        <p class="text-white text-sm font-semibold">Setting</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/SignOut.svg" alt="Sign Out">
+                        <p class="text-[#5F6C72] text-sm font-normal">Log-out</p>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <!-- Account Info -->
+                    <div class="w-[984px] h-[508px] border border-[#E4E7E9]">
+                        <h1 class="text-[#191C1F] text-sm font-semibold uppercase ltr:pl-6 rtl:pr-6 py-4">Account Setting</h1>
+                        <hr>
+                        <div class="flex gap-4 ltr:ml-6 rtl:mr-6 mt-[22px]">
+                            <img src="../assets/images/Avatar.webp" class="w-[176px] h-[176px] rounded-full" alt="Image">
+                            <form class="flex flex-wrap gap-4">
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="display-name">Display name</label>
+                                    <input type="text" id="display-name" placeholder="Kevin" class="w-[360px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                </div>
+                        
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="username">Username</label>
+                                    <input type="text" id="username" placeholder="Display name" class="w-[360px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                </div>
+                        
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="full-name">Full Name</label>
+                                    <input type="text" id="full-name" placeholder="Kevin Gilbert" class="w-[360px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                </div>
+                        
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="email">Email</label>
+                                    <input type="email" id="email" placeholder="Kevin.gilbert@gmail.com" class="w-[360px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                </div>
+                        
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="secondary-email">Secondary Email</label>
+                                    <input type="email" id="secondary-email" placeholder="kevin12345@gmail.com" class="w-[360px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                </div>
+                        
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="phone-number">Phone Number</label>
+                                    <input type="tel" id="phone-number" placeholder="+1-202-555-0118" class="w-[360px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                </div>
+                        
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="country">Country/Region</label>
+                                    <select id="country" class="w-[360px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                        <option>Bangladesh</option>
+                                    </select>
+                                </div>
+                        
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="state">States</label>
+                                    <select id="state" class="w-[172px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                        <option>Dhaka</option>
+                                    </select>
+                                </div>
+                        
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="zip-code">Zip Code</label>
+                                    <input type="text" id="zip-code" placeholder="1207" class="w-[172px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="flex items-center">
+                            <a href="#" class="text-white bg-[#FA8232] uppercase w-[162px] h-[48px] flex items-center justify-center rounded-[2px] ltr:ml-[215px] rtl:mr-[215px] mt-6">Save Changes</a>
+                        </div>
+                    </div>
+
+                <!-- Shipping Address -->
+                    <div class="w-[480px] h-[860px] border border-[#E4E7E9] mt-6">
+                        <h1 class="text-[#191C1F] text-sm font-semibold uppercase ltr:pl-6 rtl:pr-6 py-4">Shipping Address</h1>
+                        <hr>
+                        <div class="flex gap-4 ltr:ml-6 rtl:mr-6 mt-[22px]">
+                            <form class="flex flex-wrap gap-3">
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="display-name">First Name</label>
+                                    <input type="text" id="display-name" placeholder="Kevin" class="w-[208px] h-10 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                </div>
+                        
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="username">Last Name</label>
+                                    <input type="text" id="username" placeholder="Gilbert" class="w-[208px] h-10 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                </div>
+                        
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="full-name">Company Name (Optional)</label>
+                                    <input type="text" id="company-name" placeholder="" class="w-[432px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                </div>
+                        
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="email">Address</label>
+                                    <input type="email" id="text" placeholder="Road No. 13/x, House no. 1320/C, Flat No. 5D" class="w-[432px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                </div>
+                        
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="country">Country</label>
+                                    <select id="country" class="w-[432px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                        <option>Bangladesh</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="country">Region/State</label>
+                                    <select id="Region" class="w-[432px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                        <option>Bangladesh</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="state">States</label>
+                                    <select id="state" class="w-[208px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                        <option>Dhaka</option>
+                                    </select>
+                                </div>
+                        
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="zip-code">Zip Code</label>
+                                    <input type="text" id="zip-code" placeholder="1207" class="w-[208px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="Sec_email">Email</label>
+                                    <input type="email" id="Sec_email" placeholder="kevin12345@gmail.com" class="w-[432px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                </div>
+
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="phone-number">Phone Number</label>
+                                    <input type="tel" id="phone-number" placeholder="+1-202-555-0118" class="w-[432px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="flex items-center">
+                            <a href="#" class="text-white bg-[#FA8232] uppercase w-[162px] h-[48px] flex items-center justify-center rounded-[2px] ltr:ml-6 rtl:mr-6 mt-6">Save Changes</a>
+                        </div>
+                    </div>
+
+                <!-- Password -->
+                    <div class="w-[984px] h-[420px] border border-[#E4E7E9] mt-6">
+                        <h1 class="text-[#191C1F] text-sm font-semibold uppercase ltr:pl-6 rtl:pr-6 py-4">Change Password</h1>
+                        <hr>
+                        <div class="flex gap-4 ltr:ml-6 rtl:mr-6 mt-[22px]">
+                            <form class="flex flex-wrap gap-4">
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="display-name">Current Password</label>
+                                    <input type="password" id="current_password" class="w-[936px] h-10 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                </div>
+                        
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="username">New Password</label>
+                                    <input type="password" placeholder="8+ characters" id="new_password" class="w-[936px] h-10 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#77878F]">
+                                </div>
+                        
+                                <div>
+                                    <label class="block text-[#191C1F] font-normal mb-2" for="full-name">Confirm Password</label>
+                                    <input type="password" id="confirm_password" class="w-[936px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                </div>
+                        
+                        </form>
+                        </div>
+                        <div class="flex items-center">
+                            <a href="#" class="text-white bg-[#FA8232] uppercase w-[162px] h-[48px] flex items-center justify-center rounded-[2px] ltr:ml-6 rtl:mr-6 mt-6">Change Passowrd</a>
+                        </div>
+                    </div>
+            </div>                    
+        </section>
+    <!-- End Content -->
+
+    <!-- Start Footer -->
+        <div id="footer"></div>
+    <!-- End Footer --> 
+</body>
+</html>

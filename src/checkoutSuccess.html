@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alrawda">
+    <title>Checkout Success</title>
+    <link href="./../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./../dist/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/script.js"></script>
+    <style>
+        .accordion-button.active {
+            background-color: #FA8232;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Start Navbar -->
+        <div id="navbar"></div>
+    <!-- End Navbar -->
+    <hr>
+
+    <!-- Start Location -->
+        <section class="w-full h-[72px] bg-[#F2F4F5] mt-[13px]">
+            <div class="flex items-center gap-2 ltr:md:ml-[300px] rtl:md:mr-[300px] ltr:ml-10 rtl:mr-10 pt-[26px]">
+                <img src="../assets/images/House.svg" alt="Home Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Home</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Shopping Card</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#2DA5F3] text-sm font-medium">Checkout</p>
+            </div>
+        </section>
+    <!-- End Location -->
+
+    <!-- Start Content -->
+        <section class="container flex flex-col justify-center items-center mx-auto mt-[72px] mb-24 px-2 md:px-0">
+            <img src="../assets/images/CheckCircle.svg" class="w-[88px] h-[88px]" alt="Check Circle">
+            <h1 class="text-[#191C1F] text-2xl leading-[32px] font-semibold">Your order is successfully place</h1>
+            <p class="md:w-[424px] text-[#5F6C72] text-center mt-3">Pellentesque sed lectus nec tortor tristique accumsan quis dictum risus. Donec volutpat mollis nulla non facilisis.</p>
+            <div class="flex items-center justify-center gap-3 mt-[32px]">
+                <a href="#" class="md:w-[215px] w-[180px] h-[48px] flex items-center justify-center gap-2 border border-[#FFE7D6] rounded-[2px]">
+                    <img src="../assets/images/Stack.svg" alt="Stack">
+                    <span class="text-[#FA8232] font-bold text-sm">Go to Dashboard</span>
+                </a>
+                <a href="#" class="md:w-[215px] w-[140px] h-[48px] flex items-center justify-center gap-2 border border-[#FA8232] bg-[#FA8232] rounded-[2px]">
+                    <span class="text-white font-bold text-sm">View Order</span>
+                    <img src="../assets/images/ArrowRight.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
+                </a>
+            </div>
+        </section>
+    <!-- Start Content -->
+
+    <!-- Start Footer -->
+        <div id="footer"></div>
+    <!-- End Footer -->
+
+</body>
+</html>

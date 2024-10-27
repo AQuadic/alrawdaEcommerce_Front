@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alrawda">
   <title>Navbar</title>
   <link rel="stylesheet" href="./../dist/all.min.css">
   <script src="index.js"> </script>
 
 </head>
-
 <body>
 
+
+    <!--  navbar-->
+    <nav>
 
 
   <!--  navbar-->
@@ -60,11 +62,13 @@
           class="self-stretch px-4 pt-3.5 pb-[15px] bg-white rounded border border-[#eeeeee] flex items-center gap-1">
           <input type="text" class="flex-grow p-0 border-0 text-left" placeholder="Search...">
           <i class="fa-solid flex-none fa-magnifying-glass"></i>
+
         </div>
       </div>
       <div class="flex flex-col md:flex-row justify-center items-center sm:gap-6">
         <div class="flex  w-full gap-1 sm:gap-3 ">
           <div class="flex justify-center items-center">
+
 
             <button class="p-2 bg-[#f8f8f8] rounded-full flex justify-center items-center ml-2">
               <div class="p-1.5 flex justify-center items-center">
@@ -294,6 +298,7 @@
 
     </div>
 
+
     <div id="mobile-menu"
       class="sm:hidden w-2/3 z-50 h-full fixed   top-0 bottom-0 left-0 bg-[#f8f8f8] hidden flex-col ">
       <div class="relative ">
@@ -467,9 +472,111 @@
     </div>
   </nav>
 
-  <script>
+        <!-- Logo -->
 
-  </script>
+      </div>
+
+      <!--  blue-bar -->
+
+      <!-- <div class="px-[150px] w-full bg-[#017cc5] flex justify-center items-center">
+        <ul x-data="{isOpen = false}" class="flex flex-row p-1 justify-between w-full">
+
+          <li x-show="isOpen" @click="isOpen=!isOpen" :class="z-15" class="flex justify-end items-center">
+            <div class="w-3.5 h-5 text-[#333333] text-sm ">
+              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+            </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                  aria-label="التوريدات والجملة">التوريدات والجملة
+              </span>
+          </li>
+
+          <li class="flex justify-end items-center ">
+            <div class="w-3.5 h-5 text-[#333333] text-sm ">
+              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+            </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                  aria-label="التوريدات والجملة">كل المنتجات
+              </span>
+          </li>
+
+          <li class="flex justify-end items-center ">
+            <div class="w-3.5 h-5 text-[#333333] text-sm ">
+              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+            </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                  aria-label="التوريدات والجملة">مواد لاسفه
+              </span>
+          </li>
+
+          <li class="flex justify-end items-center ">
+            <div class="w-3.5 h-5 text-[#333333] text-sm ">
+              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+            </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                  aria-label="التوريدات والجملة">التوريدات والجملة
+              </span>
+          </li>
+
+          <li class="flex justify-end items-center ">
+            <div class="w-3.5 h-5 text-[#333333] text-sm ">
+              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+            </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                  aria-label="التوريدات والجملة">التوريدات والجملة
+              </span>
+          </li>
+
+          <li class="flex justify-end items-center ">
+            <div class="w-3.5 h-5 text-[#333333] text-sm ">
+              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+            </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                  aria-label="التوريدات والجملة">التوريدات والجملة
+              </span>
+          </li>
+
+          <li class="flex justify-end items-center ">
+            <div class="w-3.5 h-5 text-[#333333] text-sm ">
+              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+            </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                  aria-label="التوريدات والجملة">التوريدات والجملة
+              </span>
+          </li>
+
+          <li class="flex justify-end items-center ">
+            <div class="w-3.5 h-5 text-[#333333] text-sm ">
+              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+            </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                  aria-label="التوريدات والجملة">معطر
+              </span>
+          </li>
+
+          <li class="flex justify-end items-center ">
+            <div class="w-3.5 h-5 text-[#333333] text-sm ">
+              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+            </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                  aria-label="التوريدات والجملة">مواد لاسقه
+              </span>
+          </li>
+
+          <li class="flex justify-end items-center ">
+            <div class="w-3.5 h-5 text-[#333333] text-sm ">
+              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
+            </div>
+            <span class=" text-[#f2f2f7] text-sm"
+                  aria-label="التوريدات والجملة"> كل المنتجات
+              </span>
+          </li>
+
+        </ul>
+
+      </div> -->
+
+
+    </nav>
+
 </body>
-
 </html>

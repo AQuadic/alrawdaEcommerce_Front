@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alrawda">
     <title>Verification</title>
     <link href="./../dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="./../dist/all.min.css">
@@ -19,7 +20,7 @@
     <hr>
 
     <!-- Start Form -->
-        <div class="w-full max-w-[424px] bg-white rounded-lg p-8 mt-24 mb-24 mx-auto" style="box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.12);">   
+        <div class="w-full max-w-[424px] bg-white rounded-lg p-8 sm:mt-24 mt-10 mb-24 mx-auto" style="box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.12);">   
             <div id="signInForm" class="h-auto">
                 <form action="#" class="space-y-4">
                 <div class="flex flex-col items-center justify-center">
@@ -31,13 +32,13 @@
                         <label class="block text-[#191C1F] text-sm font-normal mb-2">Verification Code</label>
                         <a href="#" class="text-sm text-[#2DA5F3] mb-2 font-medium">Resend Code</a>
                     </div>
-                    <input type="password" placeholder="" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FA8232]">
+                    <input type="password" placeholder="" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-0 focus:border-[#FA8232]">
                 </div>
                 <div>
                 </div>
                 <button class="w-full bg-[#FA8232] flex items-center justify-center gap-2 text-white py-2 rounded-md h-[48px] font-bold text-sm">
                     Verify me
-                    <img src="../assets/images/ArrowRight.svg" alt="">
+                    <img src="../assets/images/ArrowRight.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="">
                 </button>
                 </form>
             </div>
