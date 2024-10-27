@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,272 +9,195 @@
   <script src="index.js"> </script>
 
 </head>
+
 <body>
 
 
-    <!--  navbar-->
-    <nav>
 
-      <!--  search-->
+  <!--  navbar-->
+  <nav>
 
-      <div class="h-auto p-0 m:px-4 md:px-10 lg:px-[150px] py-8 w-full flex flex-col md:flex-row justify-center items-center gap-6">
-        <img class="w-[166px] h-[50px] md:w-[200px] md:h-[60px]"
-             src="./../assets/images/Alrawda-logo-Arabic-400-x-120-px 1.svg" alt="Logo" />
+    <!-- Main navigation bar -->
+    <div class="h-auto p-0 m:px-4 md:px-10 px-3 lg:px-[150px] py-8 w-full flex justify-between items-center sm:gap-6 relative">
 
-        <!-- Search Input -->
-        <div class="flex-grow flex-col justify-end items-center ">
-          <div class="self-stretch px-4 pt-3.5 pb-[15px] bg-white rounded border border-[#eeeeee] flex items-center gap-1">
-            <input type="text" class="flex-grow p-0 border-0 text-left" placeholder="Search...">
-            <i class="fa-solid flex-none fa-magnifying-glass"></i>
-          </div>
+        <div class="flex">
+            <!-- Mobile menu button (hidden on larger screens) -->
+            <div class="flex items-center sm:hidden">
+                <button type="button"
+                    class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                    aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="absolute -inset-0.5"></span>
+                    <span class="sr-only">Open main menu</span>
 
-        </div>
-
-        <div class="flex flex-col md:flex-row justify-center items-center gap-6">
-
-          <div class="flex  w-full gap-3">
-            <div class="flex justify-center items-center">
-              
-              <button class="p-2 bg-[#f8f8f8] rounded-full flex justify-center items-center ml-2">
-                <div class="p-1.5 flex justify-center items-center">
-                  <i class="fa-regular fa-user"></i>
-                </div>
-              </button>
-
-              <div class="flex-col justify-start pl-4 ">
-                <h2 class="text-start text-[#a4a4a4] text-sm font-normal font-['DIN Next LT Arabic']">welcome</h2>
-                <div class="relative">
-                  <button id="login-button" class="flex items-center gap-1">
-                      <h4 href="/login" class="text-[#333333] text-base font-normal font-['DIN Next LT Arabic'] leading-[25px]">login</h4>
-                      <i class="fa-solid fa-angle-down text-xs font-light"></i>
-                  </button>
-                  
-                  <div id="dropdown-login" class="sm:my-3 hidden absolute z-10 w-[360px]  bg-white divide-gray-100 rounded-lg shadow top-7 left-1/2 transform -translate-x-1/2 border border-2">
-                      <div class="p-4">
-                          <h3 class="py-3 text-center text-xl font-semibold font-['Public Sans'] leading-7">sign in to your account</h3>
-                          <form action="#" class="space-y-4">
-                              <div>
-                                  <label class="block text-[#191C1F] text-sm font-normal mb-2">Email Address</label>
-                                  <input type="email" placeholder="" class="w-full px-3 py-2 border border-[#e4e7e9] focus:outline-none focus:ring-2 focus:ring-[#FA8232]">
-                              </div>
-                              <div>
-                                  <div class="flex items-center justify-between">
-                                      <label class="block text-[#191C1F] text-sm font-normal mb-2">Password</label>
-                                      <a href="#" class="text-sm text-[#2DA5F3] mb-2 font-medium">Forget Password?</a>
-                                  </div>
-                                  <div class="relative">
-                                      <input type="password" placeholder="" class="w-full px-3 py-2 border border-[#e4e7e9] focus:outline-none focus:ring-2 focus:ring-[#FA8232]">
-                                      <span class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer">
-                                          <img src="../assets/images/Eye.svg" alt="Eye Icon">
-                                      </span>
-                                  </div>
-                              </div>
-                              <button class="w-full bg-[#FA8232] flex items-center justify-center gap-2 text-white py-2 border-[#e4e7e9] h-[48px] font-bold text-sm">
-                                  SIGN IN
-                                  <img src="../assets/images/ArrowRight.svg" alt="">
-                              </button>
-                          </form>
-                          <div class="text-center mt-4">
-                              <div class="flex items-center">
-                                  <hr class="flex-grow border-t border-gray-300">
-                                  <p class="mx-2 text-sm text-gray-500">Or create account</p>
-                                  <hr class="flex-grow border-t border-gray-300">
-                              </div>
-                              <button class="w-full border border-[#f98131] text-[#f98131] flex items-center justify-center gap-2 py-2 my-4 h-[48px] font-bold text-sm">
-                                  CREATE ACCOUNT
-                              </button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              
-              </div>
+                    <!-- Icon for closed menu -->
+                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true" data-slot="icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <!-- Icon for open menu (hidden by default) -->
+                    <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true" data-slot="icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
 
+            <!-- Logo -->
+            <img class="w-3/5 sm:w-full" src="./../assets/images/Alrawda-logo-Arabic-400-x-120-px 1.svg" alt="Logo" />
+        </div>
 
-            <button class="p-2 bg-[#f8f8f8] rounded-full flex justify-center items-center ml-2">
-              <div class="p-1.5 flex justify-center items-center">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-            </button>
+        <!-- Search Input (visible only on larger screens) -->
+        <div class="flex-grow flex-col justify-end hidden sm:block items-center">
+            <div class="self-stretch px-4 pt-3.5 pb-[15px] bg-white rounded border border-[#eeeeee] flex items-center gap-1">
+                <input type="text" class="flex-grow p-0 border-0 text-left" placeholder="Search...">
+                <i class="fa-solid flex-none fa-magnifying-glass"></i>
+            </div>
+        </div>
 
+        <!-- User account and cart buttons -->
+        <div class="flex flex-col md:flex-row justify-center items-center sm:gap-6">
+            <div class="flex w-full gap-1 sm:gap-3">
+                <div class="flex justify-center items-center">
+                    <!-- User account button -->
+                    <button class="p-2 bg-[#f8f8f8] rounded-full flex justify-center items-center ml-2">
+                        <div class="p-1.5 flex justify-center items-center">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                    </button>
 
-            <div class="flex">
-              <div class="relative flex">
-                <button id="cart-button"  class="p-2 bg-[#f8f8f8] relative rounded-full flex justify-center items-center gap-2.5">
-                  <div class="p-1.5 flex justify-center items-center">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </div>
-                  <div class="absolute top-0 left-7 w-[18px] h-[18px] p-2.5 bg-[#f55157] rounded-full border border-white flex justify-center items-center">
-                    <span class="w-1.5 h-[18px] text-white text-[10px] font-normal font-['DIN Next LT Arabic']">2</span>
-                  </div>
+                    <!-- Welcome message and login dropdown (hidden on smaller screens) -->
+                    <div class="flex-col justify-start pl-4 sm:block hidden">
+                        <h2 class="text-start text-[#a4a4a4] text-sm font-normal font-['DIN Next LT Arabic']">welcome</h2>
+                        <div class="relative">
+                            <button id="login-button" class="flex items-center gap-1">
+                                <h4 href="/login" class="text-[#333333] text-base font-normal font-['DIN Next LT Arabic'] leading-[25px]">login</h4>
+                                <i class="fa-solid fa-angle-down text-xs font-light"></i>
+                            </button>
+
+                            <!-- Login dropdown menu -->
+                            <div id="dropdown-login"
+                                class="sm:my-3 hidden absolute z-10 w-[360px] bg-white divide-gray-100 rounded-lg shadow top-7 left-1/2 transform -translate-x-1/2 border border-2">
+                                <div class="p-4">
+                                    <h3 class="py-3 text-center text-xl font-semibold font-['Public Sans'] leading-7">sign in to your account</h3>
+                                    <form action="#" class="space-y-4">
+                                        <div>
+                                            <label class="block text-[#191C1F] text-sm font-normal mb-2">Email Address</label>
+                                            <input type="email" placeholder=""
+                                                class="w-full px-3 py-2 border border-[#e4e7e9] focus:outline-none focus:ring-2 focus:ring-[#FA8232]">
+                                        </div>
+                                        <div>
+                                            <div class="flex items-center justify-between">
+                                                <label class="block text-[#191C1F] text-sm font-normal mb-2">Password</label>
+                                                <a href="#" class="text-sm text-[#2DA5F3] mb-2 font-medium">Forget Password?</a>
+                                            </div>
+                                            <div class="relative">
+                                                <input type="password" placeholder=""
+                                                    class="w-full px-3 py-2 border border-[#e4e7e9] focus:outline-none focus:ring-2 focus:ring-[#FA8232]">
+                                                <span class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer">
+                                                    <img src="../assets/images/Eye.svg" alt="Eye Icon">
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <button
+                                            class="w-full bg-[#FA8232] flex items-center justify-center gap-2 text-white py-2 border-[#e4e7e9] h-[48px] font-bold text-sm">
+                                            SIGN IN
+                                            <img src="../assets/images/ArrowRight.svg" alt="">
+                                        </button>
+                                    </form>
+                                    <div class="text-center mt-4">
+                                        <div class="flex items-center">
+                                            <hr class="flex-grow border-t border-gray-300">
+                                            <p class="mx-2 text-sm text-gray-500">Or create account</p>
+                                            <hr class="flex-grow border-t border-gray-300">
+                                        </div>
+                                        <button
+                                            class="w-full border border-[#f98131] text-[#f98131] flex items-center justify-center gap-2 py-2 my-4 h-[48px] font-bold text-sm">
+                                            CREATE ACCOUNT
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Favorite button -->
+                <button class="p-2 bg-[#f8f8f8] rounded-full justify-center sm:block hidden items-center ml-2">
+                    <div class="p-1.5 flex justify-center items-center">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
                 </button>
 
-                <div id="dropdown-cart" class="sm:my-3 mt-4 hidden absolute z-10 w-[360px] bg-white divide-gray-100 rounded-lg shadow top-12 left-1/2 transform -translate-x-1/2 border border-2">
-                  <div  class="" >
-                    <h3 class="p-3 textc"> shoping cart <span class="text-[#475156]">(02)</span></h3>
-                    <hr>
-                    <div class="flex justify-center items-center p-3">
-                      <div class="border border-1 mr-2">
-                        <img src="./../assets/images/photos/hulk.svg" class="w-28 h-24" alt="">
-                      </div>
-                      <div class="flex-grow ">
-                        <h6 class="text-lg">Hulk</h6>
-                        <div class="flex justify-start items-center">
-                          <p> 1</p>
-                          <div class="px-1">x</div>
-                          <p class="text-[#2ca4f3] ">1,500 EGP</p>
+                <!-- Shopping cart button and dropdown -->
+                <div class="flex">
+                    <div class="relative flex">
+                        <button id="cart-button"
+                            class="p-2 bg-[#f8f8f8] relative rounded-full flex justify-center items-center gap-2.5">
+                            <div class="p-1.5 flex justify-center items-center">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <div
+                                class="absolute top-0 left-7 w-[18px] h-[18px] p-2.5 bg-[#f55157] rounded-full border border-white flex justify-center items-center">
+                                <span class="w-1.5 h-[18px] text-white text-[10px] font-normal font-['DIN Next LT Arabic']">2</span>
+                            </div>
+                        </button>
+
+                        <!-- Cart dropdown menu -->
+                        <div id="dropdown-cart"
+                            class="sm:my-3 mt-4 hidden absolute z-10 w-[360px] bg-white divide-gray-100 rounded-lg shadow top-12 left-1/2 transform -translate-x-1/2 border border-2">
+                            <div class="">
+                                <h3 class="p-3">Shopping Cart <span class="text-[#475156]">(02)</span></h3>
+                                <hr>
+                                <div class="flex justify-center items-center p-3">
+                                    <div class="border border-1 mr-2">
+                                        <img src="./../assets/images/photos/hulk.svg" class="w-28 h-24" alt="">
+                                    </div>
+                                    <div class="flex-grow ">
+                                        <h6 class="text-lg">Hulk</h6>
+                                        <div class="flex justify-start items-center">
+                                            <p>1</p>
+                                            <div class="px-1">x</div>
+                                            <p class="text-[#2ca4f3]">1,500 EGP</p>
+                                        </div>
+                                    </div>
+                                    <button>
+                                        <i class="fa-solid fa-x text-[#929FA5] text-xs"></i>
+                                    </button>
+                                </div>
+                                <hr>
+                                <div class="flex justify-between items-center p-3">
+                                    <h6 class="text-[#475156]">Sub-total:</h6>
+                                    <h6 class="font-normal">$1530<span class="font-semibold"> EGP</span></h6>
+                                </div>
+                                <button class="w-full border border-[#f98131] text-[#f98131] flex items-center justify-center gap-2 py-2 my-4 h-[48px] font-bold text-sm">
+                                    Checkout
+                                </button>
+                            </div>
                         </div>
-                
-                      </div>
-                      <button>
-                        <i class="fa-solid fa-x text-[#929FA5] text-xs"></i>
-                      </button>
                     </div>
-                    <hr>
-                    <div class="flex justify-between items-center p-3">
-                      <h6 class="text-[#475156] ">sub-total:</h6>
-                      <h6 class="font-normal">$1530<span class="font-semibold">EGB</span></h6>
-                    </div>
-                    <div class="flex flex-col px-3 gap-3 pb-4">
-                          <button class="bg-[#f98131] text-white p-3">Check Out now <i class="fa text-white fa-arrow-right " aria-hidden="true"></i></button>
-                          <button class=" border border-[#f98131] text-[#f98131]  p-3">VIEW CART</button>
-                
-                    </div>
-                
-                  </div>
-                 </div> 
-              </div>
-              <div class="flex-col justify-start pl-4 ">
-                <h2 class=" text-[#a4a4a4] text-sm font-norma text-start">cart</h2>
-                <div class="flex items-center gap-1">
-
-                <span href="/login"
-                      class="text-[#333333] text-base font-normal  leading-[25px]">12,00</span>
                 </div>
-              </div>
             </div>
-
-
-          </div>
-
-
-
-          <!-- Wishlist -->
-
-
-          <!-- User -->
-
-
-
         </div>
+    </div>
+
+    <!-- Mobile menu (hidden on larger screens) -->
+    <div class="sm:hidden" id="mobile-menu">
+        <div class="flex flex-col p-2">
+            <ul class="py-4 border border-t-2 border-gray-300 space-y-4">
+                <li><a href="#" class="block py-2 text-center">Home</a></li>
+                <li><a href="#" class="block py-2 text-center">About Us</a></li>
+                <li><a href="#" class="block py-2 text-center">Shop</a></li>
+                <li><a href="#" class="block py-2 text-center">News</a></li>
+                <li><a href="#" class="block py-2 text-center">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 
-        <!-- Logo -->
+  <script>
 
-      </div>
-
-      <!--  blue-bar -->
-
-      <!-- <div class="px-[150px] w-full bg-[#017cc5] flex justify-center items-center">
-        <ul x-data="{isOpen = false}" class="flex flex-row p-1 justify-between w-full">
-
-          <li x-show="isOpen" @click="isOpen=!isOpen" :class="z-15" class="flex justify-end items-center">
-            <div class="w-3.5 h-5 text-[#333333] text-sm ">
-              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
-            </div>
-            <span class=" text-[#f2f2f7] text-sm"
-                  aria-label="التوريدات والجملة">التوريدات والجملة
-              </span>
-          </li>
-
-          <li class="flex justify-end items-center ">
-            <div class="w-3.5 h-5 text-[#333333] text-sm ">
-              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
-            </div>
-            <span class=" text-[#f2f2f7] text-sm"
-                  aria-label="التوريدات والجملة">كل المنتجات
-              </span>
-          </li>
-
-          <li class="flex justify-end items-center ">
-            <div class="w-3.5 h-5 text-[#333333] text-sm ">
-              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
-            </div>
-            <span class=" text-[#f2f2f7] text-sm"
-                  aria-label="التوريدات والجملة">مواد لاسفه
-              </span>
-          </li>
-
-          <li class="flex justify-end items-center ">
-            <div class="w-3.5 h-5 text-[#333333] text-sm ">
-              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
-            </div>
-            <span class=" text-[#f2f2f7] text-sm"
-                  aria-label="التوريدات والجملة">التوريدات والجملة
-              </span>
-          </li>
-
-          <li class="flex justify-end items-center ">
-            <div class="w-3.5 h-5 text-[#333333] text-sm ">
-              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
-            </div>
-            <span class=" text-[#f2f2f7] text-sm"
-                  aria-label="التوريدات والجملة">التوريدات والجملة
-              </span>
-          </li>
-
-          <li class="flex justify-end items-center ">
-            <div class="w-3.5 h-5 text-[#333333] text-sm ">
-              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
-            </div>
-            <span class=" text-[#f2f2f7] text-sm"
-                  aria-label="التوريدات والجملة">التوريدات والجملة
-              </span>
-          </li>
-
-          <li class="flex justify-end items-center ">
-            <div class="w-3.5 h-5 text-[#333333] text-sm ">
-              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
-            </div>
-            <span class=" text-[#f2f2f7] text-sm"
-                  aria-label="التوريدات والجملة">التوريدات والجملة
-              </span>
-          </li>
-
-          <li class="flex justify-end items-center ">
-            <div class="w-3.5 h-5 text-[#333333] text-sm ">
-              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
-            </div>
-            <span class=" text-[#f2f2f7] text-sm"
-                  aria-label="التوريدات والجملة">معطر
-              </span>
-          </li>
-
-          <li class="flex justify-end items-center ">
-            <div class="w-3.5 h-5 text-[#333333] text-sm ">
-              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
-            </div>
-            <span class=" text-[#f2f2f7] text-sm"
-                  aria-label="التوريدات والجملة">مواد لاسقه
-              </span>
-          </li>
-
-          <li class="flex justify-end items-center ">
-            <div class="w-3.5 h-5 text-[#333333] text-sm ">
-              <i class="fa-solid fa-angle-down text-white text-xs  font-thin transform"></i>
-            </div>
-            <span class=" text-[#f2f2f7] text-sm"
-                  aria-label="التوريدات والجملة"> كل المنتجات
-              </span>
-          </li>
-
-        </ul>
-
-      </div> -->
-
-
-    </nav>
-
+  </script>
 </body>
+
 </html>
