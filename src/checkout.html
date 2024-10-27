@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alrawda">
+    <title>Checkout</title>
+    <link href="./../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./../dist/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+    <!-- Start Navbar -->
+        <div id="navbar"></div>
+    <!-- End Navbar -->
+    <hr>
+
+    <!-- Start Location -->
+        <section class="w-full h-[72px] bg-[#F2F4F5] mt-[13px]">
+            <div class="flex items-center gap-2 ltr:md:ml-[300px] rtl:md:mr-[300px] ltr:ml-10 rtl:mr-10 pt-[26px]">
+                <img src="../assets/images/House.svg" alt="Home Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Home</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Shopping Card</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#2DA5F3] text-sm font-medium">Checkout</p>
+            </div>
+        </section>
+    <!-- End Location -->
+
+    <!-- Start Content -->
+        <section class="container flex justify-center gap-6 mx-auto mt-[72px] mb-24 px-2 md:px-0">
+            <div class="w-[872px]">
+                <h1 class="text-[#191C1F] font-medium text-lg">shipment  Information</h1>
+                <form class="flex flex-wrap gap-4 mt-6">
+                    <div>
+                        <label class="block text-[#191C1F] font-normal mb-2" for="username">Username</label>
+                        <input type="text" id="username" placeholder="First name" class="w-[206px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                    </div>
+            
+                    <div>
+                        <input type="text" id="last-name" placeholder="Last name" class="w-[206px] mt-8 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                    </div>
+            
+                    <div>
+                        <label class="block text-[#191C1F] font-normal mb-2" for="address">Address</label>
+                        <input type="text" id="address" placeholder="" class="w-[872px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                    </div>
+
+                    <div>
+                        <label class="block text-[#191C1F] font-normal mb-2" for="country">Country</label>
+                        <select id="country" class="w-[206px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                            <option>Bangladesh</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-[#191C1F] font-normal mb-2" for="Region">Country/Region</label>
+                        <select id="Region" class="w-[206px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                            <option>Bangladesh</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-[#191C1F] font-normal mb-2" for="city">City</label>
+                        <select id="city" class="w-[206px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                            <option>Bangladesh</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-[#191C1F] font-normal mb-2" for="email">Email</label>
+                        <input type="tel" id="email" class="w-[428px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                    </div>
+            
+                    <div>
+                        <label class="block text-[#191C1F] font-normal mb-2" for="phone-number">Phone Number 1</label>
+                        <input type="tel" id="phone-number" class="w-[428px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                    </div>
+
+                    <div>
+                        <label class="block text-[#191C1F] font-normal mb-2" for="sec-phone">Land phone (optional)</label>
+                        <input type="tel" id="sec-phone" class="w-[428px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                    </div>
+                </form>
+                <div class="flex items-center gap-2 mt-6">
+                    <input type="checkbox"> 
+                    <span class="text-[#475156]">Ship into different address</span>
+                </div>
+                <!-- Payment Option -->
+                <div class="w-[872px] mt-[40px]">
+                    <div class="bg-white border border-[#E4E7E9] rounded-[4px] pb-10">
+                        <div class="flex justify-between items-center px-6 py-4 border-b">
+                            <h2 class="text-[#191C1F] font-medium text-sm uppercase">Payment Option</h2>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <label class="flex flex-col items-center gap-2 w-[160px] p-4">
+                                <img src="../assets/images/CurrencyDollar.svg" alt="Currency Dollar" class="w-[32px] h-[32px] mb-2">
+                                <span class="text-sm">Cash on Delivery</span>
+                                <input id="teal-radio" type="radio" value="" name="colored-radio" class="text-[#FA8232] border-gray-300 focus:ring-0">
+                            </label>
+                        
+                            <label class="flex flex-col items-center gap-2 w-[160px] p-4 ltr:border-l rtl:border-r border-gray-300">
+                                <img src="../assets/images/Venmo.svg" alt="Venmo" class="w-[32px] h-[32px] mb-2">
+                                <span class="text-sm">Venmo</span>
+                                <input id="teal-radio" type="radio" value="" name="colored-radio" class="text-[#FA8232] border-gray-300 focus:ring-0">
+                            </label>
+                        
+                            <label class="flex flex-col items-center gap-2 w-[160px] p-4 ltr:border-l rtl:border-r border-gray-300">
+                                <img src="../assets/images/Paypal.svg" alt="Paypal" class="w-[32px] h-[32px] mb-2">
+                                <span class="text-sm">Paypal</span>
+                                <input id="teal-radio" type="radio" value="" name="colored-radio" class="text-[#FA8232] border-gray-300 focus:ring-0">
+                            </label>
+                        
+                            <label class="flex flex-col items-center gap-2 w-[160px] p-4 ltr:border-l rtl:border-r border-gray-300">
+                                <img src="../assets/images/amazon.svg" alt="Amazon" class="w-[32px] h-[32px] mb-2">
+                                <span class="text-sm">Amazon Pay</span>
+                                <input id="teal-radio" type="radio" value="" name="colored-radio" class="text-[#FA8232] border-gray-300 focus:ring-0">
+                            </label>
+
+                            <label class="flex flex-col items-center gap-2 w-[160px] p-4 ltr:border-l rtl:border-r border-gray-300">
+                                <img src="../assets/images/oCreditCard.svg" alt="Credit Card" class="w-[32px] h-[32px] mb-2">
+                                <span class="text-sm">Debid/Credit Card</span>
+                                <input id="teal-radio" type="radio" value="" name="colored-radio" class="text-[#FA8232] border-gray-300 focus:ring-0">
+                            </label>
+                        </div>
+                        <hr>
+                        <form class="flex flex-wrap gap-3 mt-6 px-[32px]">
+                            <div>
+                                <label class="block text-[#191C1F] font-normal mb-2" for="nameCard">Name on Card</label>
+                                <input type="text" id="nameCard" class="w-[808px] border border-[#E4E7E9] p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                            </div>
+                    
+                            <div>
+                                <label class="block text-[#191C1F] font-normal mb-2" for="cardNum">Card Number</label>
+                                <input type="text" id="cardNum" class="w-[808px] border border-[#E4E7E9] p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                            </div>
+
+                            <div>
+                                <label class="block text-[#191C1F] font-normal mb-2" for="expireDate">Expire Date</label>
+                                <input type="text" id="expireDate" placeholder="DD/YY" class="w-[396px] border border-[#E4E7E9] p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                            </div>
+                    
+                            <div>
+                                <label class="block text-[#191C1F] font-normal mb-2" for="CVC">CVC</label>
+                                <input type="text" id="CVC" class="w-[396px] border border-[#E4E7E9] p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="mt-10">
+                    <h2 class="text-[#191C1F] font-medium text-sm uppercase">Additional Information</h2>
+                    <div class="mt-6">
+                        <label class="block text-[#191C1F] font-normal mb-2" for="orderNotes">Order Notes <span class="text-[#77878F]">(Optional)</span></label>
+                        <textarea name="text" id="orderNotes" placeholder="Notes about your order, e.g. special notes for delivery" class="w-[872px] h-[124px] border border-[#E4E7E9] p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156] placeholder:px-3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- Order Summery -->
+            <div class="w-[424px] h-[512px] border border-[#E4E7E9] mt-[14px] rounded-[4px] p-6">
+                <h2 class="text-[#191C1F] text-lg font-semibold mb-4">Order Summery</h2>
+
+                <div class="flex items-center gap-2">
+                    <img src="../assets/images/wishlistimg5.webp" alt="Item">
+                    <div>
+                        <h1 class="text-[#191C1F]">Canon EOS 1500D DSLR Camera Body+ 18-...</h1>
+                        <p>
+                            <span class="text-[#5F6C72]">1 x</span>
+                            <span class="text-[#2DA5F3] font-semibold">$70</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 mt-4">
+                    <img src="../assets/images/wishlistimg1.webp" alt="Item">
+                    <div>
+                        <h1 class="text-[#191C1F]">Canon EOS 1500D DSLR Camera Body+ 18-...</h1>
+                        <p>
+                            <span class="text-[#5F6C72]">1 x</span>
+                            <span class="text-[#2DA5F3] font-semibold">$70</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between text-gray-700 mb-2">
+                    <span class="text-[#5F6C72]">Sub-total</span>
+                    <span class="text-[#191C1F] font-medium">$320</span>
+                </div>
+                
+                <div class="flex justify-between text-gray-700 mb-2">
+                    <span class="text-[#5F6C72]">Shipping</span>
+                    <span class="text-[#191C1F] font-medium">Free</span>
+                </div>
+                
+                <div class="flex justify-between text-gray-700 mb-2">
+                    <span class="text-[#5F6C72]">Discount</span>
+                    <span class="text-[#191C1F] font-medium">$24</span>
+                </div>
+                
+                <div class="flex justify-between text-gray-700 mb-4">
+                    <span class="text-[#5F6C72]">Tax</span>
+                    <span class="text-[#191C1F] font-medium">$61.99</span>
+                </div>
+                
+                <hr class="border-t border-gray-300 mb-4">
+                
+                <div class="flex justify-between items-center text-gray-900 font-semibold text-xl mb-4">
+                    <span class="text-[#191C1F] text-base">Total</span>
+                    <span class="text-[#191C1F] font-semibold">$357.99 USD</span>
+                </div>
+                
+                <button class="w-[376px] h-14 bg-[#FA8232] text-white font-bold text-base py-3 rounded-[3px] flex items-center justify-center gap-2">
+                    PROCEED TO CHECKOUT
+                    <img src="../assets/images/ArrowRight.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
+                </button>
+            </div>
+        </section>
+    <!-- Start Content -->
+
+    <!-- Start Footer -->
+        <div id="footer"></div>
+    <!-- End Footer -->
+
+</body>
+</html>

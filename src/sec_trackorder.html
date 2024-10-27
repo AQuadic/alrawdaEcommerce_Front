@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alrawda">
+    <title>Track Order</title>
+    <link href="./../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./../dist/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <!-- Start Navbar -->
+        <div class="w-full">
+            <div class="w-full bg-[#1B6392] text-white px-4 py-1 border-b border-gray-400">
+            <div class="max-w-7xl mx-auto flex justify-between items-center text-sm py-2">
+                <span>Welcome to Clicon online eCommerce store.</span>
+                <div class="flex items-center space-x-4">
+                <span>Follow us:</span>
+                <div class="flex gap-3">
+                    <a href="#"><img src="../assets/images/navTwitter.svg" alt="Twitter"></a>
+                    <a href="#"><img src="../assets/images/navFacebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="../assets/images/navPinterest.svg" alt="Pinterest"></a>
+                    <a href="#"><img src="../assets/images/navReddit.svg" alt="Reddit"></a>
+                    <a href="#"><img src="../assets/images/navYoutube.svg" alt="Youtube"></a>
+                    <a href="#"><img src="../assets/images/navInstagram.svg" alt="Instagram"></a>
+                </div>
+                <div class="flex items-center gap-5">
+                    <div class="relative">
+                        <div class="ltr:border-l flex items-center gap-2 ltr:pl-5 cursor-pointer" onclick="toggleLanguageMenu(event)">
+                            <span>Eng</span>
+                            <img src="../assets/images/CaretDown.svg" alt="Arrow">
+                        </div>
+                        
+                        <div id="languageDropdownMenu" class="absolute hidden bg-white border rounded-md shadow-lg mt-2 left-0 z-10">
+                            <ul class="py-2">
+                                <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">English</li>
+                                <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">Arabic</li>
+                                <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">French</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="flex items-center gap-2 cursor-pointer" onclick="toggleCurrencyMenu(event)">
+                            <span>USD</span>
+                            <img src="../assets/images/CaretDown.svg" alt="Arrow">
+                        </div>
+                        
+                        <div id="currencyDropdownMenu" class="absolute hidden bg-white border rounded-md shadow-lg mt-2 left-0 z-10">
+                            <ul class="py-2">
+                                <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">USD</li>
+                                <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">EUR</li>
+                                <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">GBP</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        
+            <div class="bg-[#1B6392] py-4 px-4 border-b">
+                <div class="max-w-7xl mx-auto flex items-center justify-between">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                        <img src="../assets/images/navLogo.svg" alt="">
+                    </div>
+            
+                    <!-- Search Bar -->
+                    <div class="flex-1 max-w-2xl mx-8">
+                    <div class="relative">
+                        <input type="text" placeholder="Search for anything..." class="w-[646px] h-[48px] rounded-2 focus:outline-none focus:ring-0"/>
+                        <button class="absolute right-10 top-3">
+                        <img src="../assets/images/searchIcon.svg" alt="">
+                        </button>
+                    </div>
+                    </div>
+            
+                    <!-- Right Section -->
+                    <div class="flex items-center space-x-4">
+                        <button class="relative hover:text-blue-600">
+                        <img src="../assets/images/whiteCart.svg" alt="Cart">
+                        <span class="absolute -top-2 -right-2 bg-white text-[#1B6392] text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                        </button>
+                        <button class="relative hover:text-blue-600">
+                            <img src="../assets/images/whiteHeart.svg" alt="Heart">
+                        </button>
+                        <button class="hover:text-blue-600">
+                            <img src="../assets/images/whiteUser.svg" alt="User">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="container mx-auto h-[80px] flex items-center justify-between">
+                <div class="flex items-center space-x-8 h-12">
+                    <div class="relative">
+                            <div class="w-[155px] h-[48px] flex items-center justify-center cursor-pointer gap-2 bg-[#F2F4F5]" onclick="toggleCategoryMenu(event)">
+                                <span class="font-medium">All Category</span>
+                                <img src="../assets/images/bCaretDown.svg" alt="Arrow">
+                            </div>
+                    
+                            <div id="categoryDropdownMenu" class="w-[155px] absolute hidden bg-white border rounded-md shadow-lg mt-2 left-0 z-10">
+                                <ul class="py-2">
+                                    <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">Category 1</li>
+                                    <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">Category 2</li>
+                                    <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">Category 3</li>
+                                </ul>
+                            </div>
+                    </div>
+                <div class="flex items-center space-x-6 text-gray-600">
+                    <a href="#" class="flex items-center gap-1 font-semibold text-[#FA8232]">
+                        <img src="../assets/images/oMapPinLine.svg" alt="MapPinLine">
+                        <span>Track Order</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-1 font-normal text-[#5F6C72]">
+                        <img src="../assets/images/ArrowsCounterClockwise.svg" alt="ClockClockwise">
+                        <span>Compare</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-1 font-normal text-[#5F6C72]">
+                        <img src="../assets/images/gHeadphones.svg" alt="Headphones">
+                        <span>Customer Support</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-1 font-normal text-[#5F6C72]">
+                        <img src="../assets/images/Info.svg" alt="Info">
+                        <span>Need Help</span>
+                    </a>
+                    
+                </div>
+                </div>
+                <div class="flex items-center gap-1">
+                    <img src="../assets/images/PhoneCall.svg" alt="Phone Call">
+                    <span>+1-202-555-0104</span>
+                </div>
+            </div>
+        </div>
+    <!-- End Navbar -->
+    <hr>
+    <!-- Start Location -->
+        <div class="w-full h-[72px] bg-[#F2F4F5]">
+            <div class="flex items-center gap-2 ltr:md:ml-[300px] rtl:md:mr-[300px] ltr:ml-10 rtl:mr-10 pt-[26px]">
+                <img src="../assets/images/House.svg" alt="Home Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Home</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Pages</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#2DA5F3] text-sm font-medium">Track Order</p>
+            </div>
+        </div>
+    <!-- End Location -->
+
+    <!-- Start Search -->
+        <div class="container mx-auto mt-12 mb-24 ltr:md:pl-[270px] ltr:pl-5 rtl:md:pr-[270px] rtl:pr-5">
+            <h1 class="text-[#191C1F] text-[32px] font-semibold leading-[40px]">Track Order</h1>
+            <p class="md:w-[760px] text-[#5F6C72] mt-4 text-base font-normal">To track your order please enter your order ID in the input field below and press the “Track Order” button. this was given to you on your receipt and in the confirmation email you should have received.</p>
+                <form class="flex flex-wrap gap-3 mt-6">
+                    <div>
+                        <label class="block text-[#191C1F] font-normal mb-2" for="display-name">Order ID</label>
+                        <input type="text" id="order-id" placeholder="ID..." class="md:w-[424px] w-[300px] h-10 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                    </div>
+            
+                    <div>
+                        <label class="block text-[#191C1F] font-normal mb-2" for="username">Billing Email</label>
+                        <input type="email" id="email-address" placeholder="Email address" class="md:w-[424px] w-[300px] h-10 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                    </div>
+                </form>
+                <div class="flex items-center gap-[2px] mt-[18px]">
+                    <img src="../assets/images/Info.svg" alt="Info Icon">
+                    <p class="text-[#5F6C72] font-normal text-sm">Order ID that we sended to your in your email address.</p>
+                </div>
+                <button class="w-[217px] bg-[#FA8232] flex items-center justify-center gap-2 text-white py-2 rounded-[2px] h-[48px] font-bold text-sm mt-4">
+                    Track Order
+                <img src="../assets/images/ArrowRight.svg" class="transform rtl:scale-x-[-1] ltr:scale-x-100" alt="Right Arrow">
+                </button>
+        </div>
+    <!-- Start Search -->
+
+    <!-- Start Footer -->
+        <div id="footer"></div>
+    <!-- End Footer -->
+
+    <script>
+        function closeAllMenus() {
+            const menus = [
+                document.getElementById('languageDropdownMenu'),
+                document.getElementById('currencyDropdownMenu'),
+                document.getElementById('categoryDropdownMenu'),
+            ];
+            
+            menus.forEach(menu => menu.classList.add('hidden'));
+        }
+    
+        function toggleLanguageMenu(event) {
+            event.stopPropagation(); 
+            const menu = document.getElementById('languageDropdownMenu');
+            const isHidden = menu.classList.contains('hidden');
+            closeAllMenus();
+            if (isHidden) {
+                menu.classList.remove('hidden');
+            }
+        }
+    
+        function toggleCurrencyMenu(event) {
+            event.stopPropagation();
+            const menu = document.getElementById('currencyDropdownMenu');
+            const isHidden = menu.classList.contains('hidden');
+            closeAllMenus();
+            if (isHidden) {
+                menu.classList.remove('hidden');
+            }
+        }
+    
+        function toggleCategoryMenu(event) {
+            event.stopPropagation();
+            const menu = document.getElementById('categoryDropdownMenu');
+            const isHidden = menu.classList.contains('hidden');
+            closeAllMenus();
+            if (isHidden) {
+                menu.classList.remove('hidden');
+            }
+        }
+    
+        document.addEventListener('click', function(event) {
+            closeAllMenus();
+        });
+    </script>
+</body>
+</html>
