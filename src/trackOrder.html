@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alrawda">
+    <title>Track Order</title>
+    <link href="./../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./../dist/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <!-- Start Navbar -->
+        <div id="navbar"></div>
+    <!-- End Navbar -->
+    <hr>
+
+    <!-- Start Location -->
+        <div class="w-full h-[72px] bg-[#F2F4F5] mt-[13px]">
+            <div class="flex items-center gap-2 ltr:md:ml-[300px] rtl:md:mr-[300px] ltr:ml-10 rtl:mr-10 pt-[26px]">
+                <img src="../assets/images/House.svg" alt="Home Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Home</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Pages</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#2DA5F3] text-sm font-medium">Track Order</p>
+            </div>
+        </div>
+    <!-- End Location -->
+
+    <!-- Start Search -->
+        <div class="container mx-auto mt-12 mb-24 ltr:md:pl-[270px] ltr:pl-5 rtl:md:pr-[270px] rtl:pr-5">
+            <h1 class="text-[#191C1F] text-[32px] font-semibold leading-[40px]">Track Order</h1>
+            <p class="md:w-[760px] text-[#5F6C72] mt-4 text-base font-normal">To track your order please enter your order ID in the input field below and press the “Track Order” button. this was given to you on your receipt and in the confirmation email you should have received.</p>
+                <form class="flex flex-wrap gap-3 mt-6">
+                    <div>
+                        <label class="block text-[#191C1F] font-normal mb-2" for="display-name">Order ID</label>
+                        <input type="text" id="order-id" placeholder="ID..." class="md:w-[424px] w-[300px] h-10 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                    </div>
+            
+                    <div>
+                        <label class="block text-[#191C1F] font-normal mb-2" for="username">Billing Email</label>
+                        <input type="email" id="email-address" placeholder="Email address" class="md:w-[424px] w-[300px] h-10 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                    </div>
+                </form>
+                <div class="flex items-center gap-[2px] mt-[18px]">
+                    <img src="../assets/images/Info.svg" alt="Info Icon">
+                    <p class="text-[#5F6C72] font-normal text-sm">Order ID that we sended to your in your email address.</p>
+                </div>
+                <button class="w-[217px] bg-[#FA8232] flex items-center justify-center gap-2 text-white py-2 rounded-[2px] h-[48px] font-bold text-sm mt-4">
+                    Track Order
+                <img src="../assets/images/ArrowRight.svg" class="transform rtl:scale-x-[-1] ltr:scale-x-100" alt="Right Arrow">
+                </button>
+        </div>
+    <!-- Start Search -->
+
+    <!-- Start Footer -->
+        <div id="footer"></div>
+    <!-- End Footer -->
+</body>
+</html>
