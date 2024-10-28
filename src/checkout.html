@@ -20,7 +20,7 @@
     <hr class="mt-2 sm:block hidden">
 
     <!-- Start Location -->
-        <section class="w-full h-[72px] bg-[#F2F4F5] mt-[13px]">
+        <section class="w-full h-[72px] bg-[#F2F4F5] mt-[13px] md:px-0 px-2">
             <div class="flex items-center container mx-auto gap-2 pt-[26px]">
                 <img src="../assets/images/House.svg" alt="Home Icon">
                 <p class="text-[#5F6C72] font-normal text-sm">Home</p>
@@ -33,58 +33,58 @@
     <!-- End Location -->
 
     <!-- Start Content -->
-        <section class="container flex justify-center gap-6 mx-auto mt-[72px] mb-24 px-2 md:px-0">
-            <div class="w-[872px]">
+        <section class="container flex md:flex-row flex-col justify-center gap-6 mx-auto md:mt-[72px] mt-10 mb-24 px-2 md:px-0">
+            <div class="md:w-[872px]">
                 <h1 class="text-[#191C1F] font-medium text-lg">shipment  Information</h1>
                 <form class="flex flex-wrap gap-4 mt-6">
                     <div>
                         <label class="block text-[#191C1F] font-normal mb-2" for="username">Username</label>
-                        <input type="text" id="username" placeholder="First name" class="w-[206px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                        <input type="text" id="username" placeholder="First name" class="md:w-[206px] w-[170px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                     </div>
             
                     <div>
-                        <input type="text" id="last-name" placeholder="Last name" class="w-[206px] mt-8 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                        <input type="text" id="last-name" placeholder="Last name" class="md:w-[206px] w-[170px] mt-8 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                     </div>
             
                     <div>
                         <label class="block text-[#191C1F] font-normal mb-2" for="address">Address</label>
-                        <input type="text" id="address" placeholder="" class="w-[872px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                        <input type="text" id="address" placeholder="" class="md:w-[872px] w-[170px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                     </div>
 
                     <div>
                         <label class="block text-[#191C1F] font-normal mb-2" for="country">Country</label>
-                        <select id="country" class="w-[206px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                        <select id="country" class="md:w-[206px] w-[170px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                             <option>Bangladesh</option>
                         </select>
                     </div>
 
                     <div>
                         <label class="block text-[#191C1F] font-normal mb-2" for="Region">Country/Region</label>
-                        <select id="Region" class="w-[206px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                        <select id="Region" class="md:w-[206px] w-[170px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                             <option>Bangladesh</option>
                         </select>
                     </div>
 
                     <div>
                         <label class="block text-[#191C1F] font-normal mb-2" for="city">City</label>
-                        <select id="city" class="w-[206px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                        <select id="city" class="md:w-[206px] w-[170px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                             <option>Bangladesh</option>
                         </select>
                     </div>
 
                     <div>
                         <label class="block text-[#191C1F] font-normal mb-2" for="email">Email</label>
-                        <input type="tel" id="email" class="w-[428px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                        <input type="tel" id="email" class="md:w-[428px] w-[170px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                     </div>
             
                     <div>
                         <label class="block text-[#191C1F] font-normal mb-2" for="phone-number">Phone Number 1</label>
-                        <input type="tel" id="phone-number" class="w-[428px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                        <input type="tel" id="phone-number" class="md:w-[428px] w-[170px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                     </div>
 
                     <div>
                         <label class="block text-[#191C1F] font-normal mb-2" for="sec-phone">Land phone (optional)</label>
-                        <input type="tel" id="sec-phone" class="w-[428px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                        <input type="tel" id="sec-phone" class="md:w-[428px] w-[170px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                     </div>
                 </form>
                 <div class="flex items-center gap-2 mt-6">
@@ -92,7 +92,7 @@
                     <span class="text-[#475156]">Ship into different address</span>
                 </div>
                 <!-- Payment Option -->
-                <div class="w-[872px] mt-[40px]">
+                <div class="md:w-[872px] mt-[40px]">
                     <div class="bg-white border border-[#E4E7E9] rounded-[4px] pb-10">
                         <div class="flex justify-between items-center px-6 py-4 border-b">
                             <h2 class="text-[#191C1F] font-medium text-sm uppercase">Payment Option</h2>
@@ -100,31 +100,31 @@
                         <div class="flex items-center justify-center">
                             <label class="flex flex-col items-center gap-2 w-[160px] p-4">
                                 <img src="../assets/images/CurrencyDollar.svg" alt="Currency Dollar" class="w-[32px] h-[32px] mb-2">
-                                <span class="text-sm">Cash on Delivery</span>
+                                <span class="text-sm md:block hidden">Cash on Delivery</span>
                                 <input id="teal-radio" type="radio" value="" name="colored-radio" class="text-[#FA8232] border-gray-300 focus:ring-0">
                             </label>
                         
                             <label class="flex flex-col items-center gap-2 w-[160px] p-4 ltr:border-l rtl:border-r border-gray-300">
                                 <img src="../assets/images/Venmo.svg" alt="Venmo" class="w-[32px] h-[32px] mb-2">
-                                <span class="text-sm">Venmo</span>
+                                <span class="text-sm md:block hidden">Venmo</span>
                                 <input id="teal-radio" type="radio" value="" name="colored-radio" class="text-[#FA8232] border-gray-300 focus:ring-0">
                             </label>
                         
                             <label class="flex flex-col items-center gap-2 w-[160px] p-4 ltr:border-l rtl:border-r border-gray-300">
                                 <img src="../assets/images/Paypal.svg" alt="Paypal" class="w-[32px] h-[32px] mb-2">
-                                <span class="text-sm">Paypal</span>
+                                <span class="text-sm md:block hidden">Paypal</span>
                                 <input id="teal-radio" type="radio" value="" name="colored-radio" class="text-[#FA8232] border-gray-300 focus:ring-0">
                             </label>
                         
                             <label class="flex flex-col items-center gap-2 w-[160px] p-4 ltr:border-l rtl:border-r border-gray-300">
                                 <img src="../assets/images/amazon.svg" alt="Amazon" class="w-[32px] h-[32px] mb-2">
-                                <span class="text-sm">Amazon Pay</span>
+                                <span class="text-sm md:block hidden">Amazon Pay</span>
                                 <input id="teal-radio" type="radio" value="" name="colored-radio" class="text-[#FA8232] border-gray-300 focus:ring-0">
                             </label>
 
                             <label class="flex flex-col items-center gap-2 w-[160px] p-4 ltr:border-l rtl:border-r border-gray-300">
                                 <img src="../assets/images/oCreditCard.svg" alt="Credit Card" class="w-[32px] h-[32px] mb-2">
-                                <span class="text-sm">Debid/Credit Card</span>
+                                <span class="text-sm md:block hidden">Debid/Credit Card</span>
                                 <input id="teal-radio" type="radio" value="" name="colored-radio" class="text-[#FA8232] border-gray-300 focus:ring-0">
                             </label>
                         </div>
@@ -132,22 +132,22 @@
                         <form class="flex flex-wrap gap-3 mt-6 px-[32px]">
                             <div>
                                 <label class="block text-[#191C1F] font-normal mb-2" for="nameCard">Name on Card</label>
-                                <input type="text" id="nameCard" class="w-[808px] border border-[#E4E7E9] p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                <input type="text" id="nameCard" class="md:w-[808px] w-[300px] border border-[#E4E7E9] p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                             </div>
                     
                             <div>
                                 <label class="block text-[#191C1F] font-normal mb-2" for="cardNum">Card Number</label>
-                                <input type="text" id="cardNum" class="w-[808px] border border-[#E4E7E9] p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                <input type="text" id="cardNum" class="md:w-[808px] w-[300px] border border-[#E4E7E9] p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                             </div>
 
                             <div>
                                 <label class="block text-[#191C1F] font-normal mb-2" for="expireDate">Expire Date</label>
-                                <input type="text" id="expireDate" placeholder="DD/YY" class="w-[396px] border border-[#E4E7E9] p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                <input type="text" id="expireDate" placeholder="DD/YY" class="md:w-[396px] w-[300px] border border-[#E4E7E9] p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                             </div>
                     
                             <div>
                                 <label class="block text-[#191C1F] font-normal mb-2" for="CVC">CVC</label>
-                                <input type="text" id="CVC" class="w-[396px] border border-[#E4E7E9] p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                <input type="text" id="CVC" class="md:w-[396px] w-[300px] border border-[#E4E7E9] p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                             </div>
 
                         </form>
@@ -159,12 +159,12 @@
                     <h2 class="text-[#191C1F] font-medium text-sm uppercase">Additional Information</h2>
                     <div class="mt-6">
                         <label class="block text-[#191C1F] font-normal mb-2" for="orderNotes">Order Notes <span class="text-[#77878F]">(Optional)</span></label>
-                        <textarea name="text" id="orderNotes" placeholder="Notes about your order, e.g. special notes for delivery" class="w-[872px] h-[124px] border border-[#E4E7E9] p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156] placeholder:px-3"></textarea>
+                        <textarea name="text" id="orderNotes" placeholder="Notes about your order, e.g. special notes for delivery" class="md:w-[872px] w-[340px] h-[124px] border border-[#E4E7E9] p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156] placeholder:px-3"></textarea>
                     </div>
                 </div>
             </div>
             <!-- Order Summery -->
-            <div class="w-[424px] h-[512px] border border-[#E4E7E9] mt-[14px] rounded-[4px] p-6">
+            <div class="md:w-[424px] h-[512px] border border-[#E4E7E9] mt-[14px] rounded-[4px] p-6">
                 <h2 class="text-[#191C1F] text-lg font-semibold mb-4">Order Summery</h2>
 
                 <div class="flex items-center gap-2">
@@ -216,11 +216,11 @@
                     <span class="text-[#191C1F] font-semibold">$357.99 USD</span>
                 </div>
                 
-                <button class="w-[376px] h-14 bg-[#FA8232] text-white font-bold text-base py-3 rounded-[3px] flex items-center justify-center gap-2">
+                <button class="md:w-[376px] w-[300px] h-14 bg-[#FA8232] text-white font-bold text-base py-3 rounded-[3px] flex items-center justify-center gap-2">
                     PROCEED TO CHECKOUT
                     <img src="../assets/images/ArrowRight.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
                 </button>
-            </div>
+            </div> 
         </section>
     <!-- Start Content -->
 

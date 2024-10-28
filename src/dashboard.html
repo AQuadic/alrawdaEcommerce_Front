@@ -11,11 +11,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./js/script.js"></script>
-    <style>
-        #sidebar {
-        transition: transform 0.3s ease;
-}
-    </style>
 </head>
 
 <body>
@@ -38,9 +33,9 @@
     <!-- End Location -->
 
     <!-- Start Content -->
-        <section class="container mx-auto flex  gap-16 mt-[40px] mb-[72px]">     
+        <section class="container mx-auto flex gap-16 mt-[40px] mb-[72px]">     
             <!-- Sidebar -->
-            <div id="sidebar" class="md:hidden block sidebar fixed left-0 top-0 w-[264px] h-full border border-[#E4E7E9] shadow-md transform -translate-x-full bg-white z-50">
+            <div id="sidebar" class="md:hidden block sidebar fixed left-0 top-0 w-[264px] h-full border border-[#E4E7E9] shadow-md transform -translate-x-full bg-white z-50 transform transition-transform duration-300 ease">
                 <button id="closeSidebar" class="flex items-center justify-end w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer text-[#5F6C72]">
                     <img src="../assets/images/closeIcon.svg" alt="Close" class="w-6 h-6">
                 </button>
@@ -133,77 +128,78 @@
                 </ul>
             </div>
 
-                <div class="md:px-0 px-2">
-                    <button id="toggleButton" class="md:hidden flex items-center gap-2 mb-4 text-white rounded">
-                        <img src="../assets/images/burger-menu.svg" class="w-6 h-6" alt="Toggle Sidebar">
-                        <p class="text-black">Dashboard</p>
-                    </button>
-                    <h1 class="text-[#191C1F] font-semibold text-[20px]">Hello, Kevin</h1>
-                    <p class="text-[#475156] md:w-[432px] font-medium text-sm mt-3">From your account dashboard. you can easily check & view your <a href="#" class="text-[#2DA5F3]">Recent Orders</a>, manage your <a href="#" class="text-[#2DA5F3]">Shipping and Billing Addresses</a> and edit your <a href="#" class="text-[#2DA5F3]">Password</a> and <a href="#" class="text-[#2DA5F3]">Account Details.</a></p>
-                    <div class="flex md:flex-row flex-col items-center md:items-start gap-6">
-                        <!-- Account Info -->
-                            <div class="w-[312px] h-[312px] border border-[#E4E7E9] mt-6">
-                                <h1 class="text-[#191C1F] text-sm font-semibold uppercase ltr:pl-6 rtl:pr-6 py-4">Account Info</h1>
-                                <hr>
-                                <div class="flex items-center gap-4 ltr:ml-6 rtl:mr-6 mt-[22px]">
-                                    <img src="../assets/images/team2.webp" class="w-[48px] h-[48px] rounded-full" alt="Image">
-                                    <span>
-                                        <h1 class="text-[#191C1F] text-base font-medium">Kevin Gilbert</h1>
-                                        <p class="text-[#5F6C72] text-sm font-normal">Dhaka - 1207, Bangladesh</p>
-                                    </span>
-                                </div>
-                                <div class="flex items-baseline gap-1">
-                                    <h1 class="text-[#191C1F] font-normal text-sm ltr:ml-6 rtl:mr-6 mt-[20px]">Email:</h1>
-                                    <p class="text-[#5F6C72] font-normal text-sm">kevin.gilbert@gmail.com</p>
-                                </div>
-                                <div class="flex items-baseline gap-1">
-                                    <h1 class="text-[#191C1F] font-normal text-sm ltr:ml-6 rtl:mr-6 mt-2">Sec Email: </h1>
-                                    <p class="text-[#5F6C72] font-normal text-sm">kevin12345@gmail.com</p>
-                                </div>
-                                <div class="flex items-baseline gap-1">
-                                    <h1 class="text-[#191C1F] font-normal text-sm ltr:ml-6 rtl:mr-6 mt-2">Phone:</h1>
-                                    <p class="text-[#5F6C72] font-normal text-sm">+1-202-555-0118</p>
-                                </div>
-                                <a href="#" class="flex items-center font-bold justify-center ltr:ml-6 rtl:mr-6 mt-[22px] text-[#2DA5F3] uppercase w-[155px] h-12 border-2 border-[#D5EDFD]">
-                                    Edit Account
-                                </a>
+            <div class="md:px-0 px-2 w-full">
+                <button id="toggleButton" class="md:hidden flex items-center gap-2 mb-4 text-white rounded">
+                    <img src="../assets/images/burger-menu.svg" class="w-6 h-6" alt="Toggle Sidebar">
+                    <p class="text-black">Dashboard</p>
+                </button>
+                <h1 class="text-[#191C1F] font-semibold text-[20px]">Hello, Kevin</h1>
+                <p class="text-[#475156] md:w-[432px] font-medium text-sm mt-3">From your account dashboard. you can easily check & view your <a href="#" class="text-[#2DA5F3]">Recent Orders</a>, manage your <a href="#" class="text-[#2DA5F3]">Shipping and Billing Addresses</a> and edit your <a href="#" class="text-[#2DA5F3]">Password</a> and <a href="#" class="text-[#2DA5F3]">Account Details.</a></p>
+                <div class="flex md:flex-row items-center flex-col gap-6">
+                    <!-- Account Info -->
+                        <div class="w-[312px] h-[312px] border border-[#E4E7E9] mt-6">
+                            <h1 class="text-[#191C1F] text-sm font-semibold uppercase ltr:pl-6 rtl:pr-6 py-4">Account Info</h1>
+                            <hr>
+                            <div class="flex items-center gap-4 ltr:ml-6 rtl:mr-6 mt-[22px]">
+                                <img src="../assets/images/team2.webp" class="w-[48px] h-[48px] rounded-full" alt="Image">
+                                <span>
+                                    <h1 class="text-[#191C1F] text-base font-medium">Kevin Gilbert</h1>
+                                    <p class="text-[#5F6C72] text-sm font-normal">Dhaka - 1207, Bangladesh</p>
+                                </span>
                             </div>
-                        <!-- Number Of Orders -->
-                            <div class="mt-[22px]">
-                                <div class="w-[312px] h-[88px] bg-[#EAF6FE] flex gap-4 ltr:pl-6 rtl:pr-6 py-4">
-                                    <img src="../assets/images/dashIcon.svg" alt="Icon">
-                                    <span>
-                                        <p class="text-[#191C1F] font-semibold text-[20px]">154</p>
-                                        <p class="text-[#475156] font-normal text-sm mt-1">Total Orders</p>
-                                    </span>
-                                </div>
-                                <div class="w-[312px] h-[88px] bg-[#FFF3EB] flex gap-4 ltr:pl-6 rtl:pr-6 py-4 mt-6">
-                                    <img src="../assets/images/dashIcon2.svg" alt="Icon">
-                                    <span>
-                                        <p class="text-[#191C1F] font-semibold text-[20px]">05</p>
-                                        <p class="text-[#475156] font-normal text-sm mt-1">Pending Orders</p>
-                                    </span>
-                                </div>
-                                <div class="w-[312px] h-[88px] bg-[#EAF7E9] flex gap-4 ltr:pl-6 rtl:pr-6 py-4 mt-6">
-                                    <img src="../assets/images/dashIcon3.svg" alt="Icon">
-                                    <span>
-                                        <p class="text-[#191C1F] font-semibold text-[20px]">149</p>
-                                        <p class="text-[#475156] font-normal text-sm mt-1">Completed Orders</p>
-                                    </span>
-                                </div>
+                            <div class="flex items-baseline gap-1">
+                                <h1 class="text-[#191C1F] font-normal text-sm ltr:ml-6 rtl:mr-6 mt-[20px]">Email:</h1>
+                                <p class="text-[#5F6C72] font-normal text-sm">kevin.gilbert@gmail.com</p>
                             </div>
-                    </div>
-                    <!-- Recent Orders -->
-                    <div class="w-[984px] mt-6">
-                        <div class="bg-white border border-[#E4E7E9] rounded-[4px] overflow-hidden">
-                            <div class="flex justify-between items-center px-6 py-4 border-b">
-                                <h2 class="text-[#191C1F] font-medium text-sm uppercase">Recent Order</h2>
-                                <a href="#" class="flex items-center gap-2 text-[#FA8232] text-sm font-semibold">
-                                    View all
-                                    <img src="../assets/images/oArrowRight.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Right Arrow">
-                                </a>
+                            <div class="flex items-baseline gap-1">
+                                <h1 class="text-[#191C1F] font-normal text-sm ltr:ml-6 rtl:mr-6 mt-2">Sec Email: </h1>
+                                <p class="text-[#5F6C72] font-normal text-sm">kevin12345@gmail.com</p>
                             </div>
-                            <table class="min-w-full bg-white">
+                            <div class="flex items-baseline gap-1">
+                                <h1 class="text-[#191C1F] font-normal text-sm ltr:ml-6 rtl:mr-6 mt-2">Phone:</h1>
+                                <p class="text-[#5F6C72] font-normal text-sm">+1-202-555-0118</p>
+                            </div>
+                            <a href="#" class="flex items-center font-bold justify-center ltr:ml-6 rtl:mr-6 mt-[22px] text-[#2DA5F3] uppercase w-[155px] h-12 border-2 border-[#D5EDFD]">
+                                Edit Account
+                            </a>
+                        </div>
+                    <!-- Number Of Orders -->
+                        <div class="mt-[22px]">
+                            <div class="w-[312px] h-[88px] bg-[#EAF6FE] flex gap-4 ltr:pl-6 rtl:pr-6 py-4">
+                                <img src="../assets/images/dashIcon.svg" alt="Icon">
+                                <span>
+                                    <p class="text-[#191C1F] font-semibold text-[20px]">154</p>
+                                    <p class="text-[#475156] font-normal text-sm mt-1">Total Orders</p>
+                                </span>
+                            </div>
+                            <div class="w-[312px] h-[88px] bg-[#FFF3EB] flex gap-4 ltr:pl-6 rtl:pr-6 py-4 mt-6">
+                                <img src="../assets/images/dashIcon2.svg" alt="Icon">
+                                <span>
+                                    <p class="text-[#191C1F] font-semibold text-[20px]">05</p>
+                                    <p class="text-[#475156] font-normal text-sm mt-1">Pending Orders</p>
+                                </span>
+                            </div>
+                            <div class="w-[312px] h-[88px] bg-[#EAF7E9] flex gap-4 ltr:pl-6 rtl:pr-6 py-4 mt-6">
+                                <img src="../assets/images/dashIcon3.svg" alt="Icon">
+                                <span>
+                                    <p class="text-[#191C1F] font-semibold text-[20px]">149</p>
+                                    <p class="text-[#475156] font-normal text-sm mt-1">Completed Orders</p>
+                                </span>
+                            </div>
+                        </div>
+                </div>
+                <!-- Recent Orders -->
+                <div class="w-full md:w-[984px] mt-10">
+                    <div class="bg-white border border-[#E4E7E9] rounded-[4px] overflow-hidden">
+                        <div class="flex justify-between items-center px-6 py-4 border-b">
+                            <h2 class="text-[#191C1F] font-medium text-sm uppercase">Recent Order</h2>
+                            <a href="#" class="flex items-center gap-2 text-[#FA8232] text-sm font-semibold">
+                                View all
+                                <img src="../assets/images/oArrowRight.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Right Arrow">
+                            </a>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-[984px] md:w-full bg-white">
                                 <thead>
                                     <tr class="bg-[#E4E7E9]">
                                         <th class="py-2 px-4 ltr:text-left rtl:text-right text-[#475156] font-medium text-[12px] uppercase">Order ID</th>
@@ -220,7 +216,7 @@
                                         <td class="py-3 px-4 text-[#5F6C72]">Dec 30, 2019 05:18</td>
                                         <td class="py-3 px-4 text-[#475156]">$1,500 (5 Products)</td>
                                         <td class="py-3 px-4">
-                                            <a href="#" class="flex items-center gap-2 font-medium text-[#2DA5F3]">View Details 
+                                            <a href="./orderDetails.html" class="flex items-center gap-2 font-medium text-[#2DA5F3]">View Details 
                                                 <img src="../assets/images/blueArrow.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
                                             </a>
                                         </td>
@@ -231,7 +227,7 @@
                                         <td class="py-3 px-4 text-[#5F6C72]">Feb 2, 2019 19:28</td>
                                         <td class="py-3 px-4 text-[#475156]">$80 (11 Products)</td>
                                         <td class="py-3 px-4">
-                                            <a href="#" class="flex items-center gap-2 font-medium text-[#2DA5F3]">View Details 
+                                            <a href="./orderDetails.html" class="flex items-center gap-2 font-medium text-[#2DA5F3]">View Details 
                                                 <img src="../assets/images/blueArrow.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
                                             </a>
                                         </td>
@@ -242,7 +238,7 @@
                                         <td class="py-3 px-4 text-[#5F6C72]">Mar 20, 2019 23:14</td>
                                         <td class="py-3 px-4 text-[#475156]">$160 (3 Products)</td>
                                         <td class="py-3 px-4">
-                                            <a href="#" class="flex items-center gap-2 font-medium text-[#2DA5F3]">View Details 
+                                            <a href="./orderDetails.html" class="flex items-center gap-2 font-medium text-[#2DA5F3]">View Details 
                                                 <img src="../assets/images/blueArrow.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
                                             </a>
                                         </td>
@@ -253,7 +249,7 @@
                                         <td class="py-3 px-4 text-[#5F6C72]">Feb 2, 2019 19:28</td>
                                         <td class="py-3 px-4 text-[#475156]">$80 (1 Product)</td>
                                         <td class="py-3 px-4">
-                                            <a href="#" class="flex items-center gap-2 font-medium text-[#2DA5F3]">View Details 
+                                            <a href="./orderDetails.html" class="flex items-center gap-2 font-medium text-[#2DA5F3]">View Details 
                                                 <img src="../assets/images/blueArrow.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
                                             </a>
                                         </td>
@@ -264,7 +260,7 @@
                                         <td class="py-3 px-4 text-[#5F6C72]">Feb 2, 2019 19:28</td>
                                         <td class="py-3 px-4 text-[#475156]">$2,300 (2 Products)</td>
                                         <td class="py-3 px-4">
-                                            <a href="#" class="flex items-center gap-2 font-medium text-[#2DA5F3]">View Details 
+                                            <a href="./orderDetails.html" class="flex items-center gap-2 font-medium text-[#2DA5F3]">View Details 
                                                 <img src="../assets/images/blueArrow.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
                                             </a>
                                         </td>
@@ -275,7 +271,7 @@
                                         <td class="py-3 px-4 text-[#5F6C72]">Dec 30, 2019 07:52</td>
                                         <td class="py-3 px-4 text-[#475156]">$70 (1 Product)</td>
                                         <td class="py-3 px-4">
-                                            <a href="#" class="flex items-center gap-2 font-medium text-[#2DA5F3]">View Details 
+                                            <a href="./orderDetails.html" class="flex items-center gap-2 font-medium text-[#2DA5F3]">View Details 
                                                 <img src="../assets/images/blueArrow.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
                                             </a>
                                         </td>
@@ -286,16 +282,16 @@
                                         <td class="py-3 px-4 text-[#5F6C72]">Dec 7, 2019 23:26</td>
                                         <td class="py-3 px-4 text-[#475156]">$220 (1 Product)</td>
                                         <td class="py-3 px-4">
-                                            <a href="#" class="flex items-center gap-2 font-medium text-[#2DA5F3]">View Details 
+                                            <a href="./orderDetails.html" class="flex items-center gap-2 font-medium text-[#2DA5F3]">View Details 
                                                 <img src="../assets/images/blueArrow.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
                                             </a>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
                     </div>
                 </div>
+            </div>
         </section>
     <!-- End Content -->
 

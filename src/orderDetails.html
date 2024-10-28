@@ -11,11 +11,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./js/script.js"></script>
-    <style>
-        #sidebar {
-        transition: transform 0.3s ease;
-}
-    </style>
 </head>
 
 <body>
@@ -40,48 +35,48 @@
     <!-- Start Content -->
         <section class="container mx-auto flex  gap-16 mt-[40px] mb-[72px]">
                 <!-- Sidebar -->
-                <div id="sidebar" class="md:hidden block sidebar fixed left-0 top-0 w-[264px] h-full border border-[#E4E7E9] shadow-md transform -translate-x-full bg-white z-50">
+                <div id="sidebar" class="md:hidden block sidebar fixed left-0 top-0 w-[264px] h-full border border-[#E4E7E9] shadow-md transform -translate-x-full bg-white z-50 transform transition-transform duration-300 ease">
                     <button id="closeSidebar" class="flex items-center justify-end w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer text-[#5F6C72]">
                         <img src="../assets/images/closeIcon.svg" alt="Close" class="w-6 h-6">
                     </button>
                     <ul class="mt-4">
-                        <a href="./dashboard.html" class="flex items-center gap-3 bg-[#FA8232] w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
-                            <img src="../assets/images/Stackwhite.svg" alt="Stack">
-                            <p class="text-white text-sm font-semibold">Dashboard</p>
+                        <a href="./dashboard.html" class="flex items-center gap-3  w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                            <img src="../assets/images/Stackgray.svg" alt="Stack">
+                            <p class="text-[#5F6C72] text-sm font-semibold">Dashboard</p>
                         </a>
-                        <a href="./orderHistory.html" class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
-                            <img src="../assets/images/Storefront@2x.svg" alt="Storefront">
-                            <p class="text-[#5F6C72] text-sm font-normal">Order History</p>
-                        </a>
-                        <li class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <a href="./orderHistory.html" class="flex items-center gap-3 w-[262px] bg-[#FA8232] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                            <img src="../assets/images/StorefrontW.svg" alt="Storefront">
+                            <p class="text-white text-sm font-normal">Order History</p>
+                        </a href="./orderHistory.html">
+                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/MapPinLine.svg" alt="MapPinLine">
                             <p class="text-[#5F6C72] text-sm font-normal">Track Order</p>
                         </li>
-                        <li class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/ShoppingCartSimple.svg" alt="Shopping Cart">
                             <p class="text-[#5F6C72] text-sm font-normal">Shopping Cart</p>
                         </li>
-                        <li class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/Heart.svg" alt="Heart">
                             <p class="text-[#5F6C72] text-sm font-normal">Wishlist</p>
                         </li>
-                        <li class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/ArrowsCounterClockwise.svg" alt="Clockwise">
                             <p class="text-[#5F6C72] text-sm font-normal">Compare</p>
                         </li>
-                        <li class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/NotebookGray.svg" alt="Notebook">
                             <p class="text-[#5F6C72] text-sm font-normal">Cards & Address</p>
                         </li>
-                        <li class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/ClockClockwise.svg" alt="Clock">
                             <p class="text-[#5F6C72] text-sm font-normal">Browsing History</p>
                         </li>
-                        <a href="./dashboardSetting.html" class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/Gear.svg" alt="Gear">
                             <p class="text-[#5F6C72] text-sm font-normal">Setting</p>
-                        </a>
-                        <li class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        </li>
+                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/SignOut.svg" alt="Sign Out">
                             <p class="text-[#5F6C72] text-sm font-normal">Log-out</p>
                         </li>
@@ -94,7 +89,7 @@
                             <img src="../assets/images/Stackgray.svg" alt="Stack">
                             <p class="text-[#5F6C72] text-sm font-semibold">Dashboard</p>
                         </a>
-                        <a href="./orderHistory.html" class="flex items-center gap-3 w-[264px] bg-[#FA8232] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <a href="./orderHistory.html" class="flex items-center gap-3 w-[262px] bg-[#FA8232] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                             <img src="../assets/images/StorefrontW.svg" alt="Storefront">
                             <p class="text-white text-sm font-normal">Order History</p>
                         </a href="./orderHistory.html">

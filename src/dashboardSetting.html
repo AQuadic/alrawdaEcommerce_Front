@@ -18,8 +18,8 @@
     <hr class="mt-2 sm:block hidden">
 
     <!-- Start Location -->
-        <section class="w-full h-[72px] bg-[#F2F4F5] mt-[13px]">
-            <div class="flex items-center container mx-auto gap-2 pt-[26px]">
+        <section class="w-full h-[72px] bg-[#F2F4F5] mt-[13px] md:px-0 px-2">
+            <div class="flex items-center container mx-auto md:gap-2 gap-1 pt-[26px]">
                 <img src="../assets/images/House.svg" alt="Home Icon">
                 <p class="text-[#5F6C72] font-normal text-sm">Home</p>
                 <img src="../assets/images/arrow.svg" alt="Arrow Icon">
@@ -34,7 +34,10 @@
 
     <!-- Start Content -->
         <section class="container mx-auto flex  gap-16 mt-[40px] mb-[72px]">
-            <div class="w-[264px] h-[432px] border border-[#E4E7E9]" style="box-shadow: 0px 8px 40px 0px #00000014;">
+            <div id="sidebar" class="md:hidden block sidebar fixed left-0 top-0 w-[264px] h-full border border-[#E4E7E9] shadow-md transform -translate-x-full bg-white z-50 transform transition-transform duration-300 ease">
+                <button id="closeSidebar" class="flex items-center justify-end w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer text-[#5F6C72]">
+                    <img src="../assets/images/closeIcon.svg" alt="Close" class="w-6 h-6">
+                </button>
                 <ul class="mt-4">
                     <a href="./dashboard.html" class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                         <img src="../assets/images/Stackgray.svg" alt="Stack">
@@ -68,7 +71,7 @@
                         <img src="../assets/images/ClockClockwise.svg" alt="Clock">
                         <p class="text-[#5F6C72] text-sm font-normal">Browsing History</p>
                     </li>
-                    <li class="flex items-center gap-3 bg-[#FA8232] w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                    <li class="flex items-center gap-3 bg-[#FA8232] w-[262px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
                         <img src="../assets/images/whiteGear.svg" alt="Gear">
                         <p class="text-white text-sm font-semibold">Setting</p>
                     </li>
@@ -78,161 +81,209 @@
                     </li>
                 </ul>
             </div>
-            <div>
+            <div class="md:block hidden w-[264px] h-[432px] border border-[#E4E7E9]" style="box-shadow: 0px 8px 40px 0px #00000014;">
+                <ul class="mt-4">
+                    <a href="./dashboard.html" class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/Stackgray.svg" alt="Stack">
+                        <p class="text-[#5F6C72] text-sm font-normal">Dashboard</p>
+                    </a href="./dashboard.html">
+                    <a href="./orderHistory.html" class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/Storefront@2x.svg" alt="Storefront">
+                        <p class="text-[#5F6C72] text-sm font-normal">Order History</p>
+                    </a>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/MapPinLine.svg" alt="MapPinLine">
+                        <p class="text-[#5F6C72] text-sm font-normal">Track Order</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/ShoppingCartSimple.svg" alt="Shopping Cart">
+                        <p class="text-[#5F6C72] text-sm font-normal">Shopping Cart</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/Heart.svg" alt="Heart">
+                        <p class="text-[#5F6C72] text-sm font-normal">Wishlist</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/ArrowsCounterClockwise.svg" alt="Clockwise">
+                        <p class="text-[#5F6C72] text-sm font-normal">Compare</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/NotebookGray.svg" alt="Notebook">
+                        <p class="text-[#5F6C72] text-sm font-normal">Cards & Address</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/ClockClockwise.svg" alt="Clock">
+                        <p class="text-[#5F6C72] text-sm font-normal">Browsing History</p>
+                    </li>
+                    <li class="flex items-center gap-3 bg-[#FA8232] w-[262px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/whiteGear.svg" alt="Gear">
+                        <p class="text-white text-sm font-semibold">Setting</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/SignOut.svg" alt="Sign Out">
+                        <p class="text-[#5F6C72] text-sm font-normal">Log-out</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="md:px-0 px-2">
                 <!-- Account Info -->
-                    <div class="w-[984px] h-[508px] border border-[#E4E7E9]">
+                <button id="toggleButton" class="md:hidden flex items-center gap-2 mb-4 text-white rounded">
+                    <img src="../assets/images/burger-menu.svg" class="w-6 h-6" alt="Toggle Sidebar">
+                    <p class="text-black">Dashboard</p>
+                </button>
+                    <div class="md:w-[984px] md:h-[508px] border border-[#E4E7E9]">
                         <h1 class="text-[#191C1F] text-sm font-semibold uppercase ltr:pl-6 rtl:pr-6 py-4">Account Setting</h1>
                         <hr>
-                        <div class="flex gap-4 ltr:ml-6 rtl:mr-6 mt-[22px]">
-                            <img src="../assets/images/Avatar.webp" class="w-[176px] h-[176px] rounded-full" alt="Image">
+                        <div class="flex md:flex-row flex-col gap-4 ltr:ml-6 rtl:mr-6 mt-[22px]">
+                            <img src="../assets/images/Avatar.webp" class="w-[176px] h-[176px] rounded-full mx-auto" alt="Image">
                             <form class="flex flex-wrap gap-4">
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="display-name">Display name</label>
-                                    <input type="text" id="display-name" placeholder="Kevin" class="w-[360px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <input type="text" id="display-name" placeholder="Kevin" class="md:w-[360px] w-[300px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                 </div>
                         
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="username">Username</label>
-                                    <input type="text" id="username" placeholder="Display name" class="w-[360px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <input type="text" id="username" placeholder="Display name" class="md:w-[360px] w-[300px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                 </div>
                         
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="full-name">Full Name</label>
-                                    <input type="text" id="full-name" placeholder="Kevin Gilbert" class="w-[360px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <input type="text" id="full-name" placeholder="Kevin Gilbert" class="md:w-[360px] w-[300px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                 </div>
                         
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="email">Email</label>
-                                    <input type="email" id="email" placeholder="Kevin.gilbert@gmail.com" class="w-[360px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <input type="email" id="email" placeholder="Kevin.gilbert@gmail.com" class="md:w-[360px] w-[300px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                 </div>
                         
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="secondary-email">Secondary Email</label>
-                                    <input type="email" id="secondary-email" placeholder="kevin12345@gmail.com" class="w-[360px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <input type="email" id="secondary-email" placeholder="kevin12345@gmail.com" class="md:w-[360px] w-[300px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                 </div>
                         
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="phone-number">Phone Number</label>
-                                    <input type="tel" id="phone-number" placeholder="+1-202-555-0118" class="w-[360px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <input type="tel" id="phone-number" placeholder="+1-202-555-0118" class="md:w-[360px] w-[300px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                 </div>
                         
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="country">Country/Region</label>
-                                    <select id="country" class="w-[360px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <select id="country" class="md:w-[360px] w-[300px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                         <option>Bangladesh</option>
                                     </select>
                                 </div>
                         
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="state">States</label>
-                                    <select id="state" class="w-[172px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <select id="state" class="md:w-[172px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                         <option>Dhaka</option>
                                     </select>
                                 </div>
                         
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="zip-code">Zip Code</label>
-                                    <input type="text" id="zip-code" placeholder="1207" class="w-[172px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <input type="text" id="zip-code" placeholder="1207" class="md:w-[172px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                 </div>
                             </form>
                         </div>
-                        <div class="flex items-center">
-                            <a href="#" class="text-white bg-[#FA8232] uppercase w-[162px] h-[48px] flex items-center justify-center rounded-[2px] ltr:ml-[215px] rtl:mr-[215px] mt-6">Save Changes</a>
+                        <div class="flex items-center justify-center md:justify-start pb-3 md:pb-0">
+                            <a href="#" class="text-white bg-[#FA8232] uppercase w-[162px] h-[48px] flex items-center justify-center rounded-[2px] md:ltr:ml-[215px] md:rtl:mr-[215px] mt-6">Save Changes</a>
                         </div>
                     </div>
 
                 <!-- Shipping Address -->
-                    <div class="w-[480px] h-[860px] border border-[#E4E7E9] mt-6">
+                    <div class="md:w-[480px] md:h-[860px] border border-[#E4E7E9] mt-6">
                         <h1 class="text-[#191C1F] text-sm font-semibold uppercase ltr:pl-6 rtl:pr-6 py-4">Shipping Address</h1>
                         <hr>
                         <div class="flex gap-4 ltr:ml-6 rtl:mr-6 mt-[22px]">
                             <form class="flex flex-wrap gap-3">
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="display-name">First Name</label>
-                                    <input type="text" id="display-name" placeholder="Kevin" class="w-[208px] h-10 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <input type="text" id="display-name" placeholder="Kevin" class="md:w-[208px] w-[300px] h-10 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                 </div>
                         
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="username">Last Name</label>
-                                    <input type="text" id="username" placeholder="Gilbert" class="w-[208px] h-10 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <input type="text" id="username" placeholder="Gilbert" class="md:w-[208px] w-[300px] h-10 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                 </div>
                         
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="full-name">Company Name (Optional)</label>
-                                    <input type="text" id="company-name" placeholder="" class="w-[432px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <input type="text" id="company-name" placeholder="" class="md:w-[432px] w-[300px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                 </div>
                         
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="email">Address</label>
-                                    <input type="email" id="text" placeholder="Road No. 13/x, House no. 1320/C, Flat No. 5D" class="w-[432px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <input type="email" id="text" placeholder="Road No. 13/x, House no. 1320/C, Flat No. 5D" class="md:w-[432px] w-[300px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                 </div>
                         
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="country">Country</label>
-                                    <select id="country" class="w-[432px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <select id="country" class="md:w-[432px] w-[145px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                         <option>Bangladesh</option>
                                     </select>
                                 </div>
 
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="country">Region/State</label>
-                                    <select id="Region" class="w-[432px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <select id="Region" class="md:w-[432px] w-[145px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                         <option>Bangladesh</option>
                                     </select>
                                 </div>
 
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="state">States</label>
-                                    <select id="state" class="w-[208px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <select id="state" class="md:w-[208px] w-[145px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                         <option>Dhaka</option>
                                     </select>
                                 </div>
                         
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="zip-code">Zip Code</label>
-                                    <input type="text" id="zip-code" placeholder="1207" class="w-[208px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <input type="text" id="zip-code" placeholder="1207" class="md:w-[208px] w-[145px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                 </div>
                                 
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="Sec_email">Email</label>
-                                    <input type="email" id="Sec_email" placeholder="kevin12345@gmail.com" class="w-[432px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <input type="email" id="Sec_email" placeholder="kevin12345@gmail.com" class="md:w-[432px] w-[300px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                 </div>
 
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="phone-number">Phone Number</label>
-                                    <input type="tel" id="phone-number" placeholder="+1-202-555-0118" class="w-[432px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <input type="tel" id="phone-number" placeholder="+1-202-555-0118" class="md:w-[432px] w-[300px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                 </div>
                             </form>
                         </div>
-                        <div class="flex items-center">
+                        <div class="flex items-center justify-center md:justify-start pb-3 md:pb-0">
                             <a href="#" class="text-white bg-[#FA8232] uppercase w-[162px] h-[48px] flex items-center justify-center rounded-[2px] ltr:ml-6 rtl:mr-6 mt-6">Save Changes</a>
                         </div>
                     </div>
 
                 <!-- Password -->
-                    <div class="w-[984px] h-[420px] border border-[#E4E7E9] mt-6">
+                    <div class="md:w-[984px] h-[420px] border border-[#E4E7E9] mt-6">
                         <h1 class="text-[#191C1F] text-sm font-semibold uppercase ltr:pl-6 rtl:pr-6 py-4">Change Password</h1>
                         <hr>
                         <div class="flex gap-4 ltr:ml-6 rtl:mr-6 mt-[22px]">
                             <form class="flex flex-wrap gap-4">
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="display-name">Current Password</label>
-                                    <input type="password" id="current_password" class="w-[936px] h-10 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <input type="password" id="current_password" class="md:w-[936px] w-[300px] h-10 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                 </div>
                         
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="username">New Password</label>
-                                    <input type="password" placeholder="8+ characters" id="new_password" class="w-[936px] h-10 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#77878F]">
+                                    <input type="password" placeholder="8+ characters" id="new_password" class="md:w-[936px] w-[300px] h-10 border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#77878F]">
                                 </div>
                         
                                 <div>
                                     <label class="block text-[#191C1F] font-normal mb-2" for="full-name">Confirm Password</label>
-                                    <input type="password" id="confirm_password" class="w-[936px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
+                                    <input type="password" id="confirm_password" class="md:w-[936px] w-[300px] border border-gray-300 p-2 rounded focus:outline-none focus:ring-0 focus:border-[#FA8232] placeholder:text-[#475156]">
                                 </div>
                         
                         </form>
                         </div>
-                        <div class="flex items-center">
+                        <div class="flex items-center justify-center md:justify-start pb-3 md:pb-0">
                             <a href="#" class="text-white bg-[#FA8232] uppercase w-[162px] h-[48px] flex items-center justify-center rounded-[2px] ltr:ml-6 rtl:mr-6 mt-6">Change Passowrd</a>
                         </div>
                     </div>
@@ -243,5 +294,19 @@
     <!-- Start Footer -->
         <div id="footer"></div>
     <!-- End Footer --> 
+
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const sidebar = document.getElementById('sidebar');
+        const closeSidebarButton = document.getElementById('closeSidebar');
+    
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+    
+        closeSidebarButton.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+        });
+    </script>
 </body>
 </html>
