@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => response.text())
         .then(data => {
             document.getElementById('navbar').innerHTML = data;
-            initializeSidebar();
             const loginButton = document.getElementById('login-button');
             const dropdownLogin = document.getElementById('dropdown-login');
             const cartButton = document.getElementById('cart-button');
@@ -54,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 mobileMenu.classList.toggle('hidden');
             });
             
+            initializeSidebar();
         })
         .catch(error => console.log('Error loading the navbar:', error));
 });
