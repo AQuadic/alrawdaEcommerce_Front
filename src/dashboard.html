@@ -11,17 +11,22 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./js/script.js"></script>
+    <style>
+        #sidebar {
+        transition: transform 0.3s ease;
+}
+    </style>
 </head>
 
 <body>
     <!-- Start Navbar -->
         <div id="navbar"></div>
     <!-- End Navbar -->
-    <hr>
+    <hr class="mt-2 sm:block hidden">
 
     <!-- Start Location -->
-        <section class="w-full h-[72px] bg-[#F2F4F5] mt-[13px]">
-            <div class="flex items-center gap-2 ltr:md:ml-[300px] rtl:md:mr-[300px] ltr:ml-10 rtl:mr-10 pt-[26px]">
+        <section class="w-full h-[72px] bg-[#F2F4F5] mt-[13px] md:px-0 px-2">
+            <div class="flex items-center container mx-auto gap-2 pt-[26px]">
                 <img src="../assets/images/House.svg" alt="Home Icon">
                 <p class="text-[#5F6C72] font-normal text-sm">Home</p>
                 <img src="../assets/images/arrow.svg" alt="Arrow Icon">
@@ -33,56 +38,109 @@
     <!-- End Location -->
 
     <!-- Start Content -->
-        <section class="container mx-auto flex  gap-16 mt-[40px] mb-[72px]">
-                <div class="w-[264px] h-[432px] border border-[#E4E7E9]" style="box-shadow: 0px 8px 40px 0px #00000014;">
-                    <ul class="mt-4">
-                        <a href="./dashboard.html" class="flex items-center gap-3 bg-[#FA8232] w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
-                            <img src="../assets/images/Stackwhite.svg" alt="Stack">
-                            <p class="text-white text-sm font-semibold">Dashboard</p>
-                        </a href="./dashboard.html">
-                        <a href="./orderHistory.html" class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
-                            <img src="../assets/images/Storefront@2x.svg" alt="Storefront">
-                            <p class="text-[#5F6C72] text-sm font-normal">Order History</p>
-                        </a>
-                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
-                            <img src="../assets/images/MapPinLine.svg" alt="MapPinLine">
-                            <p class="text-[#5F6C72] text-sm font-normal">Track Order</p>
-                        </li>
-                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
-                            <img src="../assets/images/ShoppingCartSimple.svg" alt="Shopping Cart">
-                            <p class="text-[#5F6C72] text-sm font-normal">Shopping Cart</p>
-                        </li>
-                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
-                            <img src="../assets/images/Heart.svg" alt="Heart">
-                            <p class="text-[#5F6C72] text-sm font-normal">Wishlist</p>
-                        </li>
-                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
-                            <img src="../assets/images/ArrowsCounterClockwise.svg" alt="Clockwise">
-                            <p class="text-[#5F6C72] text-sm font-normal">Compare</p>
-                        </li>
-                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
-                            <img src="../assets/images/NotebookGray.svg" alt="Notebook">
-                            <p class="text-[#5F6C72] text-sm font-normal">Cards & Address</p>
-                        </li>
-                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
-                            <img src="../assets/images/ClockClockwise.svg" alt="Clock">
-                            <p class="text-[#5F6C72] text-sm font-normal">Browsing History</p>
-                        </li>
-                        <a href="./dashboardSetting.html" class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
-                            <img src="../assets/images/Gear.svg" alt="Gear">
-                            <p class="text-[#5F6C72] text-sm font-normal">Setting</p>
-                        </a>
-                        <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
-                            <img src="../assets/images/SignOut.svg" alt="Sign Out">
-                            <p class="text-[#5F6C72] text-sm font-normal">Log-out</p>
-                        </li>
-                    </ul>
-                </div>
+        <section class="container mx-auto flex  gap-16 mt-[40px] mb-[72px]">     
+            <!-- Sidebar -->
+            <div id="sidebar" class="md:hidden block sidebar fixed left-0 top-0 w-[264px] h-full border border-[#E4E7E9] shadow-md transform -translate-x-full bg-white z-50">
+                <button id="closeSidebar" class="flex items-center justify-end w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer text-[#5F6C72]">
+                    <img src="../assets/images/closeIcon.svg" alt="Close" class="w-6 h-6">
+                </button>
+                <ul class="mt-4">
+                    <a href="./dashboard.html" class="flex items-center gap-3 bg-[#FA8232] w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/Stackwhite.svg" alt="Stack">
+                        <p class="text-white text-sm font-semibold">Dashboard</p>
+                    </a>
+                    <a href="./orderHistory.html" class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/Storefront@2x.svg" alt="Storefront">
+                        <p class="text-[#5F6C72] text-sm font-normal">Order History</p>
+                    </a>
+                    <li class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/MapPinLine.svg" alt="MapPinLine">
+                        <p class="text-[#5F6C72] text-sm font-normal">Track Order</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/ShoppingCartSimple.svg" alt="Shopping Cart">
+                        <p class="text-[#5F6C72] text-sm font-normal">Shopping Cart</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/Heart.svg" alt="Heart">
+                        <p class="text-[#5F6C72] text-sm font-normal">Wishlist</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/ArrowsCounterClockwise.svg" alt="Clockwise">
+                        <p class="text-[#5F6C72] text-sm font-normal">Compare</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/NotebookGray.svg" alt="Notebook">
+                        <p class="text-[#5F6C72] text-sm font-normal">Cards & Address</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/ClockClockwise.svg" alt="Clock">
+                        <p class="text-[#5F6C72] text-sm font-normal">Browsing History</p>
+                    </li>
+                    <a href="./dashboardSetting.html" class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/Gear.svg" alt="Gear">
+                        <p class="text-[#5F6C72] text-sm font-normal">Setting</p>
+                    </a>
+                    <li class="flex items-center gap-3 w-full h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/SignOut.svg" alt="Sign Out">
+                        <p class="text-[#5F6C72] text-sm font-normal">Log-out</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="md:block hidden w-[264px] h-[432px] border border-[#E4E7E9]" style="box-shadow: 0px 8px 40px 0px #00000014;">
+                <ul class="mt-4">
+                    <a href="./dashboard.html" class="flex items-center gap-3 bg-[#FA8232] w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/Stackwhite.svg" alt="Stack">
+                        <p class="text-white text-sm font-semibold">Dashboard</p>
+                    </a href="./dashboard.html">
+                    <a href="./orderHistory.html" class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/Storefront@2x.svg" alt="Storefront">
+                        <p class="text-[#5F6C72] text-sm font-normal">Order History</p>
+                    </a>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/MapPinLine.svg" alt="MapPinLine">
+                        <p class="text-[#5F6C72] text-sm font-normal">Track Order</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/ShoppingCartSimple.svg" alt="Shopping Cart">
+                        <p class="text-[#5F6C72] text-sm font-normal">Shopping Cart</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/Heart.svg" alt="Heart">
+                        <p class="text-[#5F6C72] text-sm font-normal">Wishlist</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/ArrowsCounterClockwise.svg" alt="Clockwise">
+                        <p class="text-[#5F6C72] text-sm font-normal">Compare</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/NotebookGray.svg" alt="Notebook">
+                        <p class="text-[#5F6C72] text-sm font-normal">Cards & Address</p>
+                    </li>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/ClockClockwise.svg" alt="Clock">
+                        <p class="text-[#5F6C72] text-sm font-normal">Browsing History</p>
+                    </li>
+                    <a href="./dashboardSetting.html" class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/Gear.svg" alt="Gear">
+                        <p class="text-[#5F6C72] text-sm font-normal">Setting</p>
+                    </a>
+                    <li class="flex items-center gap-3 w-[264px] h-[40px] ltr:pl-6 rtl:pr-6 cursor-pointer">
+                        <img src="../assets/images/SignOut.svg" alt="Sign Out">
+                        <p class="text-[#5F6C72] text-sm font-normal">Log-out</p>
+                    </li>
+                </ul>
+            </div>
 
-                <div>
+                <div class="md:px-0 px-2">
+                    <button id="toggleButton" class="md:hidden flex items-center gap-2 mb-4 text-white rounded">
+                        <img src="../assets/images/burger-menu.svg" class="w-6 h-6" alt="Toggle Sidebar">
+                        <p class="text-black">Dashboard</p>
+                    </button>
                     <h1 class="text-[#191C1F] font-semibold text-[20px]">Hello, Kevin</h1>
-                    <p class="text-[#475156] w-[432px] font-medium text-sm mt-3">From your account dashboard. you can easily check & view your <a href="#" class="text-[#2DA5F3]">Recent Orders</a>, manage your <a href="#" class="text-[#2DA5F3]">Shipping and Billing Addresses</a> and edit your <a href="#" class="text-[#2DA5F3]">Password</a> and <a href="#" class="text-[#2DA5F3]">Account Details.</a></p>
-                    <div class="flex gap-6">
+                    <p class="text-[#475156] md:w-[432px] font-medium text-sm mt-3">From your account dashboard. you can easily check & view your <a href="#" class="text-[#2DA5F3]">Recent Orders</a>, manage your <a href="#" class="text-[#2DA5F3]">Shipping and Billing Addresses</a> and edit your <a href="#" class="text-[#2DA5F3]">Password</a> and <a href="#" class="text-[#2DA5F3]">Account Details.</a></p>
+                    <div class="flex md:flex-row flex-col items-center md:items-start gap-6">
                         <!-- Account Info -->
                             <div class="w-[312px] h-[312px] border border-[#E4E7E9] mt-6">
                                 <h1 class="text-[#191C1F] text-sm font-semibold uppercase ltr:pl-6 rtl:pr-6 py-4">Account Info</h1>
@@ -244,5 +302,19 @@
     <!-- Start Footer -->
         <div id="footer"></div>
     <!-- End Footer --> 
+    
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const sidebar = document.getElementById('sidebar');
+        const closeSidebarButton = document.getElementById('closeSidebar');
+    
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+    
+        closeSidebarButton.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+        });
+    </script>
 </body>
 </html>

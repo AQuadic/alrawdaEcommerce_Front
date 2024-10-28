@@ -17,11 +17,11 @@
     <!-- Start Navbar -->
         <div id="navbar"></div>
     <!-- End Navbar -->
-    <hr>
+    <hr class="mt-2 sm:block hidden">
 
     <!-- Start Location -->
         <div class="w-full h-[72px] bg-[#F2F4F5] mt-[13px]">
-            <div class="flex items-center gap-2 ltr:md:ml-[300px] rtl:md:mr-[300px] ltr:ml-10 rtl:mr-10 pt-[26px]">
+            <div class="flex items-center container mx-auto gap-2 pt-[26px]">
                 <img src="../assets/images/House.svg" alt="Home Icon">
                 <p class="text-[#5F6C72] font-normal text-sm">Home</p>
                 <img src="../assets/images/arrow.svg" alt="Arrow Icon">
@@ -40,12 +40,12 @@
                         <div class="absolute inset-y-0 end-5 flex items-center ps-3">
                             <img src="../assets/images/searchIcon.svg" alt="Search Icon">
                         </div>
-                        <input type="search" id="default-search" class="block md:w-[424px] w-full py-4 text-sm text-gray-900 border border-[#E4E7E9] rounded-[2px] focus:outline-none focus:ring-0" placeholder="Search" required />
+                        <input type="search" id="default-search" class="block md:w-[424px] w-full py-4 text-sm text-gray-900 border border-[#E4E7E9] rounded-[2px] focus:outline-none focus:ring-0 focus:border-[#FA8232]" placeholder="Search" required />
                     </div>
                 </form>
                 <div class="flex items-center gap-4">
                     <p class="text-[#191C1F] text-sm font-normal">Sort by:</p>
-                    <select name="select" id="select" class="w-[180px] h-[44px] border-[#E4E7E9] text-[#475156] rounded-[2px] focus:outline-none focus:ring-0 p-2">
+                    <select name="select" id="select" class="w-[180px] h-[44px] border-[#E4E7E9] text-[#475156] rounded-[2px] focus:outline-none focus:ring-0 focus:border-[#FA8232] p-2">
                         <option value="1">Most Popular</option>
                         <option value="2">2</option>
                         <option value="3">3</option>

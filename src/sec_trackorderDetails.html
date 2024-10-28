@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alrawda">
+    <title>Order Details</title>
+    <link href="./../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./../dist/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <!-- Start Navbar -->
+        <div class="w-full">
+            <div class="w-full bg-[#1B6392] text-white px-4 py-1 border-b border-gray-400">
+                <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm py-2">
+                    <span>Welcome to Clicon online eCommerce store.</span>
+                    <div class="flex items-center gap-2 mt-2 sm:mt-0">
+                        <span>Follow us:</span>
+                        <div class="flex gap-3">
+                            <a href="#"><img src="../assets/images/navTwitter.svg" alt="Twitter"></a>
+                            <a href="#"><img src="../assets/images/navFacebook.svg" alt="Facebook"></a>
+                            <a href="#"><img src="../assets/images/navPinterest.svg" alt="Pinterest"></a>
+                            <a href="#"><img src="../assets/images/navReddit.svg" alt="Reddit"></a>
+                            <a href="#"><img src="../assets/images/navYoutube.svg" alt="Youtube"></a>
+                            <a href="#"><img src="../assets/images/navInstagram.svg" alt="Instagram"></a>
+                        </div>
+                        <div class="flex items-center gap-5">
+                            <div class="relative">
+                                <div class="ltr:border-l flex items-center gap-2 ltr:pl-5 cursor-pointer" onclick="toggleLanguageMenu(event)">
+                                    <span>Eng</span>
+                                    <img src="../assets/images/CaretDown.svg" alt="Arrow">
+                                </div>
+
+                                <div id="languageDropdownMenu" class="absolute hidden bg-white border rounded-md shadow-lg mt-2 left-0 z-10">
+                                    <ul class="py-2">
+                                        <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">English</li>
+                                        <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">Arabic</li>
+                                        <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">French</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="relative">
+                                <div class="flex items-center gap-2 cursor-pointer" onclick="toggleCurrencyMenu(event)">
+                                    <span>USD</span>
+                                    <img src="../assets/images/CaretDown.svg" alt="Arrow">
+                                </div>
+
+                                <div id="currencyDropdownMenu" class="absolute hidden bg-white border rounded-md shadow-lg mt-2 left-0 z-10">
+                                    <ul class="py-2">
+                                        <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">USD</li>
+                                        <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">EUR</li>
+                                        <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">GBP</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-[#1B6392] py-4 px-4 border-b">
+                <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+                    <!-- Logo -->
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <img src="../assets/images/navLogo.svg" alt="">
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="flex-1 w-full md:max-w-2xl md:mx-8 mb-4 md:mb-0">
+                        <div class="relative">
+                            <input type="text" placeholder="Search for anything..." class="w-full md:w-[646px] h-[48px] rounded-2 focus:outline-none focus:ring-0"/>
+                            <button class="absolute ltr:right-10 rtl:left-10 top-3">
+                                <img src="../assets/images/searchIcon.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Section -->
+                    <div class="flex items-center gap-4">
+                        <button class="relative hover:text-blue-600">
+                            <img src="../assets/images/whiteCart.svg" alt="Cart">
+                            <span class="absolute -top-2 -right-2 bg-white text-[#1B6392] text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                        </button>
+                        <button class="relative hover:text-blue-600">
+                            <img src="../assets/images/whiteHeart.svg" alt="Heart">
+                        </button>
+                        <button class="hover:text-blue-600">
+                            <img src="../assets/images/whiteUser.svg" alt="User">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="container mx-auto h-auto flex flex-row flex-wrap md:items-center justify-between py-4">
+                <div class="flex flex-row flex-wrap items-center gap-4 mb-4 md:mb-0">
+                    <div class="relative">
+                        <div class="w-[155px] h-[48px] flex items-center justify-center cursor-pointer gap-2 bg-[#F2F4F5] md:mx-0 mx-2" onclick="toggleCategoryMenu(event)">
+                            <span class="font-medium">All Category</span>
+                            <img src="../assets/images/bCaretDown.svg" alt="Arrow">
+                        </div>
+                        <div id="categoryDropdownMenu" class="w-[155px] absolute hidden bg-white border rounded-md shadow-lg mt-2 left-0 z-10">
+                            <ul class="py-2">
+                                <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">Category 1</li>
+                                <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">Category 2</li>
+                                <li class="px-4 py-2 hover:bg-gray-100 text-black cursor-pointer">Category 3</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-4 text-gray-600 md:px-0 px-2">
+                        <a href="#" class="flex items-center gap-1 font-semibold text-[#FA8232]">
+                            <img src="../assets/images/oMapPinLine.svg" alt="MapPinLine">
+                            <span>Track Order</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-1 font-normal text-[#5F6C72]">
+                            <img src="../assets/images/ArrowsCounterClockwise.svg" alt="ClockClockwise">
+                            <span>Compare</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-1 font-normal text-[#5F6C72]">
+                            <img src="../assets/images/gHeadphones.svg" alt="Headphones">
+                            <span>Customer Support</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-1 font-normal text-[#5F6C72]">
+                            <img src="../assets/images/Info.svg" alt="Info">
+                            <span>Need Help</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-1 text-center md:px-0 px-2">
+                    <img src="../assets/images/PhoneCall.svg" alt="Phone Call">
+                    <span>+1-202-555-0104</span>
+                </div>
+            </div>
+        </div>
+    <!-- End Navbar -->
+    <hr class="mt-2 sm:block hidden">
+
+    <!-- Start Location -->
+        <div class="w-full h-[72px] bg-[#F2F4F5] md:px-0 px-2">
+            <div class="flex items-center container mx-auto gap-2  pt-[26px]">
+                <img src="../assets/images/House.svg" alt="Home Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Home</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#5F6C72] font-normal text-sm">Pages</p>
+                <img src="../assets/images/arrow.svg" alt="Arrow Icon">
+                <p class="text-[#2DA5F3] text-sm font-medium">Track Order Details</p>
+            </div>
+        </div>
+    <!-- End Location -->
+
+    <!-- Start Content -->
+        <section class="container mx-auto flex items-center justify-center gap-16 mt-[40px] mb-[72px]">
+                <div class="w-[984px]">
+                    <div class="bg-white border border-[#E4E7E9] rounded-[4px] overflow-hidden p-2">
+                        <div class="md:w-[936px] w-full h-[104px] bg-[#FDFAE7] border border-[#F7E99E]">
+                            <div class="px-6 py-6 flex items-center justify-between">
+                                <span>
+                                    <p class="text-[#191C1F] font-normal text-[20px]">#96459761</p>
+                                    <p class="text-[#475156] font-normal text-sm">4 Products . Order Placed in 17 Jan, 2021 at 7:32 PM</p>    
+                                </span>
+                                <p class="text-[#2DA5F3] text-[28px] font-semibold md:ltr:pr-6 md:rtl:pl-6">$1199.00</p>
+                            </div>
+                        </div>
+                        <p class="m-6 text-[#475156] ">Order expected arrival <span class="text-[#191C1F]">23 Jan, 2021</span></p>
+                        
+                            <ul class="mx-auto mt-12  grid max-w-md grid-cols-1 gap-10 sm:mt-16 lg:mt-6 lg:max-w-5xl lg:grid-cols-4 md:px-0 px-2 md:ltr:pl-32 md:rtl:pr-32 pb-6">
+                                <li class="flex-start group relative flex lg:flex-col">
+                                    <span
+                                        class="absolute  top-14 h-[calc(100%_-_32px)] w-px bg-[#FA8232] lg:right-0 lg:left-6 ltr:left-3 rtl:right-3 lg:top-[8px] lg:h-2 lg:w-[110%]"
+                                        aria-hidden="true"></span>
+                                        <div class="relative w-6 h-6 flex items-center justify-center z-10">
+                                            <img src="../assets/images/Dot.svg" alt="Dot" class="w-full h-full">
+                                            <img src="../assets/images/Check.svg" alt="check" class="absolute w-4 h-4 text-green-500">
+                                        </div>
+                                        <div class="ltr:ml-6 rtl:mr-6 lg:ml-0 lg:mt-4">
+                                                <img src="../assets/images/placedOrder.svg" alt="Placed Order">
+                                                <p class="text-[#191C1F] font-medium text-sm">Order Placed</p>
+                                        </div>
+                                </li>
+                                <li class="flex-start group relative flex lg:flex-col">
+                                    <span
+                                    class="absolute  top-14 h-[calc(100%_-_32px)] w-px bg-[#FFE7D6] lg:right-0 lg:left-6 ltr:left-3 rtl:right-3 lg:top-[8px] lg:h-2 lg:w-[110%]"
+                                    aria-hidden="true"></span>
+                                        <div class="relative w-6 h-6 flex items-center justify-center z-10">
+                                            <img src="../assets/images/Dot.svg" alt="Dot" class="w-full h-full">
+                                            <img src="../assets/images/Check.svg" alt="check" class="absolute w-4 h-4 text-green-500">
+                                        </div>
+                                        <div class="ltr:ml-6 rtl:mr-6 lg:ml-0 lg:mt-4">
+                                        <img src="../assets/images/orderPackage.svg" alt="Packaging">
+                                        <p class="text-[#191C1F] font-medium text-sm">Packaging</p>
+                                    </div>
+                                </li>
+                                <li class="flex-start group relative flex lg:flex-col">
+                                    <span
+                                    class="absolute  top-14 h-[calc(100%_-_32px)] w-px bg-[#FFE7D6] lg:right-0 lg:left-6 ltr:left-3 rtl:right-3 lg:top-[8px] lg:h-2 lg:w-[110%]"
+                                    aria-hidden="true"></span>
+                                        <div class="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+                                            <img src="../assets/images/DotW.svg" alt="Dot">
+                                        </div>
+                                    <div class="ltr:ml-6 rtl:mr-6 lg:ml-0 lg:mt-4 opacity-50">
+                                        <img src="../assets/images/onRoad.svg" alt="On Road">
+                                        <p class="text-[#191C1F] font-medium text-sm">On The Road</p>
+                                    </div>
+                                </li>
+                                <li class="flex-start group relative flex lg:flex-col">
+                                    <div class="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+                                        <img src="../assets/images/wDot.svg" alt="Dot">
+                                    </div>
+                                    <div class="ltr:ml-6 rtl:mr-6 lg:ml-0 lg:mt-4 opacity-50">
+                                        <img src="../assets/images/Handshake.svg" alt="Delivered">
+                                        <p class="text-[#191C1F] font-medium text-sm">Delivered</p>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        <hr>
+                        <!-- Order Activity -->
+                        <div class="pb-6">
+                            <h1 class="pt-6 md:ltr:pl-[32px] md:rtl:pr-[32px] px-2 text-[#191C1F] font-medium text-lg">Order Activity</h1>
+                            <ul>
+                                <li class="flex items-center gap-2 md:ltr:ml-6 md:rtl:mr-6 mx-2 mt-6">
+                                    <img src="../assets/images/Icondetail.svg" alt="Icondetail">
+                                    <div>
+                                        <p class="text-[#191C1F]">Your order has been delivered. Thank you for shopping at Clicon!</p>
+                                        <span class="text-[#77878F] mt-2">23 Jan, 2021 at 7:32 PM</span>
+                                    </div>
+                                </li>
+                                    <li class="flex items-center gap-2 md:ltr:ml-6 md:rtl:mr-6 mx-2 mt-6">
+                                    <img src="../assets/images/Icondetail1.svg" alt="Icondetail">
+                                    <div>
+                                        <p class="text-[#191C1F]">Your order has been delivered. Thank you for shopping at Clicon!</p>
+                                        <span class="text-[#77878F] mt-2">23 Jan, 2021 at 7:32 PM</span>
+                                    </div>
+                                </li>
+                                    <li class="flex items-center gap-2 md:ltr:ml-6 md:rtl:mr-6 mx-2 mt-6">
+                                    <img src="../assets/images/Icondetail2.svg" alt="Icondetail">
+                                    <div>
+                                        <p class="text-[#191C1F]">Your order has been delivered. Thank you for shopping at Clicon!</p>
+                                        <span class="text-[#77878F] mt-2">23 Jan, 2021 at 7:32 PM</span>
+                                    </div>
+                                </li>
+                                    <li class="flex items-center gap-2 md:ltr:ml-6 md:rtl:mr-6 mx-2 mt-6">
+                                    <img src="../assets/images/Icondetail3.svg" alt="Icondetail">
+                                    <div>
+                                        <p class="text-[#191C1F]">Your order has been delivered. Thank you for shopping at Clicon!</p>
+                                        <span class="text-[#77878F] mt-2">23 Jan, 2021 at 7:32 PM</span>
+                                    </div>
+                                </li>
+                                    <li class="flex items-center gap-2 md:ltr:ml-6 md:rtl:mr-6 mx-2 mt-6">
+                                    <img src="../assets/images/Icondetail4.svg" alt="Icondetail">
+                                    <div>
+                                        <p class="text-[#191C1F]">Your order has been delivered. Thank you for shopping at Clicon!</p>
+                                        <span class="text-[#77878F] mt-2">23 Jan, 2021 at 7:32 PM</span>
+                                    </div>
+                                </li>
+                                    <li class="flex items-center gap-2 md:ltr:ml-6 md:rtl:mr-6 mx-2 mt-6">
+                                    <img src="../assets/images/Icondetail5.svg" alt="Icondetail">
+                                    <div>
+                                        <p class="text-[#191C1F]">Your order has been delivered. Thank you for shopping at Clicon!</p>
+                                        <span class="text-[#77878F] mt-2">23 Jan, 2021 at 7:32 PM</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    <!-- End Content -->
+
+    <!-- Start Footer -->
+        <footer class="bg-[#191C1F] pt-12 pb-6">
+            <div class="container mx-auto grid grid-cols-1 md:grid-cols-5  px-6">
+                <div>
+                    <img src="../assets/images/footerLogo.svg" alt="Footer Logo">
+                    <div class="mt-6 mb-3">
+                        <p class="text-[#77878F] mb-1">Customer Supports:</p>
+                        <p class="text-[#FFFFFF] text-lg font-medium mb-1">(629) 555-0129</p>
+                    </div>
+                    <p class="text-[#ADB7BC] text-base my-3">4517 Washington Ave. Manchester, Kentucky 39495</p>
+                    <p class="text-[#FFFFFF] text-base">info@kinbo.com</p>
+                </div>
+            
+                <div>
+                    <h2 class="text-base font-medium text-white mb-3 uppercase">Top Category</h2>
+                    <ul>
+                    <li class="mb-2"><a href="#" class="text-[#929FA5] hover:text-[#EBC80C] font-medium mb-[6px]">Computers & Laptops</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#929FA5] hover:text-[#EBC80C] font-medium mb-[6px]">Smart Phones</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#929FA5] hover:text-[#EBC80C] font-medium mb-[6px]">Headphones</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#929FA5] hover:text-[#EBC80C] font-medium mb-[6px]">Accessories</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#929FA5] hover:text-[#EBC80C] font-medium mb-[6px]">Camera & Photo</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#929FA5] hover:text-[#EBC80C] font-medium mb-[6px]">TV & Home</a></li>
+                    <li class="mt-4"><a href="#" class="flex items-center text-[#EBC80C] gap-2">Browse All Products 
+                        <img src="../assets/images/yellowArrowRight.svg" class="transform ltr:scale-x-[-1] rtl:scale-x-100" alt="Arrow">
+                    </a>
+                    </li>
+                    </ul>
+                </div>
+            
+                <div>
+                    <h2 class="text-base font-medium text-white mb-4 uppercase">Quick Links</h2>
+                    <ul>
+                    <li class="mb-2"><a href="#" class="text-[#929FA5] hover:text-[#EBC80C] font-medium mb-[6px]">Shop Products</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#929FA5] hover:text-[#EBC80C] font-medium mb-[6px]">Shopping Cart</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#929FA5] hover:text-[#EBC80C] font-medium mb-[6px]">Wishlist</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#929FA5] hover:text-[#EBC80C] font-medium mb-[6px]">Compare</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#929FA5] hover:text-[#EBC80C] font-medium mb-[6px]">Track Order</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#929FA5] hover:text-[#EBC80C] font-medium mb-[6px]">Customer Help</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#929FA5] hover:text-[#EBC80C] font-medium mb-[6px]">About Us</a></li>
+                    </ul>
+                </div>
+            
+                <div>
+                    <h2 class="text-base font-medium text-white mb-4 uppercase">Download App</h2>
+                    <div class="flex flex-col gap-3">
+                    <a href="#"><img src="../assets/images/googlePlay.svg" alt="Google Play"></a>
+                    <a href="#"><img src="../assets/images/appStore.svg" alt="App Store"></a>
+                    </div>
+                </div>
+            
+                <div>
+                    <h2 class="text-base font-medium text-white mb-4 uppercase">Popular Tag</h2>
+                    <div class="flex flex-wrap gap-2">
+                    <span class="border border-[#303639] text-white font-medium px-3 py-1 rounded-[2px] text-sm cursor-pointer">Gaming</span>
+                    <span class="border border-[#303639] text-white font-medium px-3 py-1 rounded-[2px] text-sm cursor-pointer">iPhone</span>
+                    <span class="border border-[#303639] text-white font-medium px-3 py-1 rounded-[2px] text-sm cursor-pointer">TV</span>
+                    <span class="border border-[#303639] text-white font-medium px-3 py-1 rounded-[2px] text-sm cursor-pointer">Asus Laptops</span>
+                    <span class="border border-[#303639] text-white font-medium px-3 py-1 rounded-[2px] text-sm cursor-pointer">Macbook</span>
+                    <span class="border border-[#303639] text-white font-medium px-3 py-1 rounded-[2px] text-sm cursor-pointer">SSD</span>
+                    <span class="border border-[#303639] text-white font-medium px-3 py-1 rounded-[2px] text-sm cursor-pointer">Graphics Card</span>
+                    <span class="border border-[#303639] text-white font-medium px-3 py-1 rounded-[2px] text-sm cursor-pointer">Power Bank</span>
+                    <span class="border border-[#303639] text-white font-medium px-3 py-1 rounded-[2px] text-sm cursor-pointer">Smart TV</span>
+                    <span class="border border-[#303639] text-white font-medium px-3 py-1 rounded-[2px] text-sm cursor-pointer">Speaker</span>
+                    <span class="border border-[#303639] text-white font-medium px-3 py-1 rounded-[2px] text-sm cursor-pointer">Tablet</span>
+                    <span class="border border-[#303639] text-white font-medium px-3 py-1 rounded-[2px] text-sm cursor-pointer">Microwave</span>
+                    <span class="border border-[#303639] text-white font-medium px-3 py-1 rounded-[2px] text-sm cursor-pointer">Samsung</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-[#303639] mt-8 pt-4 text-center text-sm text-[#ADB7BC]">
+            Kriho eCommerce Template © 2021. Design by TemplatesJungle
+            </div>
+        </footer>
+    <!-- End Footer -->
+
+    <script>
+        function closeAllMenus() {
+            const menus = [
+                document.getElementById('languageDropdownMenu'),
+                document.getElementById('currencyDropdownMenu'),
+                document.getElementById('categoryDropdownMenu'),
+            ];
+            
+            menus.forEach(menu => menu.classList.add('hidden'));
+        }
+    
+        function toggleLanguageMenu(event) {
+            event.stopPropagation(); 
+            const menu = document.getElementById('languageDropdownMenu');
+            const isHidden = menu.classList.contains('hidden');
+            closeAllMenus();
+            if (isHidden) {
+                menu.classList.remove('hidden');
+            }
+        }
+    
+        function toggleCurrencyMenu(event) {
+            event.stopPropagation();
+            const menu = document.getElementById('currencyDropdownMenu');
+            const isHidden = menu.classList.contains('hidden');
+            closeAllMenus();
+            if (isHidden) {
+                menu.classList.remove('hidden');
+            }
+        }
+    
+        function toggleCategoryMenu(event) {
+            event.stopPropagation();
+            const menu = document.getElementById('categoryDropdownMenu');
+            const isHidden = menu.classList.contains('hidden');
+            closeAllMenus();
+            if (isHidden) {
+                menu.classList.remove('hidden');
+            }
+        }
+    
+        document.addEventListener('click', function(event) {
+            closeAllMenus();
+        });
+    </script>
+</body>
+</html>
