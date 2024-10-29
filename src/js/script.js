@@ -156,30 +156,7 @@ document.addEventListener("DOMContentLoaded", function() {
                    }
                   });
             
-              ProductDetailsSwiper= new Swiper(".multiple-slide-carousel-ProductDetails", {
-                loop: true,
-                slidesPerView: 2,
-                spaceBetween: 10,
-                navigation: {
-                  nextEl: " .swiper-button-next-ProductDetails",
-                  prevEl: " .swiper-button-prev-ProductDetails",
-                },
-                breakpoints: {
-                 1920: {
-                     slidesPerView: 6,
-                     spaceBetween: 10
-                 },
-                 1028: {
-                     slidesPerView: 6,
-                     spaceBetween: 10
-                 },
-                 550: {
-                     slidesPerView: 3,
-                     spaceBetween: 0
-                 },
-            
-               }
-              })
+
             
             //             
             document.getElementById('countries-button').addEventListener('click', function() {
@@ -207,5 +184,62 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('featursProducts').innerHTML = data;
         })
         .catch(error => console.log('Error loading the featursProducts:', error));
+    
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('PopUpBroductDetails.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('PopUpBroductDetails').innerHTML = data;
+            
+            ProductDetailsSwiper= new Swiper(".multiple-slide-carousel-ProductDetails", {
+                loop: true,
+                slidesPerView: 2,
+                spaceBetween: 10,
+                navigation: {
+                  nextEl: " .swiper-button-next-ProductDetails",
+                  prevEl: " .swiper-button-prev-ProductDetails",
+                },
+                breakpoints: {
+                 1920: {
+                     slidesPerView: 6,
+                     spaceBetween: 10
+                 },
+                 1028: {
+                     slidesPerView: 6,
+                     spaceBetween: 10
+                 },
+                 550: {
+                     slidesPerView: 3,
+                     spaceBetween: 0
+                 },
+            
+               }
+              })
+        })
+        .catch(error => console.log('Error loading the PopUpBroductDetails:', error));
+    
+});
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('blueNavbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('blueNavbar').innerHTML = data;
+            
+
+        })
+        .catch(error => console.log('Error loading the blueNavbar:', error));
+    
+});
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('Breadcrumb.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('Breadcrumb').innerHTML = data;
+            
+
+        })
+        .catch(error => console.log('Error loading the Breadcrumb:', error));
     
 });
