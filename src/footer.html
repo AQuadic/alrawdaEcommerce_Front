@@ -6,22 +6,23 @@
     <title>Footer</title>
 </head>
 <body>
-    <div class=" lg:px-[100px] xl:px-[200px]   p-6 bg-[#191c1e] flex flex-col md:flex-row justify-center items-center gap-3">
-        <div class="flex-col justify-start  w-1/4 items-start gap-6">
+    <footer class="bg-[#191c1e]">
+      <div class=" lg:px-[100px] xl:px-[200px] container mx-auto  p-6  flex flex-col md:flex-row justify-center items-start gap-3">
+        <div class="flex-col justify-start  md:w-1/4 items-start gap-6">
           <div class="flex justify-start items-center gap-2">
             <img class="" src="./../assets/images/Alrawda-logo-Arabic-400-x-120-px 1.svg"  alt="CLICON Logo" />
           </div>
-          <div class="flex-col justify-start items-start gap-3">
+          <div class="flex-col justify-start items-start gap-3 mt-6">
             <div class="flex-col justify-start items-start gap-1">
-              <span class="text-[#76868e] text-sm font-normal font-['Public Sans'] leading-tight">Customer Supports:</span>
-              <span class="text-white text-lg font-medium font-['Public Sans'] leading-normal">(629) 555-0129</span>
+              <p class="text-[#76868e] text-sm font-normal font-['Public Sans'] leading-tight">Customer Supports:</p>
+              <p class="text-white text-lg font-medium font-['Public Sans'] leading-normal">(629) 555-0129</p>
             </div>
-            <address class="text-[#adb7bc] text-base font-normal font-['Public Sans'] leading-normal">4517 Washington Ave. Manchester, Kentucky 39495</address>
+            <address class="text-[#adb7bc] text-base font-normal font-['Public Sans'] leading-normal my-3">4517 Washington Ave. Manchester, Kentucky 39495</address>
             <a href="mailto:info@kinbo.com" class="text-white text-base font-medium font-['Public Sans'] leading-normal">info@kinbo.com</a>
           </div>
         </div>
       
-        <div class="flex-col justify-start  w-1/4 items-start gap-3">
+        <div class="flex-col justify-start  md:w-1/4 items-start gap-3">
           <h2 class=" px-2 text-white text-base font-medium font-['Public Sans'] uppercase leading-normal">Top Category</h2>
           <div class="flex-col justify-start items-start">
             <div class="py-1.5 flex items-center gap-2 group  "> 
@@ -67,12 +68,12 @@
                         </div>
             </div>
             <div class="py-1.5 flex items-center gap-2 bg-[#191c1e]">
-              <a class="text-[#eac70b] text-sm ">Browse All Products  <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              <a class="text-[#eac70b] text-sm ">Browse All Products  <i class="fa fa-arrow-right transform ltr:scale-x-100 rtl:scale-x-[-1]" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
       
-        <div class="flex-col  w-1/4 justify-start items-start gap-3  ">
+        <div class="flex-col  md:w-1/4 justify-start items-start gap-3  ">
           <h2 class="px-2 text-white text-base font-medium font-['Public Sans'] uppercase leading-normal">Quick links</h2>
           <div class="flex-col justify-start items-start">
     
@@ -185,7 +186,8 @@
             </div>
           </div>
         </div> -->
-     
+        
       </div>
+    </footer>
 </body>
 </html>
