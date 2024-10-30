@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./../dist/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/pagedone@1.2.2/src/css/pagedone.css " rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/script.js"></script>
+
+    <style>
+        input[type=range]::-webkit-slider-thumb {
+            pointer-events: all;
+            width: 24px;
+            height: 24px;
+            -webkit-appearance: none;
+            /* @apply w-6 h-6 appearance-none pointer-events-auto; */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar-->
+    <div id="navbar">
+    </div>
+
+
+    <!-- Breadcrumb-->
+    <div id="Breadcrumb ">
+    </div>
+
+    <div class="flex gap-5  px-9lg:px-[100px] py-6  xl:px-[200px]">
+        <!-- filters -->
+        <div class="flex flex-col w-3/12 ">
+            <!-- Cateogy filter-->
+            <div class="">
+                <h3 class=" text-[#191c1e] text-base font-medium font-['Public Sans'] uppercase leading-normal">Category
+                </h3>
+                <!-- Cateogries-->
+                <ul class="flex flex-col gap-1 border border-b-2 border-l-0  border-t-0 border-r-0 py-3">
+                    <li class="flex items-center gap-2">
+                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                        <div>Electronics Devices</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                        <div>Computer & Laptop</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                        <div>SmartPhone</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                        <div>Headphone</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                        <div>Gaming Console</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                        <div>Camera & Photo</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                        <div>TV & Homes Appliances</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                        <div>Watchs & Accessories</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                        <div>GPS & Navigation</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                        <div>Warable Technology</div>
+                    </li>
+                </ul>
+            </div>
+            <!-- price range filter-->
+            <div>
+                <div class=" pt-5 flex justify-center items-center">
+                    <div x-data="range()" x-init="mintrigger(); maxtrigger()" class="relative max-w-xl w-full">
+                        <div>
+                            <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="mintrigger"
+                                x-model="minprice"
+                                class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer">
+
+                            <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="maxtrigger"
+                                x-model="maxprice"
+                                class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer">
+
+                            <div class="relative z-10 h-1">
+
+                                <div class="absolute z-10 left-0 right-0 bottom-0 top-0 rounded-md bg-gray-200"></div>
+
+                                <div class="absolute z-20 top-0 bottom-0 rounded-md bg-[#f98131]"
+                                    x-bind:style="'right:'+maxthumb+'%; left:'+minthumb+'%'"></div>
+
+                                <div class="absolute z-30 w-4 h-4 top-[1px] left-0 bg-white   border-[#f98131] border-2 rounded-full -mt-2 -ml-1"
+                                    x-bind:style="'left: '+minthumb+'%'"></div>
+
+                                <div class="absolute z-30  w-4 h-4 top-[1px] right-0 bg-white   border-[#f98131] border-2 rounded-full -mt-2 -mr-3"
+                                    x-bind:style="'right: '+maxthumb+'%'"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="flex justify-between items-center pt-5 ">
+                            <div>
+                                <input type="text" maxlength="5" x-on:input="mintrigger" x-model="minprice"
+                                    class="px-3 py-2 border border-gray-200 rounded w-24 text-center">
+                            </div>
+                            <div>
+                                <input type="text" maxlength="5" x-on:input="maxtrigger" x-model="maxprice"
+                                    class="px-3 py-2 border border-gray-200 rounded w-24 text-center">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <ul class="flex flex-col gap-1 border border-b-2 border-l-0  border-t-0 border-r-0 py-3">
+                    <li class="flex items-center gap-2">
+                        <input type="radio"
+                            class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
+                        <div>All prices</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio"
+                            class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
+                        <div>Under $20</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio"
+                            class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
+                        <div>$25 to $100</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio"
+                            class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
+                        <div>$100 to $300</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio"
+                            class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
+                        <div>$300 to $500</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio"
+                            class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
+                        <div>$500 to $1,000</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio"
+                            class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
+                        <div>$1,000 to $10,000</div>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- price rating filter-->
+
+            <div class="">
+                <h3 class=" text-[#191c1e] text-base font-medium font-['Public Sans'] uppercase leading-normal">Ratring
+                </h3>
+                <!-- Cateogries-->
+                <ul class="flex flex-col gap-1  py-3">
+                    <li class="flex items-center gap-2">
+                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                        <div>1 star</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                        <div>2 stars</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                        <div>3 stars</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                        <div>4 stars</div>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                        <div>5 stars</div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- bannar -->
+            <div class="flex mt-3  p-8 rounded border-4 border-[#ffe7d6] flex-col justify-center items-center">
+                <div>
+                    <img src="./../assets/images/shoing bannar.svg" alt="">
+                </div>
+                <!-- bannar detials-->
+                <div class="flex flex-col justify-center items-center gap-3">
+                    <img src="./../assets/images/AppleWatchBanner.svg" alt="">
+
+                    <div class=" flex-col justify-center items-center gap-4 inline-flex">
+                        <div class="flex-col justify-center items-center gap-2 flex">
+                            <h2 class=" text-center text-[#191c1e] text-2xl font-semibold font-['Public Sans'] ">Heavy
+                                on Features. Light on Price.</h2>
+                        </div>
+                        <div class="justify-center items-center gap-2 inline-flex">
+                            <div class="text-[#475156] text-sm font-normal font-['Public Sans'] leading-tight">Only for:
+                            </div>
+                            <div class="px-3 py-1.5 bg-[#f3de6d] rounded-[3px] justify-start items-start gap-2.5 flex">
+                                <div
+                                    class="text-center text-[#191c1e] text-base font-semibold font-['Public Sans'] leading-normal">
+                                    $299 USD</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- btns  -->
+                <div class="flex flex-col gap-2 pt-3 w-full">
+                    <button class=" px-6 bg-[#f98131] w-full rounded-sm justify-center items-center gap-2 inline-flex">
+                        <i class="fa-solid fa-cart-shopping text-white"></i>
+                        <div
+                            class="text-white text-sm font-bold font-['Public Sans'] uppercase leading-[48px] tracking-tight">
+                            Add to Cart</div>
+                    </button>
+                    <button
+                        class=" h-12 px-6 rounded-sm w-full border-2 border-[#f98131] justify-center items-center gap-2 inline-flex">
+                        <div
+                            class="text-[#f98131] text-sm font-bold font-['Public Sans'] uppercase leading-[48px] tracking-tight">
+                            View Details</div>
+                        <i class="fa text-[#f98131] fa-arrow-right " aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- all products and nav-->
+        <div class="flex flex-col  w-9/12">
+            <!-- nav -->
+            <div class="flex w-full justify-between">
+                <!--search input-->
+                <div
+                    class="self-stretch px-4 pt-2.5 pb-[15px] w-5/12 bg-white rounded border border-[#eeeeee] flex items-center gap-1">
+                    <input type="text" class="flex-grow p-0 border-0 text-left" placeholder="Search...">
+                    <i class="fa-solid flex-none fa-magnifying-glass"></i>
+                </div>
+                <!-- sort by-->
+                <div class="flex justify-center items-center gap-2">
+                    <span class="text-[#191c1e] text-sm font-normal ">Sort by:</span>
+                    <div class="relative ">
+                        <button id="sortBy-button"
+                            class="px-4 py-2 bg-white rounded-sm border border-[#e4e7e9] justify-center items-center gap-[45px] inline-flex">
+                            <div class="text-[#475156] text-sm font-normal font-['Public Sans'] leading-tight">Most
+                                Popular</div>
+                            <i class="fa-solid fa-angle-down text-xs font-light"></i>
+                        </button>
+                        <div id="dropdown-sortBy"
+                            class="sm:my-3 hidden  absolute z-10 w-full bg-white  divide-gray-100  shadow top-7 left-0 transform ">
+                            <ul>
+                                <li class="border px-4 py-3 border-1">
+                                    <h6>Lorem.</h6>
+                                </li>
+                                <li class="border px-4 py-3 border-1">
+                                    <h6>Lorem.</h6>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--filter bar -->
+            <div class="w-full px-6 py-3 my-3 bg-[#f2f3f4] rounded justify-between items-center inline-flex">
+                <div class="justify-start items-center gap-4 flex">
+                    <div class="text-[#5f6c72] text-sm font-normal font-['Public Sans'] leading-tight">Active Filters:
+                    </div>
+                    <!--fitler item-->
+                    <div class="justify-start items-center gap-1.5 flex">
+                        <h6 class="text-[#191c1e] text-sm font-normal font-['Public Sans'] leading-tight">Electronics
+                            Devices</h6>
+                        <i class="fa-solid fa-x text-[#191c1e] text-[10px] pt-1 "></i>
+                    </div>
+                    <!--fitler item-->
+                    <div class="justify-start items-center gap-1.5 flex">
+                        <h6 class="text-[#191c1e] text-sm font-normal font-['Public Sans'] leading-tight">Electronics
+                            Devices</h6>
+                        <i class="fa-solid fa-x text-[#191c1e] text-[10px] pt-1 "></i>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="text-black text-sm font-semibold font-['Public Sans'] leading-tight">65,867</span>
+                    <span class="text-[#5f6c72] text-sm font-normal font-['Public Sans'] leading-tight">Results
+                        found.</span>
+                </div>
+            </div>
+            <!-- products-->
+            <div class="flex w-full flex-row flex-wrap">
+                <!-- product item-->
+                 <div class="p-1  h-80  w-1/4 ">
+                <div class="border p-2 items-center gap-2 rounded-sm justify-center relative  border-[#e4e7e9] flex flex-col  ">
+                    <div class="relative  group">
+                        <div class="w-0 h-[3px] transition-all duration-500 group-hover:w-5  bg-[#eac70b]">
+                        </div>
+                    <!--image-->
+                        <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="Image" />
+
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="flex space-x-4">
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	  bg-[#f98131] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular text-white fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--rating -->
+                    <div class="flex justify-start items-center w-full">
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                        <span class="text-[#76868e] text-sm"> (52,677)</span>
+                    </div>
+                <!-- price -->
+                    <div class="  ">
+                        <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس
+                            FLYKILLER </h5>
+                        <span class=" text-[#2ca4f3] text-sm  leading-tight">$2,300</span>
+                    </div>
+                <!-- padge -->
+                    <span
+                        class=" absolute top-2 text-white px-3 text-xs py-1.5 left-2 bg-[#ee5858] rounded-sm ">
+                        Hot
+                    </span>
+                </div>
+                 </div>
+                 <div class="p-1  h-80  w-1/4 ">
+                <div class="border p-2 items-center gap-2 rounded-sm justify-center relative  border-[#e4e7e9] flex flex-col  ">
+                    <div class="relative  group">
+                        <div class="w-0 h-[3px] transition-all duration-500 group-hover:w-5  bg-[#eac70b]">
+                        </div>
+                    <!--image-->
+                        <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="Image" />
+
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="flex space-x-4">
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	  bg-[#f98131] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular text-white fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--rating -->
+                    <div class="flex justify-start items-center w-full">
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                        <span class="text-[#76868e] text-sm"> (52,677)</span>
+                    </div>
+                <!-- price -->
+                    <div class="  ">
+                        <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس
+                            FLYKILLER </h5>
+                        <span class=" text-[#2ca4f3] text-sm  leading-tight">$2,300</span>
+                    </div>
+                <!-- padge -->
+                    <span
+                        class=" absolute top-2 text-white px-3 text-xs py-1.5 left-2 bg-[#ee5858] rounded-sm ">
+                        Hot
+                    </span>
+                </div>
+                 </div>
+                 <div class="p-1  h-80  w-1/4 ">
+                <div class="border p-2 items-center gap-2 rounded-sm justify-center relative  border-[#e4e7e9] flex flex-col  ">
+                    <div class="relative  group">
+                        <div class="w-0 h-[3px] transition-all duration-500 group-hover:w-5  bg-[#eac70b]">
+                        </div>
+                    <!--image-->
+                        <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="Image" />
+
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="flex space-x-4">
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	  bg-[#f98131] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular text-white fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--rating -->
+                    <div class="flex justify-start items-center w-full">
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                        <span class="text-[#76868e] text-sm"> (52,677)</span>
+                    </div>
+                <!-- price -->
+                    <div class="  ">
+                        <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس
+                            FLYKILLER </h5>
+                        <span class=" text-[#2ca4f3] text-sm  leading-tight">$2,300</span>
+                    </div>
+                <!-- padge -->
+                    <span
+                        class=" absolute top-2 text-white px-3 text-xs py-1.5 left-2 bg-[#ee5858] rounded-sm ">
+                        Hot
+                    </span>
+                </div>
+                 </div>
+                 <div class="p-1  h-80  w-1/4 ">
+                <div class="border p-2 items-center gap-2 rounded-sm justify-center relative  border-[#e4e7e9] flex flex-col  ">
+                    <div class="relative  group">
+                        <div class="w-0 h-[3px] transition-all duration-500 group-hover:w-5  bg-[#eac70b]">
+                        </div>
+                    <!--image-->
+                        <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="Image" />
+
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="flex space-x-4">
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	  bg-[#f98131] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular text-white fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--rating -->
+                    <div class="flex justify-start items-center w-full">
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                        <span class="text-[#76868e] text-sm"> (52,677)</span>
+                    </div>
+                <!-- price -->
+                    <div class="  ">
+                        <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس
+                            FLYKILLER </h5>
+                        <span class=" text-[#2ca4f3] text-sm  leading-tight">$2,300</span>
+                    </div>
+                <!-- padge -->
+                    <span
+                        class=" absolute top-2 text-white px-3 text-xs py-1.5 left-2 bg-[#ee5858] rounded-sm ">
+                        Hot
+                    </span>
+                </div>
+                 </div>
+                 <div class="p-1  h-80  w-1/4 ">
+                <div class="border p-2 items-center gap-2 rounded-sm justify-center relative  border-[#e4e7e9] flex flex-col  ">
+                    <div class="relative  group">
+                        <div class="w-0 h-[3px] transition-all duration-500 group-hover:w-5  bg-[#eac70b]">
+                        </div>
+                    <!--image-->
+                        <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="Image" />
+
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="flex space-x-4">
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	  bg-[#f98131] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular text-white fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--rating -->
+                    <div class="flex justify-start items-center w-full">
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                        <span class="text-[#76868e] text-sm"> (52,677)</span>
+                    </div>
+                <!-- price -->
+                    <div class="  ">
+                        <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس
+                            FLYKILLER </h5>
+                        <span class=" text-[#2ca4f3] text-sm  leading-tight">$2,300</span>
+                    </div>
+                <!-- padge -->
+                    <span
+                        class=" absolute top-2 text-white px-3 text-xs py-1.5 left-2 bg-[#ee5858] rounded-sm ">
+                        Hot
+                    </span>
+                </div>
+                 </div>
+                 <div class="p-1  h-80  w-1/4 ">
+                <div class="border p-2 items-center gap-2 rounded-sm justify-center relative  border-[#e4e7e9] flex flex-col  ">
+                    <div class="relative  group">
+                        <div class="w-0 h-[3px] transition-all duration-500 group-hover:w-5  bg-[#eac70b]">
+                        </div>
+                    <!--image-->
+                        <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="Image" />
+
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="flex space-x-4">
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	  bg-[#f98131] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular text-white fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--rating -->
+                    <div class="flex justify-start items-center w-full">
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                        <span class="text-[#76868e] text-sm"> (52,677)</span>
+                    </div>
+                <!-- price -->
+                    <div class="  ">
+                        <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس
+                            FLYKILLER </h5>
+                        <span class=" text-[#2ca4f3] text-sm  leading-tight">$2,300</span>
+                    </div>
+                <!-- padge -->
+                    <span
+                        class=" absolute top-2 text-white px-3 text-xs py-1.5 left-2 bg-[#ee5858] rounded-sm ">
+                        Hot
+                    </span>
+                </div>
+                 </div>
+                 <div class="p-1  h-80  w-1/4 ">
+                <div class="border p-2 items-center gap-2 rounded-sm justify-center relative  border-[#e4e7e9] flex flex-col  ">
+                    <div class="relative  group">
+                        <div class="w-0 h-[3px] transition-all duration-500 group-hover:w-5  bg-[#eac70b]">
+                        </div>
+                    <!--image-->
+                        <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="Image" />
+
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="flex space-x-4">
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	  bg-[#f98131] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular text-white fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--rating -->
+                    <div class="flex justify-start items-center w-full">
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                        <span class="text-[#76868e] text-sm"> (52,677)</span>
+                    </div>
+                <!-- price -->
+                    <div class="  ">
+                        <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس
+                            FLYKILLER </h5>
+                        <span class=" text-[#2ca4f3] text-sm  leading-tight">$2,300</span>
+                    </div>
+                <!-- padge -->
+                    <span
+                        class=" absolute top-2 text-white px-3 text-xs py-1.5 left-2 bg-[#ee5858] rounded-sm ">
+                        Hot
+                    </span>
+                </div>
+                 </div>
+                 <div class="p-1  h-80  w-1/4 ">
+                <div class="border p-2 items-center gap-2 rounded-sm justify-center relative  border-[#e4e7e9] flex flex-col  ">
+                    <div class="relative  group">
+                        <div class="w-0 h-[3px] transition-all duration-500 group-hover:w-5  bg-[#eac70b]">
+                        </div>
+                    <!--image-->
+                        <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="Image" />
+
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="flex space-x-4">
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	  bg-[#f98131] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular text-white fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--rating -->
+                    <div class="flex justify-start items-center w-full">
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                        <span class="text-[#76868e] text-sm"> (52,677)</span>
+                    </div>
+                <!-- price -->
+                    <div class="  ">
+                        <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس
+                            FLYKILLER </h5>
+                        <span class=" text-[#2ca4f3] text-sm  leading-tight">$2,300</span>
+                    </div>
+                <!-- padge -->
+                    <span
+                        class=" absolute top-2 text-white px-3 text-xs py-1.5 left-2 bg-[#ee5858] rounded-sm ">
+                        Hot
+                    </span>
+                </div>
+                 </div>
+                 <div class="p-1  h-80  w-1/4 ">
+                <div class="border p-2 items-center gap-2 rounded-sm justify-center relative  border-[#e4e7e9] flex flex-col  ">
+                    <div class="relative  group">
+                        <div class="w-0 h-[3px] transition-all duration-500 group-hover:w-5  bg-[#eac70b]">
+                        </div>
+                    <!--image-->
+                        <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="Image" />
+
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="flex space-x-4">
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	  bg-[#f98131] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular text-white fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--rating -->
+                    <div class="flex justify-start items-center w-full">
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                        <span class="text-[#76868e] text-sm"> (52,677)</span>
+                    </div>
+                <!-- price -->
+                    <div class="  ">
+                        <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس
+                            FLYKILLER </h5>
+                        <span class=" text-[#2ca4f3] text-sm  leading-tight">$2,300</span>
+                    </div>
+                <!-- padge -->
+                    <span
+                        class=" absolute top-2 text-white px-3 text-xs py-1.5 left-2 bg-[#ee5858] rounded-sm ">
+                        Hot
+                    </span>
+                </div>
+                 </div>
+                 <div class="p-1  h-80  w-1/4 ">
+                <div class="border p-2 items-center gap-2 rounded-sm justify-center relative  border-[#e4e7e9] flex flex-col  ">
+                    <div class="relative  group">
+                        <div class="w-0 h-[3px] transition-all duration-500 group-hover:w-5  bg-[#eac70b]">
+                        </div>
+                    <!--image-->
+                        <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="Image" />
+
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="flex space-x-4">
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	  bg-[#f98131] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular text-white fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--rating -->
+                    <div class="flex justify-start items-center w-full">
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                        <span class="text-[#76868e] text-sm"> (52,677)</span>
+                    </div>
+                <!-- price -->
+                    <div class="  ">
+                        <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس
+                            FLYKILLER </h5>
+                        <span class=" text-[#2ca4f3] text-sm  leading-tight">$2,300</span>
+                    </div>
+                <!-- padge -->
+                    <span
+                        class=" absolute top-2 text-white px-3 text-xs py-1.5 left-2 bg-[#ee5858] rounded-sm ">
+                        Hot
+                    </span>
+                </div>
+                 </div>
+                 <div class="p-1  h-80  w-1/4 ">
+                <div class="border p-2 items-center gap-2 rounded-sm justify-center relative  border-[#e4e7e9] flex flex-col  ">
+                    <div class="relative  group">
+                        <div class="w-0 h-[3px] transition-all duration-500 group-hover:w-5  bg-[#eac70b]">
+                        </div>
+                    <!--image-->
+                        <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="Image" />
+
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="flex space-x-4">
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	  bg-[#f98131] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular text-white fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--rating -->
+                    <div class="flex justify-start items-center w-full">
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                        <span class="text-[#76868e] text-sm"> (52,677)</span>
+                    </div>
+                <!-- price -->
+                    <div class="  ">
+                        <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس
+                            FLYKILLER </h5>
+                        <span class=" text-[#2ca4f3] text-sm  leading-tight">$2,300</span>
+                    </div>
+                <!-- padge -->
+                    <span
+                        class=" absolute top-2 text-white px-3 text-xs py-1.5 left-2 bg-[#ee5858] rounded-sm ">
+                        Hot
+                    </span>
+                </div>
+                 </div>
+                 <div class="p-1  h-80  w-1/4 ">
+                <div class="border p-2 items-center gap-2 rounded-sm justify-center relative  border-[#e4e7e9] flex flex-col  ">
+                    <div class="relative  group">
+                        <div class="w-0 h-[3px] transition-all duration-500 group-hover:w-5  bg-[#eac70b]">
+                        </div>
+                    <!--image-->
+                        <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="Image" />
+
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="flex space-x-4">
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	  bg-[#f98131] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular text-white fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--rating -->
+                    <div class="flex justify-start items-center w-full">
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                        <span class="text-[#76868e] text-sm"> (52,677)</span>
+                    </div>
+                <!-- price -->
+                    <div class="  ">
+                        <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس
+                            FLYKILLER </h5>
+                        <span class=" text-[#2ca4f3] text-sm  leading-tight">$2,300</span>
+                    </div>
+                <!-- padge -->
+                    <span
+                        class=" absolute top-2 text-white px-3 text-xs py-1.5 left-2 bg-[#ee5858] rounded-sm ">
+                        Hot
+                    </span>
+                </div>
+                 </div>
+                 <div class="p-1  h-80  w-1/4 ">
+                <div class="border p-2 items-center gap-2 rounded-sm justify-center relative  border-[#e4e7e9] flex flex-col  ">
+                    <div class="relative  group">
+                        <div class="w-0 h-[3px] transition-all duration-500 group-hover:w-5  bg-[#eac70b]">
+                        </div>
+                    <!--image-->
+                        <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="Image" />
+
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="flex space-x-4">
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	  bg-[#f98131] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular text-white fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--rating -->
+                    <div class="flex justify-start items-center w-full">
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                        <span class="text-[#76868e] text-sm"> (52,677)</span>
+                    </div>
+                <!-- price -->
+                    <div class="  ">
+                        <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس
+                            FLYKILLER </h5>
+                        <span class=" text-[#2ca4f3] text-sm  leading-tight">$2,300</span>
+                    </div>
+                <!-- padge -->
+                    <span
+                        class=" absolute top-2 text-white px-3 text-xs py-1.5 left-2 bg-[#ee5858] rounded-sm ">
+                        Hot
+                    </span>
+                </div>
+                 </div>
+                 <div class="p-1  h-80  w-1/4 ">
+                <div class="border p-2 items-center gap-2 rounded-sm justify-center relative  border-[#e4e7e9] flex flex-col  ">
+                    <div class="relative  group">
+                        <div class="w-0 h-[3px] transition-all duration-500 group-hover:w-5  bg-[#eac70b]">
+                        </div>
+                    <!--image-->
+                        <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="Image" />
+
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="flex space-x-4">
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	  bg-[#f98131] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular text-white fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--rating -->
+                    <div class="flex justify-start items-center w-full">
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                        <span class="text-[#76868e] text-sm"> (52,677)</span>
+                    </div>
+                <!-- price -->
+                    <div class="  ">
+                        <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس
+                            FLYKILLER </h5>
+                        <span class=" text-[#2ca4f3] text-sm  leading-tight">$2,300</span>
+                    </div>
+                <!-- padge -->
+                    <span
+                        class=" absolute top-2 text-white px-3 text-xs py-1.5 left-2 bg-[#ee5858] rounded-sm ">
+                        Hot
+                    </span>
+                </div>
+                 </div>
+                 <div class="p-1  h-80  w-1/4 ">
+                <div class="border p-2 items-center gap-2 rounded-sm justify-center relative  border-[#e4e7e9] flex flex-col  ">
+                    <div class="relative  group">
+                        <div class="w-0 h-[3px] transition-all duration-500 group-hover:w-5  bg-[#eac70b]">
+                        </div>
+                    <!--image-->
+                        <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="Image" />
+
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="flex space-x-4">
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	  bg-[#f98131] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular text-white fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--rating -->
+                    <div class="flex justify-start items-center w-full">
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                        <span class="text-[#76868e] text-sm"> (52,677)</span>
+                    </div>
+                <!-- price -->
+                    <div class="  ">
+                        <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس
+                            FLYKILLER </h5>
+                        <span class=" text-[#2ca4f3] text-sm  leading-tight">$2,300</span>
+                    </div>
+                <!-- padge -->
+                    <span
+                        class=" absolute top-2 text-white px-3 text-xs py-1.5 left-2 bg-[#ee5858] rounded-sm ">
+                        Hot
+                    </span>
+                </div>
+                 </div>
+                 <div class="p-1  h-80  w-1/4 ">
+                <div class="border p-2 items-center gap-2 rounded-sm justify-center relative  border-[#e4e7e9] flex flex-col  ">
+                    <div class="relative  group">
+                        <div class="w-0 h-[3px] transition-all duration-500 group-hover:w-5  bg-[#eac70b]">
+                        </div>
+                    <!--image-->
+                        <img src="./../assets/images/Image.svg" class="w-5/6 m-auto" alt="Image" />
+
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div class="flex space-x-4">
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	 bg-[#f8f8f8] rounded-full flex justify-center items-center">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div
+                                    class="p-2 cursor-pointer	  bg-[#f98131] rounded-full flex justify-center items-center">
+                                    <i class="fa-regular text-white fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--rating -->
+                    <div class="flex justify-start items-center w-full">
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star text-yellow-500 text-sm"></i>
+                        <i class="fas fa-star-half-alt text-yellow-500 text-sm"></i>
+                        <span class="text-[#76868e] text-sm"> (52,677)</span>
+                    </div>
+                <!-- price -->
+                    <div class="  ">
+                        <h5 class=" my-1 text-[#191c1e] text-sm ">أقوى سبراي للجسم طارد للذباب والناموس
+                            FLYKILLER </h5>
+                        <span class=" text-[#2ca4f3] text-sm  leading-tight">$2,300</span>
+                    </div>
+                <!-- padge -->
+                    <span
+                        class=" absolute top-2 text-white px-3 text-xs py-1.5 left-2 bg-[#ee5858] rounded-sm ">
+                        Hot
+                    </span>
+                </div>
+                 </div>
+
+                </div>
+            <!-- Pagination-->
+            <div class=" relative">
+                <div id="pagination"
+                class="flex items-center justify-between  border-gray-200 bg-white px-4 py-3 sm:px-6">
+
+
+                <!-- Desktop view -->
+                <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-center">
+
+                    <div class=" relative">
+                        <nav id="pagination-nav" class="isolate inline-flex gap-2 px-2 -space-x-px rounded-md "
+                            aria-label="Pagination">
+                            <!-- Pagination buttons will be generated here dynamically -->
+
+                        </nav>
+                        <button id="slider-button-left"
+                        class="!w-12 !h-12 swiper-button-prev del text-[#f98131] duration-500 border border-solid border-[#f98131] rounded-full flex justify-center items-center hover:bg-[#f98131]   hover:!text-white absolute left-0 top-[50%] transform -translate-x-full ">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    </button>
+        
+                    <button id="slider-button-right"
+                        class="!w-12 !h-12 swiper-button-next del text-[#f98131] duration-500 border border-solid border-[#f98131] rounded-full flex justify-center items-center hover:bg-[#f98131]   hover:!text-white absolute right-0 top-[50%] transform translate-x-full">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+        </div >
+
+    </div>
+
+
+
+
+    <!-- footer-->
+    <div id="footer">
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const sortByButton = document.getElementById('sortBy-button');
+        const dropdownsortBy = document.getElementById('dropdown-sortBy');
+        sortByButton.addEventListener('click', function (event) {
+            console.log('here');
+
+            event.stopPropagation(); // Prevent click from bubbling up
+            dropdownsortBy.classList.toggle('hidden');
+        });
+        // Pagination Setup
+        // Pagination Setup
+        let currentPage = 1;
+        const totalPages = 10;
+        const maxVisiblePages = 5;
+
+        const paginationNav = document.getElementById("pagination-nav");
+        const sliderButtonLeft = document.getElementById("slider-button-left");
+        const sliderButtonRight = document.getElementById("slider-button-right");
+
+        function updatePagination() {
+            // Clear existing pagination buttons
+            paginationNav.innerHTML = "";
+
+            // Calculate visible page numbers
+            const startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+            const endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+            // Create page buttons
+            for (let i = startPage; i <= endPage; i++) {
+                const pageButton = document.createElement("button");
+                pageButton.textContent = i;
+                pageButton.className = `relative  !w-12 !h-12  justify-center   !border-[#f98131] rounded-full  inline-flex  items-center px-4 py-2 text-sm font-semibold ${i === currentPage ? "bg-[#f98131] text-white !ring-[#f98131] " : "text-gray-900"
+                    } ring-1 ring-inset ring-gray-300 focus:z-20`;
+                pageButton.onclick = () => changePage(i);
+                paginationNav.appendChild(pageButton);
+            }
+
+            // Enable/Disable slider buttons based on page position
+            sliderButtonLeft.disabled = currentPage === 1;
+            sliderButtonRight.disabled = currentPage === totalPages;
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            updatePagination();
+        }
+
+        // Event Listeners for Slider Buttons
+        sliderButtonLeft.onclick = () => {
+            if (currentPage > 1) changePage(currentPage - 1);
+        };
+        sliderButtonRight.onclick = () => {
+            if (currentPage < totalPages) changePage(currentPage + 1);
+        };
+
+        // Initialize pagination on page load
+        updatePagination();
+
+
+    </script>
+</body>
+
+</html>

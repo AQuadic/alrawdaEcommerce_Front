@@ -32,3 +32,11 @@
 
     content: none !important;
 }
+
+
+    .swiper-pagination-current {
+    color: #111827 !important;
+    }
+    .swiper-pagination-total {
+    color: #9CA3AF;
+    }
