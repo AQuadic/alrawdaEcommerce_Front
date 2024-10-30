@@ -47,9 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
               mobileMenu.classList.toggle('hidden');
             });
 
-            closeMenu.addEventListener('click', function () {
-                console.log('here');
-                
+            closeMenu.addEventListener('click', function () {                
                 mobileMenu.classList.toggle('hidden');
             });
             
@@ -80,6 +78,9 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => console.log('Error loading the footer:', error));
         
 });
+
+// Load offer
+
 document.addEventListener("DOMContentLoaded", function() {
     fetch('offer.html')
         .then(response => response.text())
@@ -89,6 +90,9 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => console.log('Error loading the offer:', error));
         
 });
+
+// Load contactbar
+
 document.addEventListener("DOMContentLoaded", function() {
     fetch('contactbar.html')
         .then(response => response.text())
@@ -98,11 +102,22 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => console.log('Error loading the contactbar:', error));
         
 });
+
+// Load header
+
 document.addEventListener("DOMContentLoaded", function() {
     fetch('header.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header').innerHTML = data;
+            var HeaderSwiper = new Swiper(".default-carousel", {
+                loop: true,
+                pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                },
+            
+                });
         })
         .catch(error => console.log('Error loading the header:', error));
     
@@ -122,16 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => response.text())
         .then(data => {
             document.getElementById('categoriesSlider').innerHTML = data;
-            var HeaderSwiper = new Swiper(".default-carousel", {
-                loop: true,
-                pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                },
-            
-                });
-            
-            var CategorysSwiper2 = new Swiper(".multiple-slide-carousel", {
+            var CategorysSwiper = new Swiper(".multiple-slide-carousel", {
                     loop: true,
                     slidesPerView: 2,
                     spaceBetween: 10,
@@ -155,17 +161,12 @@ document.addEventListener("DOMContentLoaded", function() {
             
                    }
                   });
-            
-
-            
-            //             
             document.getElementById('countries-button').addEventListener('click', function() {
                 const dropdown = document.getElementById('dropdown-countries');
                 dropdown.classList.toggle('hidden');
               }); 
         })
         .catch(error => console.log('Error loading the categoriesSlider:', error));
-    
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -175,8 +176,8 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('bestDeals').innerHTML = data;
         })
         .catch(error => console.log('Error loading the bestDeals:', error));
-    
 });
+
 document.addEventListener("DOMContentLoaded", function() {
     fetch('featursProducts.html')
         .then(response => response.text())
@@ -218,8 +219,7 @@ document.addEventListener("DOMContentLoaded", function() {
                }
               })
         })
-        .catch(error => console.log('Error loading the PopUpBroductDetails:', error));
-    
+        .catch(error => console.log('Error loading the PopUpBroductDetails:', error));    
 });
 document.addEventListener("DOMContentLoaded", function() {
     fetch('blueNavbar.html')
@@ -243,3 +243,28 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => console.log('Error loading the Breadcrumb:', error));
     
 });
+
+    function range() {
+        return {
+          minprice: 1000, 
+          maxprice: 7000,
+          min: 100, 
+          max: 10000,
+          minthumb: 0,
+          maxthumb: 0, 
+          
+          mintrigger() {   
+            this.minprice = Math.min(this.minprice, this.maxprice - 500);      
+            this.minthumb = ((this.minprice - this.min) / (this.max - this.min)) * 100;
+          },
+           
+          maxtrigger() {
+            this.maxprice = Math.max(this.maxprice, this.minprice + 500); 
+            this.maxthumb = 100 - (((this.maxprice - this.min) / (this.max - this.min)) * 100);    
+          }, 
+        }
+    }
+
+    
+
+    
