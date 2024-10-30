@@ -244,27 +244,16 @@ document.addEventListener("DOMContentLoaded", function() {
     
 });
 
-    function range() {
-        return {
-          minprice: 1000, 
-          maxprice: 7000,
-          min: 100, 
-          max: 10000,
-          minthumb: 0,
-          maxthumb: 0, 
-          
-          mintrigger() {   
-            this.minprice = Math.min(this.minprice, this.maxprice - 500);      
-            this.minthumb = ((this.minprice - this.min) / (this.max - this.min)) * 100;
-          },
-           
-          maxtrigger() {
-            this.maxprice = Math.max(this.maxprice, this.minprice + 500); 
-            this.maxthumb = 100 - (((this.maxprice - this.min) / (this.max - this.min)) * 100);    
-          }, 
-        }
+// For Password Eye Icon
+function togglePassword(icon) {
+    const passwordInput = icon.closest('.relative').querySelector('input[type="password"], input[type="text"]');
+    const eyeIcon = icon.querySelector('i');
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.classList.replace('fa-eye-slash', 'fa-eye');
+    } else {
+        passwordInput.type = 'password';
+        eyeIcon.classList.replace('fa-eye', 'fa-eye-slash');
     }
-
-    
-
-    
+}
