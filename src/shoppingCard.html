@@ -20,8 +20,8 @@
     <hr class="mt-2 sm:block hidden">
 
     <!-- Start Content -->
-        <section class="container mx-auto flex justify-center gap-6 mt-[40px] mb-[72px]">
-                <div class="w-[872px]">
+        <section class="container mx-auto flex md:flex-row flex-col justify-center gap-6 mt-[40px] mb-[72px]">
+                <div class="md:w-[872px] p-2">
                     <div class="bg-white border border-[#E4E7E9] rounded-[4px] overflow-hidden">
                             <h1 class="pt-6 ltr:pl-[32px] rtl:pr-[32px] text-[#191C1F] font-medium text-lg">Shopping Cart</h1>
                             <div class="overflow-x-auto pt-[20px]">
@@ -88,24 +88,24 @@
                                 </tbody>
                                 </table>
                                 <div class="flex justify-between p-6">
-                                    <a href="#" class="flex items-center justify-center gap-2 w-[203px] border-2 border-[#2DA5F3] h-[48px] text-[#2DA5F3] font-bold uppercase">
+                                    <a href="#" class="flex items-center justify-center gap-2 md:w-[203px] px-1 border-2 border-[#2DA5F3] h-[48px] text-[#2DA5F3] font-bold uppercase">
                                         <img src="../assets/images/bArrowLeft.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
                                         <span>Return to Shop</span>
                                     </a>
-                                    <a href="#" class="flex items-center justify-center gap-2 w-[197px] border-2 border-[#2DA5F3] h-[48px] text-[#2DA5F3] font-bold uppercase">Update cart</a>
+                                    <a href="#" class="flex items-center justify-center gap-2 md:w-[197px] px-1 border-2 border-[#2DA5F3] h-[48px] text-[#2DA5F3] font-bold uppercase">Update cart</a>
                                 </div>
                             </div>
                     </div>
                 </div>
 
-                <div>
+                <div class="md:block flex flex-col justify-center items-center">
                     <!-- Apply Coupon -->
-                    <div class="flex items-center gap-4 rounded-[4px] px-[10px] w-[424px] border border-[#E4E7E9] h-[97px]">
+                    <div class="flex items-center gap-4 rounded-[4px] px-[10px] md:w-[424px] w-[365px] border border-[#E4E7E9] h-[97px]">
                         <input type="text" class="w-[228px] border border-[#E4E7E9] focus:outline-none focus:ring-0 focus:border-[#FA8232]">
                         <a href="#" class="text-white bg-[#2DA5F3] uppercase w-[159px] h-[48px] flex items-center justify-center rounded-[2px]">Apply Coupon</a>
                     </div>
                     <!-- Card Totals -->
-                    <div class="w-[424px] h-[344px] border border-[#E4E7E9] mt-[14px] rounded-[4px] p-6">
+                    <div class="md:w-[424px] w-[365px] h-[344px] border border-[#E4E7E9] mt-[14px] rounded-[4px] p-6">
                         <h2 class="text-[#191C1F] text-lg font-semibold mb-4">Card Totals</h2>
                         
                         <div class="flex justify-between text-gray-700 mb-2">
@@ -135,7 +135,7 @@
                             <span class="text-[#191C1F] font-semibold">$357.99 USD</span>
                         </div>
                         
-                        <button class="w-[376px] h-14 bg-[#FA8232] text-white font-bold text-base py-3 rounded-[3px] flex items-center justify-center gap-2">
+                        <button class="md:w-[376px] w-full h-14 bg-[#FA8232] text-white font-bold text-base py-3 rounded-[3px] flex items-center justify-center gap-2">
                             PROCEED TO CHECKOUT
                             <img src="../assets/images/ArrowRight.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
                         </button>
