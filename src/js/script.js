@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('navbar').innerHTML = data;
             const loginButton = document.getElementById('login-button');
             const dropdownLogin = document.getElementById('dropdown-login');
+            const userBtn = document.getElementById('userBtn');
             const cartButton = document.getElementById('cart-button');
             const dropdownCart = document.getElementById('dropdown-cart');
             const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
@@ -13,45 +14,70 @@ document.addEventListener("DOMContentLoaded", function() {
             const mobileMenu = document.getElementById('mobile-menu');
             const closeMenu = document.getElementById('close-menu');
             
+            // State tracking for dropdowns
+            let isDropdownCartOpen = false;
+            let isDropdownLoginOpen = false;
+            
             // Login dropdown 
             loginButton.addEventListener('click', function(event) {
-                event.stopPropagation(); // Prevent click from bubbling up
-                dropdownLogin.classList.toggle('hidden');
+                event.stopPropagation();
+                isDropdownLoginOpen = !isDropdownLoginOpen;
+                dropdownLogin.classList.toggle('hidden', !isDropdownLoginOpen);
                 // Close cart dropdown if it's open
-                dropdownCart.classList.add('hidden');
+                if (isDropdownCartOpen) {
+                    dropdownCart.classList.add('hidden');
+                    isDropdownCartOpen = false;
+                }
+            });
+            
+            userBtn.addEventListener('click', function(event) {
+                event.stopPropagation();
+                isDropdownLoginOpen = !isDropdownLoginOpen;
+                dropdownLogin.classList.toggle('hidden', !isDropdownLoginOpen);
+                // Close cart dropdown if it's open
+                if (isDropdownCartOpen) {
+                    dropdownCart.classList.add('hidden');
+                    isDropdownCartOpen = false;
+                }
             });
             
             // Cart dropdown 
             cartButton.addEventListener('click', function(event) {
-                event.stopPropagation(); // Prevent click from bubbling up
-                dropdownCart.classList.toggle('hidden');
+                event.stopPropagation();
+                isDropdownCartOpen = !isDropdownCartOpen;
+                dropdownCart.classList.toggle('hidden', !isDropdownCartOpen);
                 // Close login dropdown if it's open
-                dropdownLogin.classList.add('hidden');
+                if (isDropdownLoginOpen) {
+                    dropdownLogin.classList.add('hidden');
+                    isDropdownLoginOpen = false;
+                }
             });
             
-            // Close both dropdowns when clicking outside
+            // Close dropdowns when clicking outside
             document.addEventListener('click', function(event) {
                 // Check if the click is outside both dropdowns
-                if (!loginButton.contains(event.target) && !dropdownLogin.contains(event.target)) {
+                if (isDropdownLoginOpen && !loginButton.contains(event.target) && !dropdownLogin.contains(event.target)) {
                     dropdownLogin.classList.add('hidden');
+                    isDropdownLoginOpen = false;
                 }
-                if (!cartButton.contains(event.target) && !dropdownCart.contains(event.target)) {
+                if (isDropdownCartOpen && !cartButton.contains(event.target) && !dropdownCart.contains(event.target)) {
                     dropdownCart.classList.add('hidden');
+                    isDropdownCartOpen = false;
                 }
             });
             
             mobileMenuButton.addEventListener('click', function () {
-                console.log('heree');
-              const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-              mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-              mobileMenu.classList.toggle('hidden');
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
             });
-
+            
             closeMenu.addEventListener('click', function () {                
                 mobileMenu.classList.toggle('hidden');
             });
             
             initializeSidebar();
+            
         })
         .catch(error => console.log('Error loading the navbar:', error));
 });
@@ -98,6 +124,20 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => response.text())
         .then(data => {
             document.getElementById('contactbar').innerHTML = data;
+            const countriesBtn = document.getElementById('countries-button');
+            const countriesDropdown = document.getElementById('dropdown-countries');
+            
+            countriesBtn.addEventListener('click', function() {
+                countriesDropdown.classList.toggle('hidden');
+            }); 
+            
+            document.addEventListener('click', function(event) {
+                if (!countriesBtn.contains(event.target) && !countriesDropdown.contains(event.target)) {
+                    countriesDropdown.classList.add('hidden');
+                }
+            });
+            
+
         })
         .catch(error => console.log('Error loading the contactbar:', error));
         
@@ -161,10 +201,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
                    }
                   });
-            document.getElementById('countries-button').addEventListener('click', function() {
-                const dropdown = document.getElementById('dropdown-countries');
-                dropdown.classList.toggle('hidden');
-              }); 
+
         })
         .catch(error => console.log('Error loading the categoriesSlider:', error));
 });
@@ -174,6 +211,45 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => response.text())
         .then(data => {
             document.getElementById('bestDeals').innerHTML = data;
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+    
+            function updateCountdown() {
+                // Set the target date (16 days from now)
+                const now = new Date();
+                const target = new Date(now.getTime() + 16 * 24 * 60 * 60 * 1000);
+                target.setHours(12, 11, 9, 0);
+    
+                // Calculate the difference
+                const diff = target - now;
+    
+                // Calculate days, hours, minutes, seconds
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+                // Format the numbers to always show two digits
+                const formatNumber = (num) => String(num).padStart(2, '0');
+    
+                // Update the DOM elements
+                daysEl.textContent = formatNumber(days);
+                hoursEl.textContent = formatNumber(hours);
+                minutesEl.textContent = formatNumber(minutes);
+                secondsEl.textContent = formatNumber(seconds);
+    
+                // Check if countdown has finished
+                if (diff < 0) {
+                    clearInterval(timerInterval);
+                    document.getElementById('countdown').textContent = "Countdown finished!";
+                }
+            }
+    
+            // Update immediately and then every second
+            updateCountdown();
+            const timerInterval = setInterval(updateCountdown, 1000);
         })
         .catch(error => console.log('Error loading the bestDeals:', error));
 });
