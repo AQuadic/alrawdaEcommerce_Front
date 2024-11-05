@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -45,7 +45,7 @@
             </button>
             <div :class="{'translate-x-0': open, '-translate-x-full': !open}" 
                 class="fixed top-0 left-0 w-3/4 h-full bg-white z-50 overflow-y-auto transform transition-transform duration-300 md:static md:w-full md:translate-x-0">
-                <button @click="open = false" class="md:hidden text-gray-600 absolute top-4 right-4">
+                <button @click="open = false" class="md:hidden text-gray-600 absolute top-4 ltr:right-4 rtl:left-4">
                     <i class="fa fa-times"></i>
                 </button>
         
@@ -248,7 +248,7 @@
                             <div
                                 class="text-[#f98131] text-sm font-bold font-['Public Sans'] uppercase leading-[48px] tracking-tight">
                                 View Details</div>
-                            <i class="fa text-[#f98131] fa-arrow-right " aria-hidden="true"></i>
+                            <i class="fa text-[#f98131] fa-arrow-right transform ltr:scale-x-100 rtl:scale-x-[-1]" aria-hidden="true"></i>
                         </button>
                     </div>      
                   </ul>
