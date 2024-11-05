@@ -38,225 +38,238 @@
 
     <div class="flex xl:flex-row gap-5  px-9lg:px-[100px] py-6  xl:px-[150px]">
         <!-- filters -->
-        <div class="flex flex-col w-3/12 ">
-            <!-- Cateogy filter-->
-            <div class="">
-                <h3 class=" text-[#191c1e] text-base font-medium font-['Public Sans'] uppercase leading-normal">Category
-                </h3>
+        <div x-data="{ open: false }" class="relative flex flex-col md:w-3/12">
+            <button @click="open = !open" id="toggleButton" class="md:hidden flex items-center gap-2 mb-4 text-white rounded relative top-[14px]">
+                <img src="../assets/images/burger-menu.svg" class="w-6 h-6" alt="Toggle Sidebar">
+            </button>
+            <div :class="{'translate-x-0': open, '-translate-x-full': !open}" 
+                class="fixed top-0 left-0 w-3/4 h-full bg-white z-50 transform transition-transform duration-300 md:static md:w-full md:translate-x-0">
+                <button @click="open = false" class="md:hidden text-gray-600 absolute top-4 right-4">
+                    <i class="fa fa-times"></i>
+                </button>
+        
+                <!-- Category Filter -->
+                <div class="p-4 md:p-0">
+                    <h3 class="text-[#191c1e] text-base font-medium font-['Public Sans'] uppercase leading-normal">Category</h3>
                 <!-- Cateogries-->
-                <ul class="flex flex-col gap-1.5 border border-b-2 border-l-0  border-t-0 border-r-0 py-3">
-                    <li class="flex items-center gap-2">
-                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
-                        <div>Electronics Devices</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
-                        <div>Computer & Laptop</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
-                        <div>SmartPhone</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
-                        <div>Headphone</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
-                        <div>Gaming Console</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
-                        <div>Camera & Photo</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
-                        <div>TV & Homes Appliances</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
-                        <div>Watchs & Accessories</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
-                        <div>GPS & Navigation</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
-                        <div>Warable Technology</div>
-                    </li>
-                </ul>
-            </div>
-            <!-- price range filter-->
-            <div>
-                <div class=" pt-5 flex justify-center items-center">
-                    <div x-data="range()" x-init="mintrigger(); maxtrigger()" class="relative max-w-xl w-full">
-                        <div>
-                            <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="mintrigger"
-                                x-model="minprice"
-                                class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer">
-
-                            <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="maxtrigger"
-                                x-model="maxprice"
-                                class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer">
-
-                            <div class="relative z-10 h-1">
-
-                                <div class="absolute z-10 left-0 right-0 bottom-0 top-0 rounded-md bg-gray-200"></div>
-
-                                <div class="absolute z-20 top-0 bottom-0 rounded-md bg-[#f98131]"
-                                    x-bind:style="'right:'+maxthumb+'%; left:'+minthumb+'%'"></div>
-
-                                <div class="absolute z-30 w-4 h-4 top-[1px] left-0 bg-white   border-[#f98131] border-2 rounded-full -mt-2 -ml-1"
-                                    x-bind:style="'left: '+minthumb+'%'"></div>
-
-                                <div class="absolute z-30  w-4 h-4 top-[1px] right-0 bg-white   border-[#f98131] border-2 rounded-full -mt-2 -mr-3"
-                                    x-bind:style="'right: '+maxthumb+'%'"></div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="flex justify-between items-center pt-5 ">
-                            <div>
-                                <input type="text" maxlength="5" x-on:input="mintrigger" x-model="minprice"
-                                    class="px-3 py-2 border border-gray-200 rounded w-24 text-center">
-                            </div>
-                            <div>
-                                <input type="text" maxlength="5" x-on:input="maxtrigger" x-model="maxprice"
-                                    class="px-3 py-2 border border-gray-200 rounded w-24 text-center">
-                            </div>
-                        </div>
-
-                    </div>
-
+                <ul class="flex flex-col gap-1.5 border-b-2 border-l-0  border-t-0 border-r-0 py-3">
+                        <li class="flex items-center gap-2">
+                            <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                            <div>Electronics Devices</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                            <div>Computer & Laptop</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                            <div>SmartPhone</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                            <div>Headphone</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                            <div>Gaming Console</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                            <div>Camera & Photo</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                            <div>TV & Homes Appliances</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                            <div>Watchs & Accessories</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                            <div>GPS & Navigation</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                            <div>Warable Technology</div>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="flex flex-col gap-1 border border-b-2 border-l-0  border-t-0 border-r-0 py-3">
-                    <li class="flex items-center gap-2">
-                        <input type="radio"
-                            class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
-                        <div>All prices</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio"
-                            class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
-                        <div>Under $20</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio"
-                            class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
-                        <div>$25 to $100</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio"
-                            class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
-                        <div>$100 to $300</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio"
-                            class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
-                        <div>$300 to $500</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio"
-                            class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
-                        <div>$500 to $1,000</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio"
-                            class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
-                        <div>$1,000 to $10,000</div>
-                    </li>
-
-                </ul>
-            </div>
-            <!-- price rating filter-->
-
-            <div class="">
-                <h3 class=" text-[#191c1e] text-base font-medium font-['Public Sans'] uppercase leading-normal">Ratring
-                </h3>
-                <!-- Cateogries-->
-                <ul class="flex flex-col gap-1  py-3">
-                    <li class="flex items-center gap-2">
-                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
-                        <div>1 star</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
-                        <div>2 stars</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
-                        <div>3 stars</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
-                        <div>4 stars</div>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
-                        <div>5 stars</div>
-                    </li>
-
-                </ul>
-            </div>
-
-            <!-- bannar -->
-            <div class="flex mt-3  p-8 rounded border-4 border-[#ffe7d6] flex-col justify-center items-center">
+                <!-- price range filter-->
                 <div>
-                    <img src="./../assets/images/shoing bannar.svg" alt="">
-                </div>
-                <!-- bannar detials-->
-                <div class="flex flex-col justify-center items-center gap-3">
-                    <img src="./../assets/images/AppleWatchBanner.svg" alt="">
-
-                    <div class=" flex-col justify-center items-center gap-4 inline-flex">
-                        <div class="flex-col justify-center items-center gap-2 flex">
-                            <h2 class=" text-center text-[#191c1e] text-2xl font-semibold font-['Public Sans'] ">Heavy
-                                on Features. Light on Price.</h2>
-                        </div>
-                        <div class="justify-center items-center gap-2 inline-flex">
-                            <div class="text-[#475156] text-sm font-normal font-['Public Sans'] leading-tight">Only for:
+                    <div class=" pt-5 flex justify-center items-center">
+                        <div x-data="range()" x-init="mintrigger(); maxtrigger()" class="relative max-w-xl w-full">
+                            <div>
+                                <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="mintrigger"
+                                    x-model="minprice"
+                                    class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer">
+    
+                                <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="maxtrigger"
+                                    x-model="maxprice"
+                                    class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer">
+    
+                                <div class="relative z-10 h-1">
+    
+                                    <div class="absolute z-10 left-0 right-0 bottom-0 top-0 rounded-md bg-gray-200"></div>
+    
+                                    <div class="absolute z-20 top-0 bottom-0 rounded-md bg-[#f98131]"
+                                        x-bind:style="'right:'+maxthumb+'%; left:'+minthumb+'%'"></div>
+    
+                                    <div class="absolute z-30 w-4 h-4 top-[1px] left-0 bg-white   border-[#f98131] border-2 rounded-full -mt-2 -ml-1"
+                                        x-bind:style="'left: '+minthumb+'%'"></div>
+    
+                                    <div class="absolute z-30  w-4 h-4 top-[1px] right-0 bg-white   border-[#f98131] border-2 rounded-full -mt-2 -mr-3"
+                                        x-bind:style="'right: '+maxthumb+'%'"></div>
+    
+                                </div>
+    
                             </div>
-                            <div class="px-3 py-1.5 bg-[#f3de6d] rounded-[3px] justify-start items-start gap-2.5 flex">
-                                <div
-                                    class="text-center text-[#191c1e] text-base font-semibold font-['Public Sans'] leading-normal">
-                                    $299 USD</div>
+    
+                            <div class="flex justify-between items-center pt-5 ">
+                                <div>
+                                    <input type="text" maxlength="5" x-on:input="mintrigger" x-model="minprice"
+                                        class="px-3 py-2 border border-gray-200 rounded w-24 text-center">
+                                </div>
+                                <div>
+                                    <input type="text" maxlength="5" x-on:input="maxtrigger" x-model="maxprice"
+                                        class="px-3 py-2 border border-gray-200 rounded w-24 text-center">
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    <ul class="flex flex-col gap-1 border border-b-2 border-l-0  border-t-0 border-r-0 py-3">
+                        <li class="flex items-center gap-2">
+                            <input type="radio"
+                                class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
+                            <div>All prices</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio"
+                                class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
+                            <div>Under $20</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio"
+                                class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
+                            <div>$25 to $100</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio"
+                                class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
+                            <div>$100 to $300</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio"
+                                class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
+                            <div>$300 to $500</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio"
+                                class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
+                            <div>$500 to $1,000</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio"
+                                class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
+                            <div>$1,000 to $10,000</div>
+                        </li>
+    
+                    </ul>
+                </div>
+                <!-- price rating filter-->
+    
+                <div class="">
+                    <h3 class=" text-[#191c1e] text-base font-medium font-['Public Sans'] uppercase leading-normal">Ratring
+                    </h3>
+                    <!-- Cateogries-->
+                    <ul class="flex flex-col gap-1  py-3">
+                        <li class="flex items-center gap-2">
+                            <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                            <div>1 star</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                            <div>2 stars</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                            <div>3 stars</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                            <div>4 stars</div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <input type="radio" class="w-5 h-5 text-[#f98131] border-gray-300 focus:ring-white">
+                            <div>5 stars</div>
+                        </li>
+    
+                    </ul>
+                </div>
+    
+                <!-- bannar -->
+                <div class="flex mt-3  p-8 rounded border-4 border-[#ffe7d6] flex-col justify-center items-center">
+                    <div>
+                        <img src="./../assets/images/shoing bannar.svg" alt="">
+                    </div>
+                    <!-- bannar detials-->
+                    <div class="flex flex-col justify-center items-center gap-3">
+                        <img src="./../assets/images/AppleWatchBanner.svg" alt="">
+    
+                        <div class=" flex-col justify-center items-center gap-4 inline-flex">
+                            <div class="flex-col justify-center items-center gap-2 flex">
+                                <h2 class=" text-center text-[#191c1e] text-2xl font-semibold font-['Public Sans'] ">Heavy
+                                    on Features. Light on Price.</h2>
+                            </div>
+                            <div class="justify-center items-center gap-2 inline-flex">
+                                <div class="text-[#475156] text-sm font-normal font-['Public Sans'] leading-tight">Only for:
+                                </div>
+                                <div class="px-3 py-1.5 bg-[#f3de6d] rounded-[3px] justify-start items-start gap-2.5 flex">
+                                    <div
+                                        class="text-center text-[#191c1e] text-base font-semibold font-['Public Sans'] leading-normal">
+                                        $299 USD</div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- btns  -->
+                    <div class="flex flex-col gap-2 pt-3 w-full">
+                        <button class=" px-6 bg-[#f98131] w-full rounded-sm justify-center items-center gap-2 inline-flex">
+                            <i class="fa-solid fa-cart-shopping text-white"></i>
+                            <div
+                                class="text-white text-sm font-bold font-['Public Sans'] uppercase leading-[48px] tracking-tight">
+                                Add to Cart</div>
+                        </button>
+                        <button
+                            class=" h-12 px-6 rounded-sm w-full border-2 border-[#f98131] justify-center items-center gap-2 inline-flex">
+                            <div
+                                class="text-[#f98131] text-sm font-bold font-['Public Sans'] uppercase leading-[48px] tracking-tight">
+                                View Details</div>
+                            <i class="fa text-[#f98131] fa-arrow-right " aria-hidden="true"></i>
+                        </button>
+                    </div>      
+                  </ul>
                 </div>
-                <!-- btns  -->
-                <div class="flex flex-col gap-2 pt-3 w-full">
-                    <button class=" px-6 bg-[#f98131] w-full rounded-sm justify-center items-center gap-2 inline-flex">
-                        <i class="fa-solid fa-cart-shopping text-white"></i>
-                        <div
-                            class="text-white text-sm font-bold font-['Public Sans'] uppercase leading-[48px] tracking-tight">
-                            Add to Cart</div>
-                    </button>
-                    <button
-                        class=" h-12 px-6 rounded-sm w-full border-2 border-[#f98131] justify-center items-center gap-2 inline-flex">
-                        <div
-                            class="text-[#f98131] text-sm font-bold font-['Public Sans'] uppercase leading-[48px] tracking-tight">
-                            View Details</div>
-                        <i class="fa text-[#f98131] fa-arrow-right " aria-hidden="true"></i>
-                    </button>
-                </div>
+
+                
             </div>
+
         </div>
 
         <!-- all products and nav-->
         <div class="flex flex-col  w-9/12">
             <!-- nav -->
-            <div class="flex w-full justify-between">
+            <div class="flex md:flex-row  flex-col w-full justify-between gap-5 md:mx-0 mx-3">
                 <!--search input-->
                 <div
-                    class="self-stretch px-4 pt-2.5 pb-[15px] w-5/12 bg-white rounded border border-[#eeeeee] flex items-center gap-1">
+                    class="self-stretch px-4 pt-2.5 pb-[15px] md:w-5/12 bg-white rounded border border-[#eeeeee] flex items-center gap-1">
                     <input type="text" class="flex-grow p-0 border-0 text-left" placeholder="Search...">
                     <i class="fa-solid flex-none fa-magnifying-glass"></i>
                 </div>
                 <!-- sort by-->
-                <div class="flex justify-center items-center gap-2">
+                <div class="flex md:justify-center items-center gap-2">
                     <span class="text-[#191c1e] text-sm font-normal ">Sort by:</span>
                     <div class="relative ">
                         <button id="sortBy-button"
@@ -282,28 +295,27 @@
 
             </div>
             <!--filter bar -->
-            <div class="w-full px-6 py-3 my-3 bg-[#f2f3f4] rounded justify-between items-center inline-flex">
+            <div class="md:w-full w-[372px] md:px-6 px-1 py-3 my-3 bg-[#f2f3f4] rounded justify-between items-center inline-flex">
                 <div class="justify-start items-center gap-4 flex">
-                    <div class="text-[#5f6c72] text-sm font-normal font-['Public Sans'] leading-tight">Active Filters:
+                    <div class="text-[#5f6c72] md:text-sm text-[9px] font-normal font-['Public Sans'] leading-tight">Active Filters:
                     </div>
                     <!--fitler item-->
                     <div class="justify-start items-center gap-1.5 flex">
-                        <h6 class="text-[#191c1e] text-sm font-normal font-['Public Sans'] leading-tight">Electronics
+                        <h6 class="text-[#191c1e] md:text-sm text-[9px] font-normal font-['Public Sans'] leading-tight">Electronics
                             Devices</h6>
                         <i class="fa-solid fa-x text-[#191c1e] text-[10px] pt-1 "></i>
                     </div>
                     <!--fitler item-->
                     <div class="justify-start items-center gap-1.5 flex">
-                        <h6 class="text-[#191c1e] text-sm font-normal font-['Public Sans'] leading-tight">Electronics
+                        <h6 class="text-[#191c1e] md:text-sm text-[9px] font-normal font-['Public Sans'] leading-tight">Electronics
                             Devices</h6>
                         <i class="fa-solid fa-x text-[#191c1e] text-[10px] pt-1 "></i>
                     </div>
                 </div>
 
                 <div>
-                    <span class="text-black text-sm font-semibold font-['Public Sans'] leading-tight">65,867</span>
-                    <span class="text-[#5f6c72] text-sm font-normal font-['Public Sans'] leading-tight">Results
-                        found.</span>
+                    <span class="text-black md:text-sm text-[9px] font-semibold font-['Public Sans'] leading-tight">65,867</span>
+                    <span class="text-[#5f6c72] md:text-sm text-[9px] font-normal font-['Public Sans'] leading-tight">Results found.</span>
                 </div>
             </div>
             <!-- products-->
