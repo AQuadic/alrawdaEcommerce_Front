@@ -36,14 +36,15 @@
     <div id="Breadcrumb ">
     </div>
 
-    <div class="flex xl:flex-row gap-5  px-9lg:px-[100px] py-6  xl:px-[150px]">
+    <div class="md:flex xl:flex-row gap-5  px-9lg:px-[100px] py-6  xl:px-[150px]">
         <!-- filters -->
         <div x-data="{ open: false }" class="relative flex flex-col md:w-3/12">
-            <button @click="open = !open" id="toggleButton" class="md:hidden flex items-center gap-2 mb-4 text-white rounded relative top-[14px]">
+            <button @click="open = !open" id="toggleButton" class="md:hidden p-2 flex items-center gap-2 mb-4 text-white rounded relative top-[14px]">
                 <img src="../assets/images/burger-menu.svg" class="w-6 h-6" alt="Toggle Sidebar">
+                <p class="text-black">Categories</p>
             </button>
             <div :class="{'translate-x-0': open, '-translate-x-full': !open}" 
-                class="fixed top-0 left-0 w-3/4 h-full bg-white z-50 transform transition-transform duration-300 md:static md:w-full md:translate-x-0">
+                class="fixed top-0 left-0 w-3/4 h-full bg-white z-50 overflow-y-auto transform transition-transform duration-300 md:static md:w-full md:translate-x-0">
                 <button @click="open = false" class="md:hidden text-gray-600 absolute top-4 right-4">
                     <i class="fa fa-times"></i>
                 </button>
@@ -97,7 +98,7 @@
                 </div>
                 <!-- price range filter-->
                 <div>
-                    <div class=" pt-5 flex justify-center items-center">
+                    <div class=" pt-5 p-4 flex justify-center items-center">
                         <div x-data="range()" x-init="mintrigger(); maxtrigger()" class="relative max-w-xl w-full">
                             <div>
                                 <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="mintrigger"
@@ -139,7 +140,7 @@
                         </div>
     
                     </div>
-                    <ul class="flex flex-col gap-1 border border-b-2 border-l-0  border-t-0 border-r-0 py-3">
+                    <ul class="flex flex-col p-4 gap-1 border border-b-2 border-l-0  border-t-0 border-r-0 py-3">
                         <li class="flex items-center gap-2">
                             <input type="radio"
                                 class="w-5 h-5 text-white  !border-gray-300 focus:!border-[#f98131] focus:ring-white">
@@ -180,7 +181,7 @@
                 </div>
                 <!-- price rating filter-->
     
-                <div class="">
+                <div class="p-4">
                     <h3 class=" text-[#191c1e] text-base font-medium font-['Public Sans'] uppercase leading-normal">Ratring
                     </h3>
                     <!-- Cateogries-->
