@@ -6,8 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-  <div class="lg:px-[150px] w-full py-2 bg-[#f8f8f8] justify-between items-center gap-2 flex flex-col lg:flex-row">
-    <!-- Main container for the header section -->
+  <div class="bg-[#f8f8f8]">
+    <div class="lg:px-[150px] w-full py-2 container mx-auto justify-between items-center gap-2 flex flex-col lg:flex-row">
+            <!-- Main container for the header section -->
     
     <!-- Navigation and language selection (visible on small screens and up) -->
     <ul class="hidden sm:flex text-center min-[360px]:gap-3">
@@ -15,8 +16,9 @@
             <form class="max-w-sm mx-auto">
                 <div class="relative">
                     <!-- Dropdown button for language selection -->
-                    <div id="countries-button" class="flex">
-                        <img src="./../assets/images/countries/usa.svg" alt="USA" class="w-5 h-5 mr-2"> English
+                    <div id="countries-button" class="flex gap-2">
+                        <img src="./../assets/images/countries/usa.svg" alt="USA" class="w-5 h-5">
+                        <span>English</span>
                     </div>
                     
                     <!-- Dropdown menu for available languages -->
@@ -24,20 +26,23 @@
                         <ul class="py-2 text-sm text-gray-700">
                             <!-- Language option: Arabic -->
                             <li>
-                                <button type="button" class="flex items-center w-full px-4 py-2 hover:bg-gray-100">
-                                    <img src="./../assets/images/icon.svg" alt="Arabic" class="w-5 h-5 mr-2"> Arabic
+                                <button type="button" class="flex items-center w-full px-4 py-2 hover:bg-gray-100 gap-2">
+                                    <img src="./../assets/images/icon.svg" alt="Arabic" class="w-5 h-5">
+                                    <span>Arabic</span>
                                 </button>
                             </li>
                             <!-- Language option: Mandarin -->
                             <li>
-                                <button type="button" class="flex items-center w-full px-4 py-2 hover:bg-gray-100">
-                                    <img src="./../assets/images/countries/china.svg" alt="Mandarin" class="w-5 h-5 mr-2"> Mandarin
+                                <button type="button" class="flex items-center w-full px-4 py-2 hover:bg-gray-100 gap-2">
+                                    <img src="./../assets/images/countries/china.svg" alt="Mandarin" class="w-5 h-5">
+                                    <span>Mandarin</span>
                                 </button>
                             </li>
                             <!-- Language option: Russian -->
                             <li>
-                                <button type="button" class="flex items-center w-full px-4 py-2 hover:bg-gray-100">
-                                    <img src="./../assets/images/countries/russia.svg" alt="Russian" class="w-5 h-5 mr-2"> Russian
+                                <button type="button" class="flex items-center w-full px-4 py-2 hover:bg-gray-100 gap-2">
+                                    <img src="./../assets/images/countries/russia.svg" alt="Russian" class="w-5 h-5">
+                                    <span>Russian</span>
                                 </button>
                             </li>
                         </ul>
@@ -68,18 +73,21 @@
     <!-- Contact information section -->
     <ul class="flex gap-2 pt-[3px] pb-0.5">
         <!-- Email contact -->
-        <li class="text-[#666666] text-[13px]">info@alrawdaegypt.com
+        <li class="text-[#666666] text-[13px]">
             <i class="pl-2 fa-regular text-[#62D0B6] fa-envelope"></i>
+            <span>info@alrawdaegypt.com</span>
         </li>
         
         <!-- Divider -->
         <li class="m-1.5 shrink-0 mx-0 h-[10px] border border-[#d6d6d6]"></li>
         
         <!-- Phone contact -->
-        <li class="text-[#666666] text-[13px]">+201234567890 
+        <li class="text-[#666666] text-[13px]">
             <i class="pr-2 fa-solid fa-phone-volume text-[#62D0B6] transform -scale-x-100"></i>
+            <span>+201234567890 </span>
         </li>
     </ul>
+    </div>
 </div>
 
 </body>
