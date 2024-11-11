@@ -26,17 +26,20 @@
           <span class="text-white text-sm sm:text-xl  ">OFF</span>
         </div>
       
-        <!-- shop now -->
-        <a href="shop.html" class="flex items-center ltr:lg:mr-[100px] rtl:lg:ml-[100px]">
-          <div class="h-11 px-3 bg-[#eac70b] rounded-sm justify-center items-center gap-2 inline-flex">
-            <div class="text-[#191c1e] text-sm sm:text-base font-bold font-['Public Sans'] uppercase  tracking-tight">Shop
-              now</div>
-            <i class="fa fa-arrow-right transform ltr:scale-x-100 rtl:scale-x-[-1]" aria-hidden="true"></i>
-          </div>
-        </a>
+<!-- shop now -->
+<a href="shop.html" class="relative group flex items-center ltr:lg:mr-[100px] rtl:lg:ml-[100px] overflow-hidden">
+  <div class="h-11 px-3 bg-[#eac70b] rounded-sm justify-center items-center gap-2 inline-flex overflow-hidden relative">
+    <span class="absolute inset-0 flex items-center justify-center w-full h-full bg-[#191c1e] text-white -translate-x-full transition-transform duration-300 ease-out group-hover:translate-x-0">
+      <i class="fa fa-arrow-right transform ltr:scale-x-100 rtl:scale-x-[-1]" aria-hidden="true"></i>
+    </span>
+    <span class="relative text-[#191c1e] text-sm sm:text-base font-bold font-['Public Sans'] uppercase tracking-tight transition-transform duration-300 ease-out group-hover:translate-x-full">Shop now</span>
+    <span class="absolute invisible">Shop now</span>
+    <i class="fa fa-arrow-right transform ltr:scale-x-100  text-[#191c1e] rtl:scale-x-[-1]" aria-hidden="true"></i>
+  </div>
+</a>
       
         <!-- Exit Button -->
-        <button class="p-2 ltr:right-4 ltr:sm:right-6 rtl:left-4 rtl:sm:left-6 absolute bg-[#303639] rounded-sm flex items-center">
+        <button class="p-2 ltr:right-4 ltr:sm:right-6 rtl:left-4 rtl:sm:left-6 absolute bg-[#303639] rounded-sm flex items-center hover:animate-pulse">
           <i class="fa-solid fa-x text-white text-xs"></i>
         </button>
   </div>

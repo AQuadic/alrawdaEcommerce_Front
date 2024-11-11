@@ -320,16 +320,3 @@ document.addEventListener("DOMContentLoaded", function() {
     
 });
 
-// For Password Eye Icon
-function togglePassword(icon) {
-    const passwordInput = icon.closest('.relative').querySelector('input[type="password"], input[type="text"]');
-    const eyeIcon = icon.querySelector('i');
-    
-    if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        eyeIcon.classList.replace('fa-eye-slash', 'fa-eye');
-    } else {
-        passwordInput.type = 'password';
-        eyeIcon.classList.replace('fa-eye', 'fa-eye-slash');
-    }
-}

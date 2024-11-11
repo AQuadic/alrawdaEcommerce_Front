@@ -11,6 +11,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
 </head>
 
 <body>
@@ -133,8 +134,96 @@
                         <img src="../assets/images/burger-menu.svg" class="w-6 h-6" alt="Toggle Sidebar">
                         <p class="text-black">Dashboard</p>
                     </button>
-                    <div class="bg-white border border-[#E4E7E9] rounded-[4px] overflow-hidden p-2">
-                        <div class="md:w-[936px] w-full h-[104px] bg-[#FDFAE7] border border-[#F7E99E]">
+                    <div class="bg-white border border-[#E4E7E9] rounded-[4px] overflow-hidden ">
+                        <div class="flex items-center justify-between p-3">
+                            <a href="./orderHistory.html" class="flex items-center gap-2">
+                                <img src="../assets/images/ArrowLeftB.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1] cursor-pointer" alt="Arrow Icon">
+                                <h1 class="text-[#191C1F] font-medium text-sm uppercase">order details</h1>
+                            </a>
+                            
+                            <div x-data="{ showPopup: false }">
+                                <button @click="showPopup = true" id="leave-rating-button" class="flex items-center gap-2 cursor-pointer">
+                                    <p class="text-[#FA8232] text-sm font-semibold">Leave Rating</p>
+                                <img src="../assets/images/OPlus.svg" alt="Plus Icon">
+                                </button>
+                            
+                                <div x-show="showPopup" x-cloak class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+                                    <div class="bg-white rounded-lg p-4 md:m-0 m-5 w-full max-w-md relative">
+                                        <button @click="showPopup = false" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                                            <img src="../assets/images/closeIcon.svg" alt="">
+                                        </button>
+                                        <h2 class="text-sm text-[#191C1F] font-medium mb-2">Billing address</h2>
+                                        <hr class="pb-2">
+                                        <div>
+                                            <h3 class="text-[#191C1F] text-sm font-normal leading-[20px]">Rating</h3>
+                                            <div x-data="{ open: false, selected: '5 star rating' }" class="relative">
+                                                <button @click="open = !open" class="w-full h-11 mt-2 mb-4 border border-[#E4E7E9] rounded-[1px] flex items-center px-3 py-2 text-left bg-white focus:outline-none focus:ring-0 focus:border-[#FA8232]">
+                                                    <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                    <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                    <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                    <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                    <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                    <p x-text="selected"></p>
+                                                </button>
+                            
+                                                <ul x-show="open" @click.outside="open = false" class="absolute left-0 w-full bg-white border border-[#E4E7E9] rounded-[1px]">
+                                                    <li @click="selected = '5 star rating'; open = false" class="flex items-center p-2 cursor-pointer">
+                                                        <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                        <p>5 star rating</p>
+                                                    </li>
+                                                    <li @click="selected = '4 star rating'; open = false" class="flex items-center p-2 cursor-pointer">
+                                                        <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-regular fa-star mr-2 text-[#FA8232]"></i>
+                                                        <p>4 star rating</p>
+                                                    </li>
+                                                    <li @click="selected = '3 star rating'; open = false" class="flex items-center p-2 cursor-pointer">
+                                                        <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-regular fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-regular fa-star mr-2 text-[#FA8232]"></i>
+                                                        <p>3 star rating</p>
+                                                    </li>
+                                                    <li @click="selected = '2 star rating'; open = false" class="flex items-center p-2 cursor-pointer">
+                                                        <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-regular fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-regular fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-regular fa-star mr-2 text-[#FA8232]"></i>
+                                                        <p>2 star rating</p>
+                                                    </li>
+                                                    <li @click="selected = '1 star rating'; open = false" class="flex items-center p-2 cursor-pointer">
+                                                        <i class="fa-solid fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-regular fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-regular fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-regular fa-star mr-2 text-[#FA8232]"></i>
+                                                        <i class="fa-regular fa-star mr-2 text-[#FA8232]"></i>
+                                                        <p>1 star rating</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-[#191C1F] text-sm font-normal leading-[20px]">Feedback</h3>
+                                            <textarea name="feedback" id="feedback" placeholder="Write down your feedback about our product & services" class="w-full h-[124px] p-2 mt-2 mb-6 border-[#E4E7E9] rounded-[1px] focus:outline-none focus:ring-0 focus:border-[#FA8232]"></textarea>
+                                        </div>
+                                        <a href="#" class="w-[205px] h-[56px] bg-[#FA8232] flex items-center justify-center font-bold text-[16px] text-white uppercase">
+                                            publish review
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <hr class="pb-3">
+                        <div class="md:w-[936px] w-full h-[104px] bg-[#FDFAE7] border border-[#F7E99E] sm:m-5">
                             <div class="px-6 py-6 flex items-center justify-between">
                                 <span>
                                     <p class="text-[#191C1F] font-normal text-[20px]">#96459761</p>
@@ -243,6 +332,71 @@
                                     </div>
                                 </li>
                             </ul>
+                        </div>
+                        <!-- Products -->
+                        <div class="pb-6">
+                            <h1 class="pt-6 md:ltr:pl-[32px] md:rtl:pr-[32px] px-2 text-[#191C1F] font-medium text-lg">Product <span class="text-[#5F6C72] text-lg font-normal">(02)</span></h1>
+                            <div class="overflow-x-auto pt-[20px]">
+                                <table class="w-full table-auto">
+                                <thead>
+                                    <tr class="bg-[#E4E7E9]">
+                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium uppercase pt-6 md:ltr:pl-[32px] md:rtl:pr-[32px] px-2">PRODUCTS</th>
+                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium uppercase">PRICE</th>
+                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium uppercase">Quantity</th>
+                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium uppercase">Sub-Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="p-3 flex items-center gap-2">
+                                            <img src="../assets/images/wishlistimg1.webp" class="w-[72px] h-[72px] object-cover" alt="Wishlist">
+                                            <p class="w-[260px] text-[#475156]">4K UHD LED Smart TV with Chromecast Built-in</p>
+                                        </td>
+                                        <td class="p-3 text-black">
+                                            <span class="text-[#475156]">$899</span>
+                                        </td>
+                                        <td class="p-3">
+                                        <span id="counter1" class="text-[#475156] font-normal text-sm">x1</span>
+                                        </td>
+                                        <td class="trContent relative p-3 text-[#191C1F] font-medium  items-center">
+                                            <p>$70</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 flex items-center gap-2">
+                                            <img src="../assets/images/wishlistimg2.webp" class="w-[72px] h-[72px] object-cover" alt="Wishlist">
+                                            <p class="w-[260px] text-[#475156]">Wired Over-Ear Gaming Headphones with USB</p>
+                                        </td>
+                                        <td class="p-3 text-black">
+                                            <span class="text-[#475156]">$39</span>
+                                        </td>
+                                        <td class="p-3">
+                                        <span id="counter2" class="text-[#475156] font-normal text-sm">x1</span>
+                                        </td>
+                                        
+                                        <td class="trContent relative p-3 text-[#191C1F] font-medium  items-center">
+                                            <p>$250</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                            </div>
+                            <div class="p-6 flex md:flex-row flex-col gap-12">
+                                <div class="w-[1px] bg-[#E4E7E9]"></div>
+                                <div>
+                                    <h1 class="text-[#191C1F] font-medium text-lg">Shipping Address</h1>
+                                    <h2 class="text-[#191C1F] text-sm font-medium mt-6 mb-2">Kevin Gilbert</h2>
+                                    <p class="text-[#5F6C72] font-normal text-sm w-[280px] mb-3">East Tejturi Bazar, Word No. 04, Road No. 13/x, House no. 1320/C, Flat No. 5D, Dhaka - 1200, Bangladesh</p>
+                                    <p class="text-[#191C1F] font-normal text-sm">Phone number: <span class="text-[#5F6C72] text-sm font-normal"> +1-202-555-0118</span></p>
+                                    <p class="text-[#191C1F] font-normal text-sm mt-3">Email: <span class="text-[#5F6C72] text-sm font-normal"> kevin.gilbert@gmail.com</span></p>    
+                                </div>
+                                <div class="w-[1px] bg-[#E4E7E9]"></div>
+                                <div>
+                                    <h1 class="text-[#191C1F] font-medium text-lg">Order Notes</h1>
+                                    <p class="text-[#5F6C72] font-normal text-sm w-[280px] mt-6">Donec ac vehicula turpis. Aenean sagittis est eu arcu ornare, eget venenatis purus lobortis. Aliquam erat volutpat. Aliquam magna odio.</p>
+                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -22,16 +22,16 @@
     <!-- Start Content -->
         <section class="container mx-auto flex md:flex-row flex-col justify-center gap-6 mt-[40px] mb-[72px]">
                 <div class="md:w-[872px] p-2">
-                    <div class="bg-white border border-[#E4E7E9] rounded-[4px] overflow-hidden">
-                            <h1 class="pt-6 ltr:pl-[32px] rtl:pr-[32px] text-[#191C1F] font-medium text-lg">Shopping Cart</h1>
-                            <div class="overflow-x-auto pt-[20px]">
-                                <table class="w-full table-auto">
+                    <div x-data="{ counters: { counter1: 1, counter2: 1 } }" class="bg-white border border-[#E4E7E9] rounded-[4px] overflow-hidden">
+                        <h1 class="pt-6 ltr:pl-[32px] rtl:pr-[32px] text-[#191C1F] font-medium text-lg">Shopping Cart</h1>
+                        <div class="overflow-x-auto pt-[20px]">
+                            <table class="w-full table-auto">
                                 <thead>
                                     <tr class="bg-[#E4E7E9]">
-                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium uppercase">PRODUCTS</th>
-                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium uppercase">PRICE</th>
-                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium uppercase">Quantity</th>
-                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium uppercase">Sub-Total</th>
+                                        <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium uppercase">PRODUCTS</th>
+                                        <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium uppercase">PRICE</th>
+                                        <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium uppercase">Quantity</th>
+                                        <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium uppercase">Sub-Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -47,16 +47,16 @@
                                         </td>
                                         <td class="p-3">
                                             <div class="flex items-center border border-[#E4E7E9] rounded-[3px] w-[148px] p-2 justify-between">
-                                                <button onclick="decrement('counter1')" class="text-lg focus:outline-none">
+                                                <button @click="counters.counter1 > 1 && counters.counter1--" class="text-lg focus:outline-none">
                                                     <img src="../assets/images/MinusW.svg" alt="Minus">
                                                 </button>
-                                                <span id="counter1" class="text-[#475156] font-medium">01</span>
-                                                <button onclick="increment('counter1')" class="text-lg focus:outline-none">
+                                                <span x-text="String(counters.counter1).padStart(2, '0')" class="text-[#475156] font-medium"></span>
+                                                <button @click="counters.counter1++" class="text-lg focus:outline-none">
                                                     <img src="../assets/images/Plus.svg" alt="Plus">
                                                 </button>
                                             </div>
                                         </td>
-                                        <td class="trContent relative p-3 text-[#191C1F] font-medium  items-center">
+                                        <td class="trContent relative p-3 text-[#191C1F] font-medium items-center">
                                             <p>$70</p>
                                         </td>
                                     </tr>
@@ -71,31 +71,32 @@
                                         </td>
                                         <td class="p-3">
                                             <div class="flex items-center border border-[#E4E7E9] rounded-[3px] w-[148px] p-2 justify-between">
-                                                <button onclick="decrement('counter2')" class="text-lg focus:outline-none">
+                                                <button @click="counters.counter2 > 1 && counters.counter2--" class="text-lg focus:outline-none">
                                                     <img src="../assets/images/MinusW.svg" alt="Minus">
                                                 </button>
-                                                <span id="counter2" class="text-[#475156] font-medium">01</span>
-                                                <button onclick="increment('counter2')" class="text-lg focus:outline-none">
+                                                <span x-text="String(counters.counter2).padStart(2, '0')" class="text-[#475156] font-medium"></span>
+                                                <button @click="counters.counter2++" class="text-lg focus:outline-none">
                                                     <img src="../assets/images/Plus.svg" alt="Plus">
                                                 </button>
                                             </div>
                                         </td>
-                                        
-                                        <td class="trContent relative p-3 text-[#191C1F] font-medium  items-center">
+
+                                        <td class="trContent relative p-3 text-[#191C1F] font-medium items-center">
                                             <p>$250</p>
                                         </td>
                                     </tr>
                                 </tbody>
-                                </table>
-                                <div class="flex justify-between p-6">
-                                    <a href="#" class="flex items-center justify-center gap-2 md:w-[203px] px-1 border-2 border-[#2DA5F3] h-[48px] text-[#2DA5F3] font-bold uppercase">
-                                        <img src="../assets/images/bArrowLeft.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
-                                        <span>Return to Shop</span>
-                                    </a>
-                                    <a href="#" class="flex items-center justify-center gap-2 md:w-[197px] px-1 border-2 border-[#2DA5F3] h-[48px] text-[#2DA5F3] font-bold uppercase">Update cart</a>
-                                </div>
+                            </table>
+                            <div class="flex justify-between p-6">
+                                <a href="#" class="flex items-center justify-center gap-2 md:w-[203px] px-1 border-2 border-[#2DA5F3] h-[48px] text-[#2DA5F3] font-bold uppercase">
+                                    <img src="../assets/images/bArrowLeft.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
+                                    <span>Return to Shop</span>
+                                </a>
+                                <a href="#" class="flex items-center justify-center gap-2 md:w-[197px] px-1 border-2 border-[#2DA5F3] h-[48px] text-[#2DA5F3] font-bold uppercase">Update cart</a>
                             </div>
+                        </div>
                     </div>
+                    
                 </div>
 
                 <div class="md:block flex flex-col justify-center items-center">
@@ -149,23 +150,5 @@
         <div id="footer"></div>
     <!-- End Footer --> 
 
-    <script>
-        let counters = {
-            counter1: 1,
-            counter2: 1
-        };
-    
-        function increment(counterId) {
-            counters[counterId]++;
-            document.getElementById(counterId).innerText = counters[counterId].toString().padStart(2, '0');
-        }
-    
-        function decrement(counterId) {
-            if (counters[counterId] > 1) {
-                counters[counterId]--;
-                document.getElementById(counterId).innerText = counters[counterId].toString().padStart(2, '0');
-            }
-        }
-    </script>
 </body>
 </html>
