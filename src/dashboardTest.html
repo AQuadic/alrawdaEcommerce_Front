@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alrawda">
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        [x-cloak] { display: none !important; }
+        .content-card {
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+        .slide-up-enter, .slide-down-leave {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        .slide-up-leave, .slide-down-enter {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+<!--hello!  this is an example with alpine to how i thought about what the taps should look like-->
+<!--we'll just keep track of the previous active state and add a transition effect accordingly-->
+<!--the example isn't perfect also cuz for some reason i have to click twice on the tab to make it active -->
+<!--but that's smth for you to figure out now :3 .. however it's a good start to take it as a reference to apply it to the original page -->
+<!--soo .. enjoy 👋🙋‍♀️ -->
+
+
+
+
+<div x-data="tabs()" class="flex h-screen">
+    <!-- Sidebar -->
+    <div class="w-64 bg-white shadow-lg">
+        <ul class="py-4">
+            <template x-for="(tab, index) in tabItems" :key="index">
+                <li class="mb-2">
+                    <button
+                            @click="selectTab(index)"
+                            :class="{ 'bg-blue-500 text-white': activeTab === index, 'hover:bg-gray-200': activeTab !== index }"
+                            class="w-full px-4 py-2 text-left transition-colors duration-200"
+                            x-text="tab.name"
+                    ></button>
+                </li>
+            </template>
+        </ul>
+    </div>
+
+    <!-- Content Area -->
+    <div class="flex-1 p-8 relative overflow-hidden">
+        <template x-for="(tab, index) in tabItems" :key="index">
+            <div
+                    x-show="true"
+                    :style="activeTab === index ? '' : 'pointer-events: none;'"
+                    class="absolute inset-0 flex items-center justify-center"
+                    :class="{ 'z-10': activeTab === index, 'z-0': activeTab !== index }"
+            >
+                <div
+                        class="bg-white shadow-lg rounded-lg p-6 w-full max-w-2xl content-card"
+                        :class="{
+                            'slide-up-enter': index > previousTab && activeTab === index,
+                            'slide-up-leave': index < activeTab && activeTab !== index,
+                            'slide-down-enter': index < previousTab && activeTab === index,
+                            'slide-down-leave': index > activeTab && activeTab !== index,
+                            'opacity-0': activeTab !== index
+                        }"
+                >
+                    <h2 x-text="tab.name" class="text-2xl font-bold mb-4"></h2>
+                    <p x-text="tab.content" class="text-gray-600"></p>
+                </div>
+            </div>
+        </template>
+    </div>
+</div>
+
+<script>
+    function tabs() {
+        return {
+            activeTab: 0,
+            previousTab: 0,
+            tabItems: [
+                { name: 'Dashboard', content: 'Welcome to your dashboard. Here you can view an overview of your account and recent activities.' },
+                { name: 'Order History', content: 'View your past orders, track shipments, and manage returns all in one place.' },
+                { name: 'Track Order', content: 'Enter your order number to get real-time updates on your package\'s location and estimated delivery date.' },
+                { name: 'Shopping Cart', content: 'Your shopping cart is currently empty. Add items to your cart to proceed to checkout.' },
+                { name: 'Wishlist', content: 'Keep track of items you love. Add products to your wishlist for easy access later.' },
+            ],
+            selectTab(index) {
+                this.previousTab = this.activeTab;
+                this.activeTab = index;
+            }
+        }
+    }
+</script>
+</body>
+</html>
