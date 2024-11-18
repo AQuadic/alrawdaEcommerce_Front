@@ -34,8 +34,8 @@
 
     <!-- Start Content -->
         <section class="container mx-auto flex gap-16 mt-[40px] mb-[72px]">     
-            <div x-data="{ activePage: 'dashboard' }" class="md:flex">
-                <!-- <div x-data="{ open: false }">
+            <div x-data="{ activePage: 'dashboard' }" class="md:flex gap-[72px]">
+                <div x-data="{ open: false }">
                     <button @click="open = !open" class="md:hidden flex items-center gap-5 p-[3px] text-gray-800">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -108,7 +108,7 @@
                                     <p class="text-[#5F6C72] font-normal">Log-out</p>
                                 </li>
                 
-                                <div x-show="showLogoutModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" x-cloak x-transition>
+                                <div x-show="showLogoutModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" x-cloak x-transition >
                                     <div class="bg-white p-6 rounded-md shadow-lg w-[300px]">
                                         <h2 class="text-lg font-semibold mb-4">Confirm Log-out</h2>
                                         <p class="mb-6">Are you sure you want to log out?</p>
@@ -122,11 +122,16 @@
                         </ul>
                     </div>
                 </div>
-                 -->
                 <!-- Content  -->
                 <div class="flex-1">
                     <!-- Dashboard Page -->
-                    <div x-show="activePage === 'dashboard'" x-transition>
+                    <div x-show="activePage === 'dashboard'" x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-full"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 translate-y-full" 
+                    x-cloak>
                         <div class="md:px-0 px-2 w-full">
                             <h1 class="text-[#191C1F] font-semibold text-[20px]">Hello, Kevin</h1>
                             <p class="text-[#475156] md:w-[432px] font-medium text-sm mt-3">From your account dashboard. you can easily check & view your <a href="#" class="text-[#2DA5F3]">Recent Orders</a>, manage your <a href="#" class="text-[#2DA5F3]">Shipping and Billing Addresses</a> and edit your <a href="#" class="text-[#2DA5F3]">Password</a> and <a href="#" class="text-[#2DA5F3]">Account Details.</a></p>
@@ -291,7 +296,13 @@
                     </div>
             
                     <!-- Order History Page -->
-                    <div x-show="activePage === 'orderHistory'" x-transition>
+                    <div x-show="activePage === 'orderHistory'" x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-full"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 translate-y-full" 
+                    x-cloak >
                         <section class="container mx-auto flex  gap-16  mb-[72px]">
                             <div class="w-[370px] md:w-[984px] md:px-0 px-2">
                                 <div class="bg-white border border-[#E4E7E9] rounded-[4px] overflow-hidden">
@@ -417,7 +428,13 @@
                     </div>
             
                     <!-- Track Order -->
-                    <div x-show="activePage === 'trackOrder'" x-transition>
+                    <div x-show="activePage === 'trackOrder'"  x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-full"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 translate-y-full" 
+                    x-cloak>
                         <div class="container mx-auto mt-12 mb-24 ltr:pl-5 rtl:pr-5">
                             <h1 class="text-[#191C1F] text-[32px] font-semibold leading-[40px]">Track Order</h1>
                             <p class="md:w-[760px] text-[#5F6C72] mt-4 text-base font-normal">To track your order please enter your order ID in the input field below and press the “Track Order” button. this was given to you on your receipt and in the confirmation email you should have received.</p>
@@ -445,7 +462,13 @@
                     <!-- Track Order -->
 
                     <!-- Wishlist -->
-                        <div x-show="activePage === 'Wishlist'" x-transition>
+                        <div x-show="activePage === 'Wishlist'" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 translate-y-full"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        x-transition:leave="transition ease-in duration-300"
+                        x-transition:leave-start="opacity-100 translate-y-0"
+                        x-transition:leave-end="opacity-0 translate-y-full" 
+                        x-cloak>
                             <section class="container mx-auto flex justify-center mb-[72px]">
                                 <div class="md:w-full w-[370px] md:px-0 px-2">
                                     <div class="bg-white border border-[#E4E7E9] rounded-[4px] overflow-hidden">
@@ -564,7 +587,13 @@
                     <!-- Wishlist -->
 
                     <!-- Setting -->
-                        <div x-show="activePage === 'dashboardSetting'" x-transition>
+                        <div x-show="activePage === 'dashboardSetting'" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 translate-y-full"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        x-transition:leave="transition ease-in duration-300"
+                        x-transition:leave-start="opacity-100 translate-y-0"
+                        x-transition:leave-end="opacity-0 translate-y-full" 
+                        x-cloak >
                             <section class="container mx-auto flex  gap-16 mb-[72px]">
                                 <div class="md:px-0 px-2">
                                     <!-- Account Info -->
@@ -730,7 +759,7 @@
                     <!-- Setting -->
 
                     <!-- Setting -->
-                    <div x-show="activePage === './orderDetails.html'" x-transition>
+                    <div x-show="activePage === './orderDetails.html'" >
                     
                     </div>
                 <!-- Setting -->
